@@ -10,7 +10,7 @@ class compSciCourse:
         self.tag = "CS"
         self.credits = credits
 
-    def __repr__(self):
+    def getCourse(self):
         return self.name
 
     def addPrereq(self, prereq):

@@ -1,12 +1,20 @@
+import compSciCourse
+import mathCourse
+import softEngCourse
+
+
 class Student:
     def __init__(self, name, school, major):
         self.name = name
         self.major = major
         self.completed = []
         self.requirements = []
+        self.UpperDivCount = 0
 
     def addCompleted(self, course):
         self.completed.append(course)
+        if int(self.course.getCourse()) >= 3000:
+            self.UpperDivCount += 1
 
     def removeCompleted(self, course):
         self.completed.remove(course)

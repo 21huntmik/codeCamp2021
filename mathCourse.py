@@ -10,8 +10,8 @@ class mathCourse:
         self.tag = "Math"
         self.credits = credits
 
-    def __repr__(self):
-        return self.name
+    def getCourse(self):
+        return self.ID
 
     def addPrereq(self, prereq):
         self.prereqs.append(prereq)

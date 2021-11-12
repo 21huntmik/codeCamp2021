@@ -11,7 +11,7 @@ class softEngCourse:
         self.credits = credits
 
     def getCourse(self):
-        return self.name
+        return self.ID
 
     def addPrereq(self, prereq):
         self.prereqs.append(prereq)

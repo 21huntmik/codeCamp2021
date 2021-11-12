@@ -1,8 +1,3 @@
-import compSciCourse
-import mathCourse
-import softEngCourse
-
-
 class Student:
     def __init__(self, name, major, gradDate):
         self.name = name

@@ -43,3 +43,4 @@ while semesterCredits < 15:
         for i in courseDatabase(sorted_potentials[preReqKeys[starting_index]]).getCoreqs():
             semesterCourses.append(i)
             semesterCredits += i.getCredits()
+    starting_index += 1

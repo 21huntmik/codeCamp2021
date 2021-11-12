@@ -20,14 +20,16 @@ potentials = {}
 for i in requirements:
     prereqList = i.getPrereqs()
     add = True
-    for x in prereqList:
-        credits = x.getCredits()
-        if str(x.semesters)+str(x.year) != currentSemester:
-            add = False
-        if x not in completed:
-            add = False
-        if add:
-            potentials[x] = [credits]
+    for j in prereqList.split('*'):
+        for x in j.split(','):
+            credits = x.getCredits()
+            # NEED To do some hard restructuring to account for the way split prereqs are evaluated
+            if ((1 == int(currentSemester[1:]) % 2) and "Odd" not in x.years()) or ((0 == (int(currentSemester[1:]) % 2)) and "Even" not in x.years()) or (currentSemester[0] not in x.getSemesters()):
+                add = False
+            if x not in completed:
+                add = False
+            if add:
+                potentials[x] = [credits]
 
 sorted_potentials = col.OrderedDict(potentials)
 starting_index = 0

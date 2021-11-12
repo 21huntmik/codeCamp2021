@@ -5,6 +5,7 @@ class softEngCourse:
     def __init__(self, ID, credits):
         self.ID = ID
         self.prereqs = []
+        self.year = []
         self.semesters = []
         self.coreqs = []
         self.tag = "SE"
@@ -39,3 +40,6 @@ class softEngCourse:
 
     def getCoreqs(self):
         return self.coreqs
+
+    def getYear(self):
+        return self.year

@@ -6,6 +6,7 @@ class compSciCourse:
         self.ID = ID
         self.prereqs = []
         self.semesters = []
+        self.year = []
         self.coreqs = []
         self.tag = "CS"
         self.credits = credits
@@ -39,3 +40,6 @@ class compSciCourse:
 
     def getCoreqs(self):
         return self.coreqs
+
+    def getYear(self):
+        return self.year

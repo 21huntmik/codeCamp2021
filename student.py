@@ -1,15 +1,17 @@
 class Student:
-    def __init__(self, name, major, gradDate):
+    def __init__(self, name, major, gradDate, currentSemester, completedList, requirementsList):
         self.name = name
         self.major = major
-        self.completed = []
-        self.requirements = []
+        self.completed = completedList
+        self.requirements = requirementsList
+        self.currentSemester = currentSemester
         self.UpperDivCount = 0
         self.graduationYear = 0
         self.gradDate = gradDate
         self.graduationSemester = ""
 
     def addCompleted(self, course):
+        for i in
         self.completed.append(course)
         if int(self.course.getCourse()) >= 3000:
             self.UpperDivCount += 1
@@ -23,15 +25,31 @@ class Student:
     def removeRequirement(self, course):
         self.requirements.remove(course)
 
+    def getRequirements(self):
+        return self.requirements
+
     def getCompleted(self):
         return self.completed
 
     def getRequirements(self):
         return self.requirements
 
-    # Ensure that graduation input from the website comes in the format of semesterYEAR
-    # Year is an integer
-    # Semester is a string, F=Fall, S=Spring, or U=Summer
+    def incrementSemester(self):
+        currentSemester, currentYear = self.currentSemester.split("-")
+        if currentSemester == "SP":
+            currentSemester = "SU"
+            currentYear = str(int(currentYear))
+        elif currentSemester == "SU":
+            currentSemester = "FA"
+            currentYear = str(int(currentYear))
+        elif currentSemester == "FA":
+            currentSemester = "SP"
+            currentYear = str(int(currentYear) + 1)
+
+        # Ensure that graduation input from the website comes in the format of semesterYEAR
+        # Year is an integer
+        # Semester is a string, F=Fall, S=Spring, or U=Summer
+
     def getGradSemester(self):
         gradSemester = self.gradDate[0]
         return gradSemester

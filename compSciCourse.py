@@ -1,4 +1,4 @@
-
+import trial.py
 # Course class utilizes only course codes, not course names
 # This way we avoid larger data structures, as the course ID serves as a key in the hash table of course requirements
 class compSciCourse:

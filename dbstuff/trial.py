@@ -83,13 +83,27 @@ class CoursesDB:
         return courses
 
     def getRequiredCourses(self):
-        self.cursor.execute("SELECT Required FROM mytable")
+        self.cursor.execute("SELECT * FROM mytable")
         courses = self.cursor.fetchall()
-        return courses
+        req_courses = []
+        for course in courses:
+            if course["Required"] == 'TRUE':
+                req_courses.append(course)
+        return req_courses
+
+    def getPrereqsOfReq(self):
+        req_courses = self.getRequiredCourses()
+        pre_reqs = []
+        for course in req_courses:
+            if course["Prereqs"]:
+                req_w_prereq = [course["Course"], course["Prereqs"]]
+                pre_reqs.append(req_w_prereq)
+        return pre_reqs
 
 ma = CoursesDB("ma.db")
 se = CoursesDB("se.db")
 cs = CoursesDB("cs.db")
-print(cs.getPreReqs("CS-3600"))
+#print(cs.getRequiredCourses())
+print(cs.getPrereqsOfReq())
 
 

@@ -2,11 +2,12 @@ import sqlite3
 
 from sqlite3 import Error
 
+
 def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
         d[col[0]] = row[idx]
-    return d 
+    return d
 
 
 class CoursesDB:
@@ -35,7 +36,7 @@ class CoursesDB:
 
     def getCourseCredits(self, course):
         return course["Credits"]
-    
+
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT * FROM mytable WHERE Odd_Fa = ?", data)
@@ -62,10 +63,11 @@ class CoursesDB:
 
     def getPreReqs(self, number):
         data = [number]
-        self.cursor.execute("SELECT Prereqs FROM mytable WHERE Course = ?", data)
+        self.cursor.execute(
+            "SELECT Prereqs FROM mytable WHERE Course = ?", data)
         course = self.cursor.fetchall()
         return course
-    
+
     def getCoursesFromPrereqs(self, finished_course):
         data = [finished_course]
         self.cursor.execute("SELECT * FROM mytable")
@@ -102,5 +104,3 @@ class CoursesDB:
                 req_w_prereq = [course["Course"], course["Prereqs"]]
                 pre_reqs.append(req_w_prereq)
         return pre_reqs
-
-

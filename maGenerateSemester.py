@@ -1,17 +1,17 @@
 import trial as db
 import student as std
+import flask
 
 
-def makeStudent():
-    major = input("Enter your major: ")  # actually get from web input
-    if major == "Math":
-        completedList = []  # get from web input
-        electiveChoices = []  # get from web input
-        maRequirements = db.ma.getRequiredCourses()
-        student = std.Student(major, completedList,
-                              maRequirements, electiveChoices)
-        student.updateRequirements()
-        return student
+def makeStudent(completed, electives):
+    major = "SE"
+    completedList = completed  # get from web input
+    electiveChoices = electives  # get from web input
+    maRequirements = db.ma.getRequiredCourses()
+    student = std.Student(major, completedList,
+                          maRequirements, electiveChoices)
+    student.updateRequirements()
+    return student
 
 
 def preReqCheck(student, course):
@@ -70,18 +70,15 @@ def generateSemester(student):
     return semesterCourses
 
 
-def generatePlan():
+def generatePlan(completed, electives):
     # generate plan
     # return dictionary of semesters
     # key is semester
     # value is list of classes
-    student = makeStudent()
+    student = makeStudent(completed, electives)
     plan = {}
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         student.incrementSemester()
     return plan
-
-
-generatePlan()

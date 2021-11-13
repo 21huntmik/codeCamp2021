@@ -1,9 +1,9 @@
 class Student:
-    def __init__(self, major, currentSemester, completedList, requirementsList, electivesList):
+    def __init__(self, major, completedList, requirementsList, electivesList):
         self.major = major
         self.completed = completedList
         self.requirements = requirementsList
-        self.currentSemester = currentSemester
+        self.currentSemester = 'S2022'
         self.electives = electivesList
         self.UpperDivCount = 0
 
@@ -49,21 +49,13 @@ class Student:
         # Year is an integer
         # Semester is a string, F=Fall, S=Spring, or U=Summer
         currentSemester, currentYear = self.currentSemester.split("-")
-        if currentSemester == "SP":
-            currentSemester = "FA"
+        if currentSemester == "S":
+            currentSemester = "F"
             currentYear = str(int(currentYear))
-        elif currentSemester == "FA":
-            currentSemester = "SP"
+        elif currentSemester == "F":
+            currentSemester = "S"
             currentYear = str(int(currentYear) + 1)
-        self.currentSemester = currentSemester + "-" + currentYear
-
-    def getGradSemester(self):
-        gradSemester = self.gradDate[0]
-        return gradSemester
-
-    def getGradYear(self):
-        gradYear = self.gradDate[1:]
-        return int(gradYear)
+        self.currentSemester = currentSemester + currentYear
 
     def firstUpperDivCount(self):
         for i in self.completed:

@@ -23,7 +23,7 @@ class CoursesDB:
 
     def getOneCourse(self, number):
         data = [number]
-        self.cursor.execute("SELECT * FROM mytable WHERE Number = ?", data)
+        self.cursor.execute("SELECT * FROM mytable WHERE Course = ?", data)
         course = self.cursor.fetchone()
         return course
 
@@ -59,7 +59,7 @@ class CoursesDB:
 
     def getPreReqs(self, number):
         data = [number]
-        self.cursor.execute("SELECT Prereqs FROM mytable WHERE Number = ?", data)
+        self.cursor.execute("SELECT Prereqs FROM mytable WHERE Course = ?", data)
         course = self.cursor.fetchall()
         return course
     
@@ -90,6 +90,6 @@ class CoursesDB:
 ma = CoursesDB("ma.db")
 se = CoursesDB("se.db")
 cs = CoursesDB("cs.db")
-print(cs.getCoursesFromPrereqs("CS-1400"))
+print(cs.getPreReqs("CS-3600"))
 
 

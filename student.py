@@ -1,14 +1,11 @@
 class Student:
-    def __init__(self, name, major, gradDate, currentSemester, completedList, requirementsList):
-        self.name = name
+    def __init__(self, major, currentSemester, completedList, requirementsList, electivesList):
         self.major = major
         self.completed = completedList
         self.requirements = requirementsList
         self.currentSemester = currentSemester
+        self.electives = electivesList
         self.UpperDivCount = 0
-        self.graduationYear = 0
-        self.gradDate = gradDate
-        self.graduationSemester = ""
 
     def addCompleted(self, course):
         self.completed.append(course)
@@ -24,14 +21,28 @@ class Student:
     def removeRequirement(self, course):
         self.requirements.remove(course)
 
+    def removeCompletedFromList(self, courseList):
+        for course in courseList:
+            self.requirements.remove(course)
+        return self.requirements
+
+    def addCouseChoicesFromList(self, courseChoiceList):
+        for course in courseChoiceList:
+            self.requirements.append(course)
+        return self.requirements
+
+    def getElectiveChoices(self):
+        return self.electives
+
     def getRequirements(self):
         return self.requirements
 
     def getCompleted(self):
         return self.completed
 
-    def getRequirements(self):
-        return self.requirements
+    def updateRequirements(self):
+        self.requirements = self.removeCompletedFromList(self.completed)
+        self.requirements = self.addCouseChoicesFromList(self.electives)
 
     def incrementSemester(self):
         # Ensure that graduation input from the website comes in the format of semester-YEAR

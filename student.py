@@ -11,7 +11,6 @@ class Student:
         self.graduationSemester = ""
 
     def addCompleted(self, course):
-        for i in
         self.completed.append(course)
         if int(self.course.getCourse()) >= 3000:
             self.UpperDivCount += 1
@@ -35,20 +34,17 @@ class Student:
         return self.requirements
 
     def incrementSemester(self):
+        # Ensure that graduation input from the website comes in the format of semester-YEAR
+        # Year is an integer
+        # Semester is a string, F=Fall, S=Spring, or U=Summer
         currentSemester, currentYear = self.currentSemester.split("-")
         if currentSemester == "SP":
-            currentSemester = "SU"
-            currentYear = str(int(currentYear))
-        elif currentSemester == "SU":
             currentSemester = "FA"
             currentYear = str(int(currentYear))
         elif currentSemester == "FA":
             currentSemester = "SP"
             currentYear = str(int(currentYear) + 1)
-
-        # Ensure that graduation input from the website comes in the format of semesterYEAR
-        # Year is an integer
-        # Semester is a string, F=Fall, S=Spring, or U=Summer
+        self.currentSemester = currentSemester + "-" + currentYear
 
     def getGradSemester(self):
         gradSemester = self.gradDate[0]
@@ -57,3 +53,8 @@ class Student:
     def getGradYear(self):
         gradYear = self.gradDate[1:]
         return int(gradYear)
+
+    def firstUpperDivCount(self):
+        for i in self.completed:
+            if int(i.getCourse()) >= 3000:
+                self.UpperDivCount += 1

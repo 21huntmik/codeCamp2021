@@ -100,10 +100,5 @@ class CoursesDB:
                 pre_reqs.append(req_w_prereq)
         return pre_reqs
 
-ma = CoursesDB("ma.db")
-se = CoursesDB("se.db")
-cs = CoursesDB("cs.db")
-#print(cs.getRequiredCourses())
-print(cs.getPrereqsOfReq())
 
 

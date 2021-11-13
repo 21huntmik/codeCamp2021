@@ -32,6 +32,9 @@ class CoursesDB:
         self.cursor.execute("SELECT * FROM mytable WHERE Credits = ?", data)
         course = self.cursor.fetchall()
         return course
+
+    def getCourseCredits(self, course):
+        return course["Credits"]
     
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
@@ -99,6 +102,5 @@ class CoursesDB:
                 req_w_prereq = [course["Course"], course["Prereqs"]]
                 pre_reqs.append(req_w_prereq)
         return pre_reqs
-
 
 

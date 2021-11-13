@@ -2,6 +2,10 @@ import sqlite3
 
 from sqlite3 import Error
 
+import os.path
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def dict_factory(cursor, row):
     d = {}
@@ -18,19 +22,19 @@ class CoursesDB:
 
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
-        self.cursor.execute("SELECT * FROM mytable")
+        self.cursor.execute("SELECT * FROM MYTABLE")
         courses = self.cursor.fetchall()
         return courses
 
     def getOneCourse(self, number):
         data = [number]
-        self.cursor.execute("SELECT * FROM mytable WHERE Course = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Course = ?", data)
         course = self.cursor.fetchone()
         return course
 
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
-        self.cursor.execute("SELECT * FROM mytable WHERE Credits = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Credits = ?", data)
         course = self.cursor.fetchall()
         return course
 
@@ -39,38 +43,38 @@ class CoursesDB:
 
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM mytable WHERE Odd_Fa = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Odd_Fa = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM mytable WHERE Odd_Sp = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Odd_Sp = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM mytable WHERE Evn_Fa = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Evn_Fa = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM mytable WHERE Evn_Sp = ?", data)
+        self.cursor.execute("SELECT * FROM MYTABLE WHERE Evn_Sp = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getPreReqs(self, number):
         data = [number]
         self.cursor.execute(
-            "SELECT Prereqs FROM mytable WHERE Course = ?", data)
+            "SELECT Prereqs FROM MYTABLE WHERE Course = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCoursesFromPrereqs(self, finished_course):
         data = [finished_course]
-        self.cursor.execute("SELECT * FROM mytable")
+        self.cursor.execute("SELECT * FROM MYTABLE")
         rows = self.cursor.fetchall()
         courses = []
         for row in rows:
@@ -79,7 +83,7 @@ class CoursesDB:
         return courses
 
     def getCoursesByPrereqQuantity(self):
-        self.cursor.execute("SELECT * FROM mytable")
+        self.cursor.execute("SELECT * FROM MYTABLE")
         rows = self.cursor.fetchall()
         courses = []
         for row in rows:
@@ -88,7 +92,7 @@ class CoursesDB:
         return courses
 
     def getRequiredCourses(self):
-        self.cursor.execute("SELECT * FROM mytable")
+        self.cursor.execute("SELECT * FROM MYTABLE")
         courses = self.cursor.fetchall()
         req_courses = []
         for course in courses:
@@ -104,3 +108,8 @@ class CoursesDB:
                 req_w_prereq = [course["Course"], course["Prereqs"]]
                 pre_reqs.append(req_w_prereq)
         return pre_reqs
+
+
+ma = CoursesDB("ma.db")
+se = CoursesDB("se.db")
+cs = CoursesDB("cs.db")

@@ -25,3 +25,5 @@ That's where Graduation-Station comes in. We created a web-based application tha
 - [ ] Add a course difficulty rating to all database
 - [ ] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
+- [ ] Establish a more thorough grammar process for the initial totalString value processing
+- [ ] Allow users to go back a page

@@ -8,8 +8,8 @@ That's where Graduation-Station comes in. We created a web-based application tha
 
 ### Current Bugs
 
-- [x] Input buttons cannot be unpressed~~
-- [x] Multiple track/interest area buttons can be pressed; max should be 1~~
+- [x] Input buttons cannot be unpressed
+- [x] Multiple track/interest area buttons can be pressed; max should be 1
 - [ ] Database connection is unsupported in current format
 
 ### Planned Features

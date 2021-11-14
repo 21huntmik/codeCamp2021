@@ -7,11 +7,11 @@ import os.path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-# def dict_factory(cursor, row):
-#d = {}
-# for idx, col in enumerate(cursor.description):
-#    d[col[0]] = row[idx]
-# return d
+def dict_factory(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
 
 
 class CoursesDB:

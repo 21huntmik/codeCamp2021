@@ -19,6 +19,7 @@ That's where Graduation-Station comes in. We created a web-based application tha
 - [ ] Account for courses that do not follow the same permission structures as most
 - [ ] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
 - [ ] Allow users to export a desired plan as a pdf
+- [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
 - [ ] Create another interest area for the CS degree
 - [ ] Identify interest area tracks for the Math degree
 - [ ] Add a course difficulty rating to all database

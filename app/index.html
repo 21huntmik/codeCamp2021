@@ -974,110 +974,127 @@
 		</div>
 
 		<div id="body3M">
+			
+			<script type="text/javascript">
+			function chkcontrol(j) {
+			var total=0;
+			for(var i=0; i < document.formOne.ckb.length; i++){
+			if(document.formOne.ckb[i].checked){
+			total =total +1;}
+			if(total > 4){
+			alert("Please Select only four") 
+			document.formOne.ckb[j].checked = false ;
+			return false;
+			}
+			}
+			} </script>
 
 			<p>
-				Now that we know what classes you have taken, please pick FOUR of the following classes. If you have taken any of the following (even if it makes it more than 4) please make sure you check them off.
+				Now that we know what classes you have taken, please pick FOUR of the following classes.
 			</p>
 
 			<h3>
 				Electives
 			</h3>
 
-			<input type="checkbox" id="m2600e" name="m2600e" value="m2600e">
-			<label for="m2600e">
-				2600: Introduction to Modeling and Simulation
-			</label>
+			<form name="formOne">
+			
+				<input type="checkbox" id="m2600e" name="ckb" value="m2600e" onclick='chkcontrol(0)';>
+				<label for="m2600e">
+					2600: Introduction to Modeling and Simulation
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m3000e" name="ckb" value="m3000e" onclick='chkcontrol(1)';>
+				<label for="m3000e">
+					3000: History of Mathematics
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m3100e" name="ckb" value="m3100e" onclick='chkcontrol(2)';>
+				<label for="m3100e">
+					3100: Euclidean/Non-Euclidean Geometry
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m3210e" name="ckb" value="m3210e" onclick='chkcontrol(3)';>
+				<label for="m3210e">
+					3210: Introduction to Analysis II
+				</label>
+	
+				<br>
 
-			<br>
+				<input type="checkbox" id="m3450e" name="ckb" value="m3450e" onclick='chkcontrol(4)';>
+				<label for="m3450e">
+					3450: Statistical Inference
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m3500e" name="ckb" value="m3500e" onclick='chkcontrol(5)';>
+				<label for="m3500e">
+					3500: Numerical Analysis
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m3700e" name="ckb" value="m3700e" onclick='chkcontrol(6)';>
+				<label for="m3700e">
+					3700: Mathematical Modeling I
+				</label>
+	
+				<br>
+	
+				<input type="checkbox" id="m4010e" name="ckb" value="m4010e" onclick='chkcontrol(7)';>
+				<label for="m4010e">
+					4010: Abstract Algebra
+				</label>	
 
-			<input type="checkbox" id="m3000e" name="m3000e" value="m3000e">
-			<label for="m3000e">
-				3000: History of Mathematics
-			</label>
+				<br>
 
-			<br>
+				<input type="checkbox" id="m4100e" name="ckb" value="m4100e" onclick='chkcontrol(8)';>
+				<label for="m4100e">
+					4100: Introduction to Topology
+				</label>
 
-			<input type="checkbox" id="m3100e" name="m3100e" value="m3100e">
-			<label for="m3100e">
-				3100: Euclidean/Non-Euclidean Geometry
-			</label>
+				<br>
 
-			<br>
+				<input type="checkbox" id="m4200e" name="ckb" value="m4200e" onclick='chkcontrol(9)';>
+				<label for="m4200e">
+					4200: Introduction to Complex Analysis
+				</label>
 
-			<input type="checkbox" id="m3210e" name="m3210e" value="m3210e">
-			<label for="m3210e">
-				3210: Introduction to Analysis II
-			</label>
+				<br>
 
-			<br>
+				<input type="checkbox" id="m4250e" name="ckb" value="m4250e" onclick='chkcontrol(10)';>
+				<label for="m4250e">
+					4250: Programming for Scientific Computation
+				</label>
 
-			<input type="checkbox" id="m3450e" name="m3450e" value="m3450e">
-			<label for="m3450e">
-				3450: Statistical Inference
-			</label>
+				<br>
 
-			<br>
+				<input type="checkbox" id="m4550e" name="ckb" value="4550e" onclick='chkcontrol(11)';>
+				<label for="m4550e">
+					4550: Scientific Computation
+				</label>
 
-			<input type="checkbox" id="m3500e" name="m3500e" value="m3500e">
-			<label for="m3500e">
-				3500: Numerical Analysis
-			</label>
+				<br>
 
-			<br>
+				<input type="checkbox" id="m4800e" name="ckb" value="m4800e" onclick='chkcontrol(12)';>
+				<label for="m4800e">
+					4800: Industrial Careers in Mathematics
+				</label>
 
-			<input type="checkbox" id="m3700e" name="m3700e" value="m3700e">
-			<label for="m3700e">
-				3700: Mathematical Modeling I
-			</label>
+				<br>
 
-			<br>
-
-			<input type="checkbox" id="m4010e" name="m4010e" value="m4010e">
-			<label for="m4010e">
-				4010: Abstract Algebra
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4100e" name="m4100e" value="m4100e">
-			<label for="m4100e">
-				4100: Introduction to Topology
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4200e" name="m4200e" value="m4200e">
-			<label for="m4200e">
-				4200: Introduction to Complex Analysis
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4250e" name="m4250e" value="m4250e">
-			<label for="m4250e">
-				4250: Programming for Scientific Computation
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4550e" name="m4550e" value="4550e">
-			<label for="m4550e">
-				4550: Scientific Computation
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4800e" name="m4800e" value="m4800e">
-			<label for="m4800e">
-				4800: Industrial Careers in Mathematics
-			</label>
-
-			<br>
-
-			<input type="checkbox" id="m4890e" name="m4890e" value="m4890e">
-			<label for="m4890e">
-				4890: Independant Research
-			</label>
+				<input type="checkbox" id="m4890e" name="ckb" value="m4890e" onclick='chkcontrol(13)';>
+				<label for="m4890e">
+					4890: Independant Research
+				</label>
+			</form>
 
 			<br>
 

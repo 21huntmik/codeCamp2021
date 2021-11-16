@@ -1,1 +1,2 @@
-
+All of the tables in the databases need to be moved over to one .db file.
+I went back and looked at the lectures from Web Applications, and all you need to do is input the data into https://jsonformatter.curiousconcept.com/ (which will format the data to JSON). After that, all you need to do is open terminal and do "vim schedules.db" and then paste all of the json formatted info into the file. The file should include different tables for each major (CS, SE, MA).

@@ -28,7 +28,7 @@ rating INTEGER
 
 - [x] Input buttons cannot be unpressed
 - [x] Multiple track/interest area buttons can be pressed; max should be 1
-- [ ] Database connection is unsupported in current format
+- [x] Database connection is unsupported in current format
 
 ### Planned Features
 
@@ -40,7 +40,7 @@ rating INTEGER
 - [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
 - [ ] Create another interest area for the CS degree
 - [ ] Identify interest area tracks for the Math degree
-- [ ] Add a course difficulty rating to all database
+- [x] Add a course difficulty rating to all database
 - [ ] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
 - [ ] Establish a more thorough grammar process for the initial totalString value processing

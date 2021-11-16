@@ -19,11 +19,19 @@ def appendElectives(completed, choice):
 
 
 def makeStudent(completed, electiveChoice):
-    major = "SE"
+    major = "CS"
     completedList = completed  # get from web input
     electives = appendElectives(completedList, electiveChoice)
     cs = csDB()
-    csRequirements = cs.getRequiredCourses()
+    firstCSRequirements = cs.getRequiredCourses()
+    csRequirements = []
+    for i in firstCSRequirements:
+        i = list(i)
+        if i[-1] == '|':
+            nextVal = i[:-1]
+        else:
+            nextVal = i
+        csRequirements.append(nextVal)
     student = std.Student(major, completedList,
                           csRequirements, electives)
     student.updateRequirements()

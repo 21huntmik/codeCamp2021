@@ -26,6 +26,8 @@ class MyHandler(BaseHTTPRequestHandler):
         parsed_body = parse_qs(body)
         print(parsed_body)
         listItems = parsed_body['item'][0]
+        #listItems = parsed_body[1]
+        print(listItems)
         inputComponents = listItems.split(' ')
         major = inputComponents[0]
         electives = inputComponents[1]

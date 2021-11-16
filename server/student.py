@@ -8,27 +8,39 @@ class Student:
         self.UpperDivCount = 0
 
     def addCompleted(self, course):
-        self.completed.append(course)
-        if int(self.course.getCourse()) >= 3000:
-            self.UpperDivCount += 1
+        newCompleted = self.completed
+        newCompleted.append(course)
+        self.completed = newCompleted
 
     def removeCompleted(self, course):
-        self.completed.remove(course)
+        newCompleted = self.completed
+        newCompleted.remove(course)
+        self.completed = newCompleted
 
     def addRequirement(self, course):
-        self.requirements.append(course)
+        newRequirements = self.requirements
+        newRequirements.append(course)
+        self.requirements = newRequirements
 
     def removeRequirement(self, course):
-        self.requirements.remove(course)
+        newRequirements = self.requirements
+        newRequirements.remove(course)
+        self.requirements = newRequirements
 
     def removeCompletedFromList(self, courseList):
         for course in courseList:
-            self.requirements.remove(course)
+            newRequirements = self.requirements
+            if course in newRequirements:
+                newRequirements.remove(course)
+            self.requirements = newRequirements
         return self.requirements
 
-    def addCouseChoicesFromList(self, courseChoiceList):
+    def addCourseChoicesFromList(self, courseChoiceList):
         for course in courseChoiceList:
-            self.requirements.append(course)
+            newRequirements = self.requirements
+            if course not in newRequirements:
+                newRequirements.append(course)
+            self.requirements = newRequirements
         return self.requirements
 
     def getElectiveChoices(self):
@@ -42,7 +54,7 @@ class Student:
 
     def updateRequirements(self):
         self.requirements = self.removeCompletedFromList(self.completed)
-        self.requirements = self.addCouseChoicesFromList(self.electives)
+        self.requirements = self.addCourseChoicesFromList(self.electives)
 
     def incrementSemester(self):
         # Ensure that graduation input from the website comes in the format of semester-YEAR

@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs
 import json
-import trial as db
 import seGenerateSemester
 import csGenerateSemester
 import maGenerateSemester

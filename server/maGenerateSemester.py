@@ -1,4 +1,4 @@
-import trial as db
+import database as db
 import student as std
 import flask
 

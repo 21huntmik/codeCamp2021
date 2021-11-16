@@ -1,15 +1,31 @@
-import trial as db
+from database import csDB as csDB
 import student as std
 import flask
 
 
-def makeStudent(completed, electives):
+def appendElectives(completed, choice):
+    electivesList = []
+    if choice == "theory":
+        electivesList = ['CS-3400', 'CS-3410', 'CS-4307', 'CS-4550',
+                         'CS-4320', 'CS-4300', 'CS-3520', 'CS-3200', 'CS-3500', 'CS-3600']
+    elif choice == "dev":
+        electivesList = ['CS-3200', 'CS-3600', 'CS-3400', 'CS-3520',
+                         'CS-4307', 'CS-4320', 'CS-4550', 'CS-4200', 'CS-3500', 'CS-3020', ]
+    finalAppend = []
+    for course in electivesList:
+        if course not in completed:
+            finalAppend.append(course)
+    return finalAppend
+
+
+def makeStudent(completed, electiveChoice):
     major = "SE"
     completedList = completed  # get from web input
-    electiveChoices = electives  # get from web input
-    csRequirements = db.cs.getRequiredCourses()
+    electives = appendElectives(completedList, electiveChoice)
+    cs = csDB()
+    csRequirements = cs.getRequiredCourses()
     student = std.Student(major, completedList,
-                          csRequirements, electiveChoices)
+                          csRequirements, electives)
     student.updateRequirements()
     return student
 
@@ -18,7 +34,7 @@ def preReqCheck(student, course):
     # check if preReq is satisfied
     # if so, return True
     # else, return False
-    rawList = db.cs.getPreReqs(course)
+    rawList = csDB.getPreReqs(course)
     if len(rawList) != 0:
         preReqBranches = rawList.split('*')
         evaluatedPreReqs = []
@@ -43,16 +59,16 @@ def isOffered(student, course):
     # reformat semester/year listing as F or S or U + year
     offered = True
     if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
-        if course not in db.cs.getCourseByOddYearFall():
+        if course not in csDB.getCourseByOddYearFall():
             offered = False
     if student.currentSemester[0] == "S" and (1 == int(student.currentSemester[1:]) % 2):
-        if course not in db.cs.getCourseByOddYearSpring():
+        if course not in csDB.getCourseByOddYearSpring():
             offered = False
     if student.currentSemester[0] == "F" and (0 == int(student.currentSemester[1:]) % 2):
-        if course not in db.cs.getCourseByEvenYearFall():
+        if course not in csDB.getCourseByEvenYearFall():
             offered = False
     if student.currentSemester[0] == "S" and (0 == int(student.currentSemester[1:]) % 2):
-        if course not in db.cs.getCourseByEvenYearSpring():
+        if course not in csDB.getCourseByEvenYearSpring():
             offered = False
     return offered
 
@@ -64,9 +80,9 @@ def generateSemester(student):
         for course in student.getRequirements():
             if isOffered(student, course):
                 if preReqCheck(student, course):
-                    semesterCourses[course] = db.cs.getCourseCredits(course)
+                    semesterCourses[course] = csDB.getCourseCredits(course)
                     student.removeRequirement(course)
-                    semesterCredits += db.cs.getCourseCredits(course)
+                    semesterCredits += csDB.getCourseCredits(course)
     return semesterCourses
 
 

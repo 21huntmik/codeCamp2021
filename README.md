@@ -45,3 +45,4 @@ rating INTEGER
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
 - [ ] Establish a more thorough grammar process for the initial totalString value processing
 - [ ] Allow users to go back a page
+- [ ] With classes like Competitive Programming and Seminar in Computer Science, after the initial checkbox was marked, have a drop down radio button to see how many times the class was taken. This will help with schedule generation.

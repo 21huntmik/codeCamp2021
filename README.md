@@ -6,6 +6,24 @@ The registration process at Utah Tech University sucks. Degree-Works shows stude
 
 That's where Graduation-Station comes in. We created a web-based application that generates graduation plans for Computer Science, Software Engineering, and Mathematics majors. Users select their major, which classes they have already completed, and their desired track/electives. Graduation-Station uses this information to generate a manageable, effective degree plan. Our current algorithm outputs a plan that is the fastest degree completion path for a user's unique needs.
 
+### Schema for Database
+
+##### Table Names
+CS, SE, MA
+
+##### Schema
+id PRIMARY INTEGER KEY,
+course TEXT,
+title TEXT,
+credits INTEGER,
+required TEXT,
+oddFall TEXT,
+oddSpring TEXT,
+evenFall TEXT,
+evenSpring TEXT,
+prereqs TEXT,
+rating INTEGER
+
 ### Current Bugs
 
 - [x] Input buttons cannot be unpressed

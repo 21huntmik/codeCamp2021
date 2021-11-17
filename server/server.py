@@ -40,6 +40,7 @@ class MyHandler(BaseHTTPRequestHandler):
             totalPlan = (csGenerateSemester.generatePlan(completed, electives))
         elif major == "ma":
             totalPlan = (maGenerateSemester.generatePlan(completed, electives))
+        print(totalPlan)
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.send_header("Allow-Control-Allow-Origin", "*")

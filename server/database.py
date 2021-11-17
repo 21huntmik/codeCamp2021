@@ -39,25 +39,25 @@ class csDB:
 
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE Odd_Fa = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE oddFall = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE Odd_Sp = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE oddSpring = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE Evn_Fa = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE evenFall = ?", data)
         course = self.cursor.fetchall()
         return course
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE Evn_Sp = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE evenSpring = ?", data)
         course = self.cursor.fetchall()
         return course
 

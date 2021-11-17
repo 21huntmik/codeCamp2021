@@ -66,17 +66,18 @@ def isOffered(student, course):
     # else, return False
     # reformat semester/year listing as F or S or U + year
     offered = True
+    cs_db = csDB()
     if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
-        if course not in csDB.getCourseByOddYearFall():
+        if course not in cs_db.getCourseByOddYearFall():
             offered = False
     if student.currentSemester[0] == "S" and (1 == int(student.currentSemester[1:]) % 2):
-        if course not in csDB.getCourseByOddYearSpring():
+        if course not in cs_db.getCourseByOddYearSpring():
             offered = False
     if student.currentSemester[0] == "F" and (0 == int(student.currentSemester[1:]) % 2):
-        if course not in csDB.getCourseByEvenYearFall():
+        if course not in cs_db.getCourseByEvenYearFall():
             offered = False
     if student.currentSemester[0] == "S" and (0 == int(student.currentSemester[1:]) % 2):
-        if course not in csDB.getCourseByEvenYearSpring():
+        if course not in cs_db.getCourseByEvenYearSpring():
             offered = False
     return offered
 

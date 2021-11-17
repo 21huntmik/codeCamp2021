@@ -29,6 +29,7 @@ rating INTEGER
 - [x] Input buttons cannot be unpressed
 - [x] Multiple track/interest area buttons can be pressed; max should be 1
 - [x] Database connection is unsupported in current format
+- [ ] Server is not returning a generated schedule
 
 ### Planned Features
 

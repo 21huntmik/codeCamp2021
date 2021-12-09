@@ -92,6 +92,7 @@ def generateSemester(student):
                     semesterCourses[course] = csDB.getCourseCredits(course)
                     student.removeRequirement(course)
                     semesterCredits += csDB.getCourseCredits(course)
+    print(semesterCourses)
     return semesterCourses
 
 
@@ -106,4 +107,5 @@ def generatePlan(completed, electives):
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         student.incrementSemester()
+    print(plan)
     return plan

@@ -18,19 +18,19 @@ class csDB:
 
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
-        self.cursor.execute("SELECT * FROM CS")
+        self.cursor.execute("SELECT course FROM CS")
         courses = self.cursor.fetchall()
         return courses
 
     def getOneCourse(self, number):
         data = [number]
-        self.cursor.execute("SELECT * FROM CS WHERE Course = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE Course = ?", data)
         course = self.cursor.fetchone()
         return course
 
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
-        self.cursor.execute("SELECT * FROM CS WHERE Credits = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE Credits = ?", data)
         course = self.cursor.fetchall()
         return course
 
@@ -70,7 +70,7 @@ class csDB:
 
     def getCoursesFromPrereqs(self, finished_course):
         data = [finished_course]
-        self.cursor.execute("SELECT * FROM CS")
+        self.cursor.execute("SELECT course FROM CS")
         rows = self.cursor.fetchall()
         courses = []
         for row in rows:
@@ -79,7 +79,7 @@ class csDB:
         return courses
 
     def getCoursesByPrereqQuantity(self):
-        self.cursor.execute("SELECT * FROM CS")
+        self.cursor.execute("SELECT course FROM CS")
         rows = self.cursor.fetchall()
         courses = []
         for row in rows:
@@ -89,7 +89,7 @@ class csDB:
 
     def getRequiredCourses(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE required = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE required = ?", data)
         courses = self.cursor.fetchall()
         return courses
 

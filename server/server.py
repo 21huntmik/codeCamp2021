@@ -22,6 +22,7 @@ class MyHandler(BaseHTTPRequestHandler):
     def createList(self):
         length = int(self.headers['Content-Length'])
         body = self.rfile.read(length).decode('utf-8')
+        print("createList was called.")
         print(body)
         parsed_body = parse_qs(body)
         print(parsed_body)

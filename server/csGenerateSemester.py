@@ -105,7 +105,10 @@ def generatePlan(completed, electives):
     plan = {}
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
+        print(semester)
+        print("Printed semester")
         plan[student.currentSemester] = semester
         student.incrementSemester()
+    print("Printing plan")
     print(plan)
     return plan

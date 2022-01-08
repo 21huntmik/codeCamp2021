@@ -107,7 +107,7 @@ def generateSemester(student):
     semesterCourses = {}
     cs_db = csDB()
     tmpCredits = 0
-    while semesterCredits < 12:
+    while semesterCredits < 15:
 
         #print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():

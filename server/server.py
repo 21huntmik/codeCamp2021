@@ -7,6 +7,12 @@ import maGenerateSemester
 
 
 class MyHandler(BaseHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Access-Control-Allow-Origin", self.headers["Origin"]) #-- if you add this... delete all of these headers
+        #add access control allow origin because it will help on Thursday
+        self.send_header("Access-Control-Allow-Credentials", "true") #is this right??
+        BaseHTTPRequestHandler.end_headers(self) #call the actual self.end_headers()
+
     def handleNotFound(self):
         self.send_response(404)
         self.send_header("Allow-Control-Allow-Origin", "*")
@@ -69,7 +75,6 @@ class MyHandler(BaseHTTPRequestHandler):
                 print(x)
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
-        self.send_header("Allow-Control-Allow-Origin", "*")
         self.end_headers()
         self.wfile.write(bytes(json.dumps(outputPlan), "utf-8"))
 

@@ -31,33 +31,33 @@ class MyHandler(BaseHTTPRequestHandler):
     def createList(self):
         length = int(self.headers['Content-Length'])
         body = self.rfile.read(length).decode('utf-8')
-        print("createList was called.\n\n")
-        print("priting body:")
-        print(body)
-        print("\n\n")
+        #print("createList was called.\n\n")
+        #print("priting body:")
+        # print(body)
+        # print("\n\n")
         #parsed_body = parse_qs(body)
         #print("Printing Parsed-Body:\n\n")
         # print(parsed_body)
         listItems = body
         #listItems = body['item'][1]
         #listItems = parsed_body[1]
-        print(listItems)
+        # print(listItems)
         inputComponents = listItems.split(' ')
-        print("Printing inputComponents:")
-        print(inputComponents)
-        print("\n\n")
+        #print("Printing inputComponents:")
+        # print(inputComponents)
+        # print("\n\n")
         major = inputComponents[0]
-        print("Printing major:")
-        print(major)
-        print("\n\n")
+        #print("Printing major:")
+        # print(major)
+        # print("\n\n")
         electives = inputComponents[2]
-        print("Printing electives:")
-        print(electives)
-        print("\n\n")
+        #print("Printing electives:")
+        # print(electives)
+        # print("\n\n")
         completed = inputComponents[1]
-        print("Printing completed:")
-        print(completed)
-        print("\n\n")
+        #print("Printing completed:")
+        # print(completed)
+        # print("\n\n")
         completed = completed.split("|")
         if major == "se":
             totalPlan = (seGenerateSemester.generatePlan(completed, electives))
@@ -65,24 +65,24 @@ class MyHandler(BaseHTTPRequestHandler):
             totalPlan = (csGenerateSemester.generatePlan(completed, electives))
         elif major == "ma":
             totalPlan = (maGenerateSemester.generatePlan(completed, electives))
-        print("/n/n")
-        print(totalPlan)
+        # print("/n/n")
+        # print(totalPlan)
         outputPlan = []
         for semester in totalPlan:
             creditCount = 0
             currentSemesterList = []
             currentSemesterList.append(semester)
             for course in totalPlan[semester]:
-                currentSemesterList.append(course)
+                currentSemesterList.append(f" {course}")
                 creditCount += totalPlan[semester][course]['credits']
             currentSemesterList.append(f"Total credits: {creditCount}")
             outputPlan.append(currentSemesterList)
         # print(outputPlan)
-        for i in outputPlan:
-            for x in i[:-1]:
-                print(x)
-            print(i[-1])
-            print("\n\n")
+        # for i in outputPlan:
+            # for x in i[:-1]:
+            # print(x)
+            # print(i[-1])
+            # print("\n\n")
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()

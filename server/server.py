@@ -64,7 +64,6 @@ class MyHandler(BaseHTTPRequestHandler):
             outputPlan.append(currentSemesterList)
 
         for i in outputPlan:
-            print(i)
             for x in i:
                 print(x)
         self.send_response(200)

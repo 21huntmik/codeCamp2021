@@ -17,7 +17,7 @@ def appendElectives(completed, choice):  # WORKS
     for course in electivesList:
         if course not in completed:
             finalAppend.append(course)
-    #print("Printing final append: " + str(finalAppend))
+    # print("Printing final append: " + str(finalAppend))
     return finalAppend
 
 
@@ -33,7 +33,7 @@ def makeStudent(completed, electiveChoice):
     student = std.Student(major, completed,
                           seRequirements, electives)
     student.updateRequirements()
-    #print("Printing student requirements: " + str(student.requirements))
+    # print("Printing student requirements: " + str(student.requirements))
     return student
 
 
@@ -41,15 +41,15 @@ def preReqCheck(student, course):
     # check if preReq is satisfied
     # if so, return True
     # else, return False
-    #print("Printing course: " + str(course))
+    # print("Printing course: " + str(course))
     se_db = seDB()
     rawList = se_db.getPreReqs(course)
-    #print("Printing rawList: " + str(rawList))
-    #print("Raw list prereqs: " + str(rawList))
+    # print("Printing rawList: " + str(rawList))
+    # print("Raw list prereqs: " + str(rawList))
     cleanedList = []
     value = rawList['prereqs']
     cleanedList.append(value)
-    #print("Printing cleaned list: " + str(cleanedList))
+    # print("Printing cleaned list: " + str(cleanedList))
     if cleanedList[0] == None:
         cleanedList = cleanedList.remove(None)
         return True
@@ -76,7 +76,7 @@ def isOffered(student, course):
     # reformat semester/year listing as F or S or U + year
     offered_bool = True
     se_db = seDB()
-    #print("Printing odd fall:" + str(se_db.getCourseByOddYearFall()))
+    # print("Printing odd fall:" + str(se_db.getCourseByOddYearFall()))
     if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
         offered = []
         for i in se_db.getCourseByOddYearFall():
@@ -101,12 +101,12 @@ def isOffered(student, course):
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
-    #print("Printing offered: " + str(offered))
+    # print("Printing offered: " + str(offered))
     return offered_bool
 
 
 def generateSemester(student):
-    #print("Generating a semester")
+    # print("Generating a semester")
     # print(student.getRequirements())
     semesterCredits = 0
     semesterCourses = {}
@@ -114,14 +114,14 @@ def generateSemester(student):
     tmpCredits = 0
     while semesterCredits < 12:
 
-        #print("Printing Semester Courses: " + str(semesterCourses))
+        # print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():
             if semesterCredits >= 15:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):
                     semesterCourses[course] = se_db.getCourseCredits(course)
-                    #print("Printing course: " + str(course))
+                    # print("Printing course: " + str(course))
                     student.removeRequirement(course)
                     semesterCredits += se_db.getCourseCredits(course)[
                         'credits']
@@ -133,7 +133,7 @@ def generateSemester(student):
     for course in semesterCourses:
         student.addCompleted(course)
 
-    print(semesterCourses)
+    # print(semesterCourses)
     return semesterCourses
 
 
@@ -142,17 +142,16 @@ def generatePlan(completed, electives):
     # return dictionary of semesters
     # key is semester
     # value is list of classes
-    #print("Printing completed: " + str(completed))
-    #print("Printing electives: " + str(electives))
+    # print("Printing completed: " + str(completed))
+    # print("Printing electives: " + str(electives))
     student = makeStudent(completed, electives)
     plan = {}
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
-        #print("Printing plan: " + str(plan))
+        # print("Printing plan: " + str(plan))
         student.incrementSemester()
-        print("Printing student requirements: " +
-              str(student.getRequirements()))
-    #print("Printing plan")
+        # print("Printing student requirements: " + str(student.getRequirements()))
+    # print("Printing plan")
     # print(plan)
     return plan

@@ -73,10 +73,9 @@ class MyHandler(BaseHTTPRequestHandler):
             currentSemesterList = []
             currentSemesterList.append(semester)
             for course in totalPlan[semester]:
-                information_string = f"{course}\t\t\t{totalPlan[semester][course]['credits']} credits"
-                currentSemesterList.append(information_string)
+                currentSemesterList.append(course)
                 creditCount += totalPlan[semester][course]['credits']
-            currentSemesterList.append(f"Total\t\t\t{creditCount} credits")
+            currentSemesterList.append(f"Total credits: {creditCount}")
             outputPlan.append(currentSemesterList)
         # print(outputPlan)
         for i in outputPlan:

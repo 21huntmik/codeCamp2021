@@ -548,7 +548,7 @@ secondMoveOnM.onclick = function () {
 
 	var m1210 = document.getElementById("m1210");
 	if (m1210.checked) {
-		maClasses+=("MA-1210");
+		maClasses+=("MA-1210|");
 	}
 
 	var m1220 = document.getElementById("m1220");
@@ -780,8 +780,143 @@ thirdMoveOn.onclick = function() {
 		response.json().then(function (data) {
 			//format here
 			//3 x 3 grid
+			var schedule = data;
+			console.log("THIS IS FROM THE JAVASCRIPT");
+			console.log(schedule);
 
-			console.log(data);
+			//to access data from the server... use the following functions
+				//indexing values (0 & -1)
+				//pop to remove the last item (credits)
+				//shift to remove the first item (semester)
+
+			//schedules is a list of lists
+			var semesterCount = 0;
+
+			console.log(semesterCount);
+
+			//loop over each list in schedules, index, pop, shift and store
+			var semester1HeaderContent = "";
+			var semester1Classes = "";
+			var semester1CreditCount = "";
+
+			var semester2HeaderContent = "";
+			var semester2Classes = "";
+			var semester2CreditCount = "";
+
+			var semester3HeaderContent = "";
+			var semester3Classes = "";
+			var semester3CreditCount = "";
+
+			var semester4HeaderContent = "";
+			var semester4Classes = "";
+			var semester4CreditCount = "";
+
+			var semester5HeaderContent = "";
+			var semester5Classes = "";
+			var semester5CreditCount = "";
+
+			var semester6HeaderContent = "";
+			var semester6Classes = "";
+			var semester6CreditCount = "";
+
+			var semester7HeaderContent = "";
+			var semester7Classes = "";
+			var semester7CreditCount = "";
+
+			var semester8HeaderContent = "";
+			var semester8Classes = "";
+			var semester8CreditCount = "";
+
+			for (var x of schedule) {
+				console.log("In the for loop");
+				console.log(x);
+				semesterCount += 1;
+				console.log(semesterCount);
+				var loopSemester = x;
+				//loopSemester is the list with the current semester info
+				//index to store, pop and shift to remove and leave everything else for class list
+				if (semesterCount == 1) {
+					semester1HeaderContent = loopSemester[0];
+					console.log(semester1HeaderContent);
+					var length = loopSemester.length;
+					semester1CreditCount = loopSemester[length - 1];
+					console.log(semester1CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester1Classes = loopSemester;
+					console.log(semester1Classes);
+				} else if (semesterCount == 2) {
+					semester2HeaderContent = loopSemester[0];
+					console.log(semester2HeaderContent);
+					var length = loopSemester.length;
+					semester2CreditCount = loopSemester[length - 1];
+					console.log(semester2CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester2Classes = loopSemester;
+					console.log(semester2Classes);
+				} else if (semesterCount == 3) {
+					semester3HeaderContent = loopSemester[0];
+					console.log(semester3HeaderContent);
+					var length = loopSemester.length;
+					semester3CreditCount = loopSemester[length - 1];
+					console.log(semester3CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester3Classes = loopSemester;
+					console.log(semester3Classes);
+				} else if (semesterCount == 4) {
+					semester4HeaderContent = loopSemester[0];
+					console.log(semester4HeaderContent);
+					var length = loopSemester.length;
+					semester4CreditCount = loopSemester[length - 1];
+					console.log(semester4CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester4Classes = loopSemester;
+					console.log(semester4Classes);
+				} else if (semesterCount == 5) {
+					semester5HeaderContent = loopSemester[0];
+					console.log(semester5HeaderContent);
+					var length = loopSemester.length;
+					semester5CreditCount = loopSemester[length - 1];
+					console.log(semester5CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester5Classes = loopSemester;
+					console.log(semester5Classes);
+				} else if (semesterCount == 6) {
+					semester6HeaderContent = loopSemester[0];
+					console.log(semester6HeaderContent);
+					var length = loopSemester.length;
+					semester6CreditCount = loopSemester[length - 1];
+					console.log(semester6CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester6Classes = loopSemester;
+					console.log(semester6Classes);
+				} else if (semesterCount == 7) {
+					semester7HeaderContent = loopSemester[0];
+					console.log(semester7HeaderContent);
+					var length = loopSemester.length;
+					semester7CreditCount = loopSemester[length - 1];
+					console.log(semester7CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester7Classes = loopSemester;
+					console.log(semester7Classes);
+				} else if (semesterCount == 8) {
+					semester8HeaderContent = loopSemester[0];
+					console.log(semester8HeaderContent);
+					var length = loopSemester.length;
+					semester8CreditCount = loopSemester[length - 1];
+					console.log(semester8CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester8Classes = loopSemester;
+					console.log(semester8Classes);
+				}
+			}
 
 			var wrapper = document.querySelector(".csSchedule");
 			wrapper.style.marginBottom = "2%";
@@ -794,16 +929,16 @@ thirdMoveOn.onclick = function() {
 			semester1.style.border = "thin solid #e3e3e3";
 			semester1.style.float = "left";
 			var semester1Header = document.createElement("h2");
-			semester1Header.innerHTML = "Spring 2022";
+			semester1Header.innerHTML = semester1HeaderContent;
 			semester1Header.style.marginBottom = "0px";
 			semester1Header.style.marginTop = "2%";
 			semester1Header.style.textAlign = "center";
 			var semester1p = document.createElement("p");
-			semester1p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester1p.innerHTML = semester1Classes;
 			semester1p.style.marginRight = "5px";
 			semester1p.style.marginLeft = "5px";
 			var semester1Credits = document.createElement("h4");
-			semester1Credits.innerHTML = "15";
+			semester1Credits.innerHTML = semester1Credits;
 			semester1Credits.style.textAlign = "center";
 			semester1.appendChild(semester1Header);
 			semester1.appendChild(semester1p);
@@ -817,16 +952,16 @@ thirdMoveOn.onclick = function() {
 			semester2.style.border = "thin solid #e3e3e3";
 			semester2.style.float = "left";
 			var semester2Header = document.createElement("h2");
-			semester2Header.innerHTML = "Fall 2022";
+			semester2Header.innerHTML = semester2HeaderContent;
 			semester2Header.style.marginBottom = "0px";
 			semester2Header.style.marginTop = "2%";
 			semester2Header.style.textAlign = "center";
 			var semester2p = document.createElement("p");
-			semester2p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester2p.innerHTML = semester2Classes;
 			semester2p.style.marginRight = "5px";
 			semester2p.style.marginLeft = "5px";
 			var semester2Credits = document.createElement("h4");
-			semester2Credits.innerHTML = "15";
+			semester2Credits.innerHTML = semester2Credits;
 			semester2Credits.style.textAlign = "center";
 			semester2.appendChild(semester2Header);
 			semester2.appendChild(semester2p);
@@ -840,16 +975,16 @@ thirdMoveOn.onclick = function() {
 			semester3.style.border = "thin solid #e3e3e3";
 			semester3.style.float = "left";
 			var semester3Header = document.createElement("h2");
-			semester3Header.innerHTML = "Spring 2023";
+			semester3Header.innerHTML = semester3HeaderContent;
 			semester3Header.style.marginBottom = "0px";
 			semester3Header.style.marginTop = "2%";
 			semester3Header.style.textAlign = "center";
 			var semester3p = document.createElement("p");
-			semester3p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester3p.innerHTML = semester3Classes;
 			semester3p.style.marginRight = "5px";
 			semester3p.style.marginLeft = "5px";
 			var semester3Credits = document.createElement("h4");
-			semester3Credits.innerHTML = "15";
+			semester3Credits.innerHTML = semester3Credits;
 			semester3Credits.style.textAlign = "center";
 			semester3.appendChild(semester3Header);
 			semester3.appendChild(semester3p);
@@ -863,16 +998,16 @@ thirdMoveOn.onclick = function() {
 			semester4.style.border = "thin solid #e3e3e3";
 			semester4.style.float = "left";
 			var semester4Header = document.createElement("h2");
-			semester4Header.innerHTML = "Fall 2023";
+			semester4Header.innerHTML = semester4HeaderContent;
 			semester4Header.style.marginBottom = "0px";
 			semester4Header.style.marginTop = "2%";
 			semester4Header.style.textAlign = "center";
 			var semester4p = document.createElement("p");
-			semester4p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester4p.innerHTML = semester4Classes;
 			semester4p.style.marginRight = "5px";
 			semester4p.style.marginLeft = "5px";
 			var semester4Credits = document.createElement("h4");
-			semester4Credits.innerHTML = "15";
+			semester4Credits.innerHTML = semester4Credits;
 			semester4Credits.style.textAlign = "center";
 			semester4.appendChild(semester4Header);
 			semester4.appendChild(semester4p);
@@ -886,16 +1021,16 @@ thirdMoveOn.onclick = function() {
 			semester5.style.border = "thin solid #e3e3e3";
 			semester5.style.float = "left";
 			var semester5Header = document.createElement("h2");
-			semester5Header.innerHTML = "Spring 2024";
+			semester5Header.innerHTML = semester5HeaderContent;
 			semester5Header.style.marginBottom = "0px";
 			semester5Header.style.marginTop = "2%";
 			semester5Header.style.textAlign = "center";
 			var semester5p = document.createElement("p");
-			semester5p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester5p.innerHTML = semester5Classes;
 			semester5p.style.marginRight = "5px";
 			semester5p.style.marginLeft = "5px";
 			var semester5Credits = document.createElement("h4");
-			semester5Credits.innerHTML = "15";
+			semester5Credits.innerHTML = semester5Credits;
 			semester5Credits.style.textAlign = "center";
 			semester5.appendChild(semester5Header);
 			semester5.appendChild(semester5p);
@@ -909,16 +1044,16 @@ thirdMoveOn.onclick = function() {
 			semester6.style.border = "thin solid #e3e3e3";
 			semester6.style.float = "left";
 			var semester6Header = document.createElement("h2");
-			semester6Header.innerHTML = "Fall 2024";
+			semester6Header.innerHTML = semester6HeaderContent;
 			semester6Header.style.marginBottom = "0px";
 			semester6Header.style.marginTop = "2%";
 			semester6Header.style.textAlign = "center";
 			var semester6p = document.createElement("p");
-			semester6p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester6p.innerHTML = semester6Classes;
 			semester6p.style.marginRight = "5px";
 			semester6p.style.marginLeft = "5px";
 			var semester6Credits = document.createElement("h4");
-			semester6Credits.innerHTML = "15";
+			semester6Credits.innerHTML = semester6Credits;
 			semester6Credits.style.textAlign = "center";
 			semester6.appendChild(semester6Header);
 			semester6.appendChild(semester6p);
@@ -932,16 +1067,16 @@ thirdMoveOn.onclick = function() {
 			semester7.style.border = "thin solid #e3e3e3";
 			semester7.style.float = "left";
 			var semester7Header = document.createElement("h2");
-			semester7Header.innerHTML = "Spring 2025";
+			semester7Header.innerHTML = semester7HeaderContent;
 			semester7Header.style.marginBottom = "0px";
 			semester7Header.style.marginTop = "2%";
 			semester7Header.style.textAlign = "center";
 			var semester7p = document.createElement("p");
-			semester7p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester7p.innerHTML = semester7Classes;
 			semester7p.style.marginRight = "5px";
 			semester7p.style.marginLeft = "5px";
 			var semester7Credits = document.createElement("h4");
-			semester7Credits.innerHTML = "15";
+			semester7Credits.innerHTML = semester7Credits;
 			semester7Credits.style.textAlign = "center";
 			semester7.appendChild(semester7Header);
 			semester7.appendChild(semester7p);
@@ -955,16 +1090,16 @@ thirdMoveOn.onclick = function() {
 			semester8.style.border = "thin solid #e3e3e3";
 			semester8.style.float = "left";
 			var semester8Header = document.createElement("h2");
-			semester8Header.innerHTML = "Fall 2025";
+			semester8Header.innerHTML = semester8HeaderContent;
 			semester8Header.style.marginBottom = "0px";
 			semester8Header.style.marginTop = "2%";
 			semester8Header.style.textAlign = "center";
 			var semester8p = document.createElement("p");
-			semester8p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester8p.innerHTML = semester8Classes;
 			semester8p.style.marginRight = "5px";
 			semester8p.style.marginLeft = "5px";
 			var semester8Credits = document.createElement("h4");
-			semester8Credits.innerHTML = "15";
+			semester8Credits.innerHTML = semester8Credits;
 			semester8Credits.style.textAlign = "center";
 			semester8.appendChild(semester8Header);
 			semester8.appendChild(semester8p);

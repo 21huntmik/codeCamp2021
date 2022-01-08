@@ -223,7 +223,8 @@ select {
 
 .csSchedule {
 	width:60%;
-	height:80%;
+	min-height: 50%;
+	overflow: hidden;
 	margin-right: auto;
 	margin-left: auto;
 }

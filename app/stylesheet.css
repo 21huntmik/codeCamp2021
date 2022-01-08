@@ -230,15 +230,16 @@ select {
 }
 
 .seSchedule {
-	width: 50%;
-	height: 50%;
-	margin-left: auto;
+	width:60%;
+	min-height: 50%;
+	overflow: hidden;
 	margin-right: auto;
-}
+	margin-left: auto;}
 
 .maSchedule {
-	width: 50%;
-	height: 50%;
+	width:60%;
+	min-height: 50%;
+	overflow: hidden;
 	margin-right: auto;
 	margin-left: auto;
 }

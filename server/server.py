@@ -8,10 +8,13 @@ import maGenerateSemester
 
 class MyHandler(BaseHTTPRequestHandler):
     def end_headers(self):
-        self.send_header("Access-Control-Allow-Origin", self.headers["Origin"]) #-- if you add this... delete all of these headers
-        #add access control allow origin because it will help on Thursday
-        self.send_header("Access-Control-Allow-Credentials", "true") #is this right??
-        BaseHTTPRequestHandler.end_headers(self) #call the actual self.end_headers()
+        # -- if you add this... delete all of these headers
+        self.send_header("Access-Control-Allow-Origin", self.headers["Origin"])
+        # add access control allow origin because it will help on Thursday
+        self.send_header("Access-Control-Allow-Credentials",
+                         "true")  # is this right??
+        # call the actual self.end_headers()
+        BaseHTTPRequestHandler.end_headers(self)
 
     def handleNotFound(self):
         self.send_response(404)
@@ -29,8 +32,9 @@ class MyHandler(BaseHTTPRequestHandler):
         length = int(self.headers['Content-Length'])
         body = self.rfile.read(length).decode('utf-8')
         print("createList was called.\n\n")
-        print("priting body:\n\n")
+        print("priting body:")
         print(body)
+        print("\n\n")
         #parsed_body = parse_qs(body)
         #print("Printing Parsed-Body:\n\n")
         # print(parsed_body)
@@ -39,16 +43,19 @@ class MyHandler(BaseHTTPRequestHandler):
         #listItems = parsed_body[1]
         print(listItems)
         inputComponents = listItems.split(' ')
-        print("Printing inputComponents:\n\n")
+        print("Printing inputComponents:")
         print(inputComponents)
+        print("\n\n")
         major = inputComponents[0]
-        print("Printing major:\n\n")
+        print("Printing major:")
         print(major)
+        print("\n\n")
         electives = inputComponents[2]
-        print("Printing electives:\n\n")
+        print("Printing electives:")
         print(electives)
+        print("\n\n")
         completed = inputComponents[1]
-        print("Printing completed:\n\n")
+        print("Printing completed:")
         print(completed)
         print("\n\n")
         completed = completed.split("|")
@@ -62,16 +69,21 @@ class MyHandler(BaseHTTPRequestHandler):
         print(totalPlan)
         outputPlan = []
         for semester in totalPlan:
+            creditCount = 0
             currentSemesterList = []
             currentSemesterList.append(semester)
             for course in totalPlan[semester]:
                 information_string = f"{course}\t\t\t{totalPlan[semester][course]['credits']} credits"
                 currentSemesterList.append(information_string)
+                creditCount += totalPlan[semester][course]['credits']
+            currentSemesterList.append(f"Total\t\t\t{creditCount} credits")
             outputPlan.append(currentSemesterList)
-
+        # print(outputPlan)
         for i in outputPlan:
-            for x in i:
+            for x in i[:-1]:
                 print(x)
+            print(i[-1])
+            print("\n\n")
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()

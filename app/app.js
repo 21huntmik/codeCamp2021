@@ -519,14 +519,15 @@ secondMoveOnSE.onclick = function() {
 
 	seClasses+=(" ");
 
-	fetch("http://localhost:8080/grad", {
+	/*fetch("http://localhost:8080/grad", {
 			method: "POST",
 			body: seClasses,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	});
+	});*/
+	fetchString += seClasses;
 }
 
 secondMoveOnM.onclick = function () {
@@ -547,194 +548,195 @@ secondMoveOnM.onclick = function () {
 
 	var m1210 = document.getElementById("m1210");
 	if (m1210.checked) {
-		maClasses+=("MA-1210");
+		maClasses+=("MA-1210|");
 	}
 
 	var m1220 = document.getElementById("m1220");
 	if (m1220.checked) {
-		maClasses+=("MA-1210");
+		maClasses+=("MA-1220|");
 	}
 
 	var mPH2210 = document.getElementById("mPH2210");
 	if (mPH2210.checked) {
-		maClasses+=("PH-2210");
+		maClasses+=("PH-2210|");
 	}
 
 	var mPH2215 = document.getElementById("mPH2215");
 	if (mPH2215.checked) {
-		maClasses+=("PH-2215");
+		maClasses+=("PH-2215|");
 	}
 
 	var m2200 = document.getElementById("m2200");
 	if (m2200.checked) {
-		maClasses+=("MA-2200");
+		maClasses+=("MA-2200|");
 	}
 
 	var m2210 = document.getElementById("m2210");
 	if (m2210.checked) {
-		maClasses+=("MA-2210");
+		maClasses+=("MA-2210|");
 	}
 
 	var m2250 = document.getElementById("m2250");
 	if (m2250.checked) {
-		maClasses+=("MA-2250");
+		maClasses+=("MA-2250|");
 	}
 
 	var m2270 = document.getElementById("m2270");
 	if (m2270.checked) {
-		maClasses+=("MA-2270");
+		maClasses+=("MA-2270|");
 	}
 
 	var m2280 = document.getElementById("m2280");
 	if (m2280.checked) {
-		maClasses+=("MA-2280");
+		maClasses+=("MA-2280|");
 	}
 
 	var m2285 = document.getElementById("m2285");
 	if (m2285.checked) {
-		maClasses+=("MA-2285");
+		maClasses+=("MA-2285|");
 	}
 
 	var m2600 = document.getElementById("m2600");
 	if (m2600.checked) {
-		maClasses+=("MA-2600");
+		maClasses+=("MA-2600|");
 	}
 
 	var m2905 = document.getElementById("m2905");
 	if (m2600.checked) {
-		maClasses+=("MA-2905");
+		maClasses+=("MA-2905|");
 	}
 
 	var m3000 = document.getElementById("m3000");
 	if (m3000.checked) {
-		maClasses+=("MA-3000");
+		maClasses+=("MA-3000|");
 	}
 
 	var m3050 = document.getElementById("m3050");
 	if (m3050.checked) {
-		maClasses+=("MA-3150");
+		maClasses+=("MA-3150|");
 	}
 
 	var m3060 = document.getElementById("m3060");
 	if (m3060.checked) {
-		maClasses+=("MA-3060");
+		maClasses+=("MA-3060|");
 	}
 
 	var m3100 = document.getElementById("m3100");
 	if (m3100.checked) {
-		maClasses+=("MA-3100");
+		maClasses+=("MA-3100|");
 	}
 
 	var m3150 = document.getElementById("m3150");
 	if (m3150.checked) {
-		maClasses+=("MA-3150");
+		maClasses+=("MA-3150|");
 	}
 
 	var m3200 = document.getElementById("m3200");
 	if (m3200.checked) {
-		maClasses+=("MA-3200");
+		maClasses+=("MA-3200|");
 	}
 
 	var m3210 = document.getElementById("m3210");
 	if (m3210.checked) {
-		maClasses+=("MA-3210");
+		maClasses+=("MA-3210|");
 	}
 
 	var m3400 = document.getElementById("m3400");
 	if (m3400.checked) {
-		maClasses+=("MA-3400");
+		maClasses+=("MA-3400|");
 	}
 
 	var m3450 = document.getElementById("m3450");
 	if (m3450.checked) {
-		maClasses+=("MA-3450");
+		maClasses+=("MA-3450|");
 	}
 
 	var m3500 = document.getElementById("m3500");
 	if (m3500.checked) {
-		maClasses+=("MA-3500");
+		maClasses+=("MA-3500|");
 	}
 
 	var m3600 = document.getElementById("m3600");
 	if (m3600.checked) {
-		maClasses+=("MA-3600");
+		maClasses+=("MA-3600|");
 	}
 
 	var m3700 = document.getElementById("m3700");
 	if (m3700.checked) {
-		maClasses+=("MA-3700");
+		maClasses+=("MA-3700|");
 	}
 
 	var m3900 = document.getElementById("m3900");
 	if (m3900.checked) {
-		maClasses+=("MA-3900");
+		maClasses+=("MA-3900|");
 	}
 
 	var m3905 = document.getElementById("m3905");
 	if (m3905.checked) {
-		maClasses+=("MA-3905");
+		maClasses+=("MA-3905|");
 	}
 
 	var m4000 = document.getElementById("m4000");
 	if (m4000.checked) {
-		maClasses+=("MA-4000");
+		maClasses+=("MA-4000|");
 	}
 
 	var m4005 = document.getElementById("m4005");
 	if (m4005.checked) {
-		maClasses+=("MA-4005");
+		maClasses+=("MA-4005|");
 	}
 
 	var m4010 = document.getElementById("m4010");
 	if (m4010.checked) {
-		maClasses+=("MA-4010");
+		maClasses+=("MA-4010|");
 	}
 
 	var m4100 = document.getElementById("m4100");
 	if (m4100.checked) {
-		maClasses+=("MA-4100");
+		maClasses+=("MA-4100|");
 	}
 
 	var m4200 = document.getElementById("m4200");
 	if (m4200.checked) {
-		maClasses+=("MA-4200");
+		maClasses+=("MA-4200|");
 	}
 
 	var m4250 = document.getElementById("m4250");
 	if (m4250.checked) {
-		maClasses+=("MA-4250");
+		maClasses+=("MA-4250|");
 	}
 
 	var m4330 = document.getElementById("m4330");
 	if (m4330.checked) {
-		maClasses+=("MA-4330");
+		maClasses+=("MA-4330|");
 	}
 
 	var m4550 = document.getElementById("m4550");
 	if (m4550.checked) {
-		maClasses+=("MA-4550");
+		maClasses+=("MA-4550|");
 	}
 
 	var m4800 = document.getElementById("m4800");
 	if (m4800.checked) {
-		maClasses+=("MA-4800");
+		maClasses+=("MA-4800|");
 	}
 
 	var m4900 = document.getElementById("m4900");
 	if (m4900.checked) {
-		maClasses+=("MA-4900");
+		maClasses+=("MA-4900|");
 	}
 
 	maClasses+=(" ");
 
-	fetch("http://localhost:8080/grad", {
+	/*fetch("http://localhost:8080/grad", {
 			method: "POST",
 			body: maClasses,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	})
+	})*/
+	fetchString += maClasses;
 }
 
 
@@ -778,6 +780,8 @@ thirdMoveOn.onclick = function() {
 		response.json().then(function (data) {
 			//format here
 			//3 x 3 grid
+
+			console.log(data);
 
 			var wrapper = document.querySelector(".csSchedule");
 			wrapper.style.marginBottom = "2%";
@@ -1007,10 +1011,11 @@ thirdMoveOnSE.onclick = function() {
 	}
 
 	seTrack+=(" ");
+	fetchString += seTrack;
 
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
-			body: seTrack,
+			body: fetchString,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
@@ -1036,80 +1041,82 @@ thirdMoveOnM.onclick = function() {
 
 	var m2600e = document.getElementById("m2600e");
 	if (m2600e.checked) {
-		maElectives+=("MA-2600");
+		maElectives+=("MA-2600|");
 	}
 
 	var m3000e = document.getElementById("m3000e");
 	if (m3000e.checked) {
-		maElectives+=("MA-3000");
+		maElectives+=("MA-3000|");
 	}
 
 	var m3100e = document.getElementById("m3100e");
 	if (m3100e.checked) {
-		maElectives+=("MA-3100");
+		maElectives+=("MA-3100|");
 	}
 
 	var m3210e = document.getElementById("m3210e");
 	if (m3210e.checked) {
-		maElectives+=("MA-3210");
+		maElectives+=("MA-3210|");
 	}
 
 	var m3450e = document.getElementById("m3450e");
 	if (m3450e.checked) {
-		maElectives+=("MA-3450");
+		maElectives+=("MA-3450|");
 	}
 
 	var m3500e = document.getElementById("m3500e");
 	if (m3500e.checked) {
-		maElectives+=("MA-3500");
+		maElectives+=("MA-3500|");
 	}
 
 	var m3700e = document.getElementById("m3700e");
 	if (m3700e.checked) {
-		maElectives+=("MA-3700");
+		maElectives+=("MA-3700|");
 	}
 
 	var m4010e = document.getElementById("m4010e");
 	if (m4010e.checked) {
-		maElectives+=("MA-4010");
+		maElectives+=("MA-4010|");
 	}
 
 	var m4100e = document.getElementById("m4100e");
 	if (m4100e.checked) {
-		maElectives+=("MA-4100");
+		maElectives+=("MA-4100|");
 	}
 
 	var m4200e = document.getElementById("m4200e");
 	if (m4200e.checked) {
-		maElectives+=("MA-4200");
+		maElectives+=("MA-4200|");
 	}
 
 	var m4250e = document.getElementById("m4250e");
 	if (m4250e.checked) {
-		maElectives+=("MA-4250");
+		maElectives+=("MA-4250|");
 	}
 
 	var m4550e = document.getElementById("m4550e");
 	if (m4550e.checked) {
-		maElectives+=("MA-4550");
+		maElectives+=("MA-4550|");
 	}
 
 	var m4800e = document.getElementById("m4800e");
 	if (m4800e.checked) {
-		maElectives+=("MA-4800");
+		maElectives+=("MA-4800|");
 	}
 
 	var m4890e = document.getElementById("m4890e");
 	if (m4890e.checked) {
-		maElectives+=("MA-4890");
+		maElectives+=("MA-4890|");
 	}
 
 	maElectives+=(" ");
 	console.log(maElectives);
 
+	fetchString += maElectives;
+
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
-			body: maElectives,
+			body: fetchString,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"

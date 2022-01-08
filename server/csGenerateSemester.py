@@ -101,8 +101,8 @@ def isOffered(student, course):
 
 
 def generateSemester(student):
-    print("Generating a semester")
-    print(student.getRequirements())
+    #print("Generating a semester")
+    # print(student.getRequirements())
     semesterCredits = 0
     semesterCourses = {}
     cs_db = csDB()
@@ -127,7 +127,8 @@ def generateSemester(student):
 
     for course in semesterCourses:
         student.addCompleted(course)
-    print(semesterCourses)
+
+    # print(semesterCourses)
     return semesterCourses
 
 
@@ -136,15 +137,15 @@ def generatePlan(completed, electives):
     # return dictionary of semesters
     # key is semester
     # value is list of classes
-    print("Printing completed: " + str(completed))
-    print("Printing electives: " + str(electives))
+    #print("Printing completed: " + str(completed))
+    #print("Printing electives: " + str(electives))
     student = makeStudent(completed, electives)
     plan = {}
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
-        print("Printing plan: " + str(plan))
+        #print("Printing plan: " + str(plan))
         student.incrementSemester()
     #print("Printing plan")
-    print(plan)
+    # print(plan)
     return plan

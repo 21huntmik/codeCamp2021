@@ -519,14 +519,15 @@ secondMoveOnSE.onclick = function() {
 
 	seClasses+=(" ");
 
-	fetch("http://localhost:8080/grad", {
+	/*fetch("http://localhost:8080/grad", {
 			method: "POST",
 			body: seClasses,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	});
+	});*/
+	fetchString += seClasses;
 }
 
 secondMoveOnM.onclick = function () {
@@ -727,14 +728,15 @@ secondMoveOnM.onclick = function () {
 
 	maClasses+=(" ");
 
-	fetch("http://localhost:8080/grad", {
+	/*fetch("http://localhost:8080/grad", {
 			method: "POST",
 			body: maClasses,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	})
+	})*/
+	fetchString += maClasses;
 }
 
 
@@ -778,6 +780,8 @@ thirdMoveOn.onclick = function() {
 		response.json().then(function (data) {
 			//format here
 			//3 x 3 grid
+
+			console.log(data);
 
 			var wrapper = document.querySelector(".csSchedule");
 			wrapper.style.marginBottom = "2%";
@@ -1007,10 +1011,11 @@ thirdMoveOnSE.onclick = function() {
 	}
 
 	seTrack+=(" ");
+	fetchString += seTrack;
 
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
-			body: seTrack,
+			body: fetchString,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
@@ -1107,9 +1112,11 @@ thirdMoveOnM.onclick = function() {
 	maElectives+=(" ");
 	console.log(maElectives);
 
+	fetchString += maElectives;
+
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
-			body: maElectives,
+			body: fetchString,
 			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"

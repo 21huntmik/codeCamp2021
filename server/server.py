@@ -25,10 +25,11 @@ class MyHandler(BaseHTTPRequestHandler):
         print("createList was called.\n\n")
         print("priting body:\n\n")
         print(body)
-        parsed_body = parse_qs(body)
-        print("Printing Parsed-Body:\n\n")
-        print(parsed_body)
-        listItems = parsed_body['item'][0]
+        #parsed_body = parse_qs(body)
+        #print("Printing Parsed-Body:\n\n")
+        # print(parsed_body)
+        listItems = body
+        #listItems = body['item'][1]
         #listItems = parsed_body[1]
         print(listItems)
         inputComponents = listItems.split(' ')
@@ -53,11 +54,24 @@ class MyHandler(BaseHTTPRequestHandler):
             totalPlan = (maGenerateSemester.generatePlan(completed, electives))
         print("/n/n")
         print(totalPlan)
+        outputPlan = []
+        for semester in totalPlan:
+            currentSemesterList = []
+            currentSemesterList.append(semester)
+            for course in totalPlan[semester]:
+                information_string = f"{course}\t\t\t{totalPlan[semester][course]['credits']} credits"
+                currentSemesterList.append(information_string)
+            outputPlan.append(currentSemesterList)
+
+        for i in outputPlan:
+            print(i)
+            for x in i:
+                print(x)
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.send_header("Allow-Control-Allow-Origin", "*")
         self.end_headers()
-        self.wfile.write(bytes(json.dumps(totalPlan), "utf-8"))
+        self.wfile.write(bytes(json.dumps(outputPlan), "utf-8"))
 
     def getList(self):
         listItems = self.createList()

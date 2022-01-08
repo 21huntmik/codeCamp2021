@@ -12,7 +12,8 @@ def dict_factory(cursor, row):
 
 class csDB:
     def __init__(self):
-        self.connection = sqlite3.connect("schedules.db")
+        self.connection = sqlite3.connect(
+            "/Users/david/Desktop/FinalCodeCamp/codeCamp2021/server/schedules.db")
         self.connection.row_factory = dict_factory
         self.cursor = self.connection.cursor()
 
@@ -35,7 +36,10 @@ class csDB:
         return course
 
     def getCourseCredits(self, course):
-        return course["Credits"]
+        data = [course]
+        self.cursor.execute("SELECT credits FROM CS WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
 
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
@@ -61,44 +65,15 @@ class csDB:
         course = self.cursor.fetchall()
         return course
 
-    def getPreReqs(self, number):
-        data = [number]
-        self.cursor.execute(
-            "SELECT Prereqs FROM CS WHERE Course = ?", data)
-        course = self.cursor.fetchall()
-        return course
-
-    def getCoursesFromPrereqs(self, finished_course):
-        data = [finished_course]
-        self.cursor.execute("SELECT * FROM CS")
-        rows = self.cursor.fetchall()
-        courses = []
-        for row in rows:
-            if finished_course in row["Prereqs"]:
-                courses.append(row)
-        return courses
-
-    def getCoursesByPrereqQuantity(self):
-        self.cursor.execute("SELECT * FROM CS")
-        rows = self.cursor.fetchall()
-        courses = []
-        for row in rows:
-            row["Prereqs"]
-            courses.append(row)
+    def getPreReqs(self, course):
+        data = [course]
+        self.cursor.execute("SELECT prereqs FROM CS WHERE course = ?", data)
+        courses = self.cursor.fetchone()
         return courses
 
     def getRequiredCourses(self):
         data = ["TRUE"]
-        self.cursor.execute("SELECT * FROM CS WHERE required = ?", data)
+        self.cursor.execute("SELECT course FROM CS WHERE required = ?", data)
         courses = self.cursor.fetchall()
-        print(courses)
+        # print(courses)
         return courses
-
-    def getPrereqsOfReq(self):
-        req_courses = self.getRequiredCourses()
-        pre_reqs = []
-        for course in req_courses:
-            if course["Prereqs"]:
-                req_w_prereq = [course["Course"], course["Prereqs"]]
-                pre_reqs.append(req_w_prereq)
-        return pre_reqs

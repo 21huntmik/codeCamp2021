@@ -22,18 +22,28 @@ class MyHandler(BaseHTTPRequestHandler):
     def createList(self):
         length = int(self.headers['Content-Length'])
         body = self.rfile.read(length).decode('utf-8')
-        print("createList was called.")
+        print("createList was called.\n\n")
+        print("priting body:\n\n")
         print(body)
         parsed_body = parse_qs(body)
+        print("Printing Parsed-Body:\n\n")
         print(parsed_body)
         listItems = parsed_body['item'][0]
         #listItems = parsed_body[1]
         print(listItems)
         inputComponents = listItems.split(' ')
+        print("Printing inputComponents:\n\n")
+        print(inputComponents)
         major = inputComponents[0]
-        electives = inputComponents[1]
-        completed = inputComponents[2]
-        electives = electives.split("|")
+        print("Printing major:\n\n")
+        print(major)
+        electives = inputComponents[2]
+        print("Printing electives:\n\n")
+        print(electives)
+        completed = inputComponents[1]
+        print("Printing completed:\n\n")
+        print(completed)
+        print("\n\n")
         completed = completed.split("|")
         if major == "se":
             totalPlan = (seGenerateSemester.generatePlan(completed, electives))
@@ -41,6 +51,7 @@ class MyHandler(BaseHTTPRequestHandler):
             totalPlan = (csGenerateSemester.generatePlan(completed, electives))
         elif major == "ma":
             totalPlan = (maGenerateSemester.generatePlan(completed, electives))
+        print("/n/n")
         print(totalPlan)
         self.send_response(200)
         self.send_header("Content-Type", "application/json")

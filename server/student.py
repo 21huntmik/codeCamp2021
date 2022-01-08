@@ -60,14 +60,16 @@ class Student:
         # Ensure that graduation input from the website comes in the format of semester-YEAR
         # Year is an integer
         # Semester is a string, F=Fall, S=Spring, or U=Summer
-        currentSemester, currentYear = self.currentSemester.split("-")
+        currentSemester, currentYear = self.currentSemester[0], int(
+            self.currentSemester[1:])
         if currentSemester == "S":
             currentSemester = "F"
             currentYear = str(int(currentYear))
         elif currentSemester == "F":
             currentSemester = "S"
             currentYear = str(int(currentYear) + 1)
-        self.currentSemester = currentSemester + currentYear
+        self.currentSemester = currentSemester + str(currentYear)
+        print("New semester: " + self.currentSemester)
 
     def firstUpperDivCount(self):
         for i in self.completed:

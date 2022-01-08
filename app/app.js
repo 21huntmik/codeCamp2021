@@ -1200,7 +1200,7 @@ thirdMoveOnSE.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector(".csSchedule");
+			var wrapper = document.querySelector(".seSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 
@@ -1625,7 +1625,7 @@ thirdMoveOnM.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector(".csSchedule");
+			var wrapper = document.querySelector(".maSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 

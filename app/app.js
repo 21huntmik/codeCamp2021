@@ -770,6 +770,7 @@ thirdMoveOn.onclick = function() {
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
 			body: fetchString,
+			credentials: 'include',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
@@ -779,16 +780,193 @@ thirdMoveOn.onclick = function() {
 			//3 x 3 grid
 
 			var wrapper = document.querySelector(".csSchedule");
+			wrapper.style.marginBottom = "2%";
+			wrapper.style.marginTop = "2%";
 
 			var semester1 = document.createElement("div");
+			semester1.style.width = "30%";
+			semester1.style.height = "30%";
+			semester1.style.margin = "5px";
+			semester1.style.border = "thin solid #e3e3e3";
+			semester1.style.float = "left";
 			var semester1Header = document.createElement("h2");
-			semester1Header.innerHTML = "Semester";
+			semester1Header.innerHTML = "Spring 2022";
+			semester1Header.style.marginBottom = "0px";
+			semester1Header.style.marginTop = "2%";
+			semester1Header.style.textAlign = "center";
 			var semester1p = document.createElement("p");
-			semester1p.innerHTML = "class - credits";
+			semester1p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester1p.style.marginRight = "5px";
+			semester1p.style.marginLeft = "5px";
+			var semester1Credits = document.createElement("h4");
+			semester1Credits.innerHTML = "15";
+			semester1Credits.style.textAlign = "center";
 			semester1.appendChild(semester1Header);
 			semester1.appendChild(semester1p);
+			semester1.appendChild(semester1Credits);
 			wrapper.appendChild(semester1);
-		});
+
+			var semester2 = document.createElement("div");
+			semester2.style.width = "30%";
+			semester2.style.height = "30%";
+			semester2.style.margin = "5px";
+			semester2.style.border = "thin solid #e3e3e3";
+			semester2.style.float = "left";
+			var semester2Header = document.createElement("h2");
+			semester2Header.innerHTML = "Fall 2022";
+			semester2Header.style.marginBottom = "0px";
+			semester2Header.style.marginTop = "2%";
+			semester2Header.style.textAlign = "center";
+			var semester2p = document.createElement("p");
+			semester2p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester2p.style.marginRight = "5px";
+			semester2p.style.marginLeft = "5px";
+			var semester2Credits = document.createElement("h4");
+			semester2Credits.innerHTML = "15";
+			semester2Credits.style.textAlign = "center";
+			semester2.appendChild(semester2Header);
+			semester2.appendChild(semester2p);
+			semester2.appendChild(semester2Credits);
+			wrapper.appendChild(semester2);
+
+			var semester3 = document.createElement("div");
+			semester3.style.width = "30%";
+			semester3.style.height = "30%";
+			semester3.style.margin = "5px";
+			semester3.style.border = "thin solid #e3e3e3";
+			semester3.style.float = "left";
+			var semester3Header = document.createElement("h2");
+			semester3Header.innerHTML = "Spring 2023";
+			semester3Header.style.marginBottom = "0px";
+			semester3Header.style.marginTop = "2%";
+			semester3Header.style.textAlign = "center";
+			var semester3p = document.createElement("p");
+			semester3p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester3p.style.marginRight = "5px";
+			semester3p.style.marginLeft = "5px";
+			var semester3Credits = document.createElement("h4");
+			semester3Credits.innerHTML = "15";
+			semester3Credits.style.textAlign = "center";
+			semester3.appendChild(semester3Header);
+			semester3.appendChild(semester3p);
+			semester3.appendChild(semester3Credits);
+			wrapper.appendChild(semester3);
+
+			var semester4 = document.createElement("div");
+			semester4.style.width = "30%";
+			semester4.style.height = "30%";
+			semester4.style.margin = "5px";
+			semester4.style.border = "thin solid #e3e3e3";
+			semester4.style.float = "left";
+			var semester4Header = document.createElement("h2");
+			semester4Header.innerHTML = "Fall 2023";
+			semester4Header.style.marginBottom = "0px";
+			semester4Header.style.marginTop = "2%";
+			semester4Header.style.textAlign = "center";
+			var semester4p = document.createElement("p");
+			semester4p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester4p.style.marginRight = "5px";
+			semester4p.style.marginLeft = "5px";
+			var semester4Credits = document.createElement("h4");
+			semester4Credits.innerHTML = "15";
+			semester4Credits.style.textAlign = "center";
+			semester4.appendChild(semester4Header);
+			semester4.appendChild(semester4p);
+			semester4.appendChild(semester4Credits);
+			wrapper.appendChild(semester4);
+
+			var semester5 = document.createElement("div");
+			semester5.style.width = "30%";
+			semester5.style.height = "30%";
+			semester5.style.margin = "5px";
+			semester5.style.border = "thin solid #e3e3e3";
+			semester5.style.float = "left";
+			var semester5Header = document.createElement("h2");
+			semester5Header.innerHTML = "Spring 2024";
+			semester5Header.style.marginBottom = "0px";
+			semester5Header.style.marginTop = "2%";
+			semester5Header.style.textAlign = "center";
+			var semester5p = document.createElement("p");
+			semester5p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester5p.style.marginRight = "5px";
+			semester5p.style.marginLeft = "5px";
+			var semester5Credits = document.createElement("h4");
+			semester5Credits.innerHTML = "15";
+			semester5Credits.style.textAlign = "center";
+			semester5.appendChild(semester5Header);
+			semester5.appendChild(semester5p);
+			semester5.appendChild(semester5Credits);
+			wrapper.appendChild(semester5);
+
+			var semester6 = document.createElement("div");
+			semester6.style.width = "30%";
+			semester6.style.height = "30%";
+			semester6.style.margin = "5px";
+			semester6.style.border = "thin solid #e3e3e3";
+			semester6.style.float = "left";
+			var semester6Header = document.createElement("h2");
+			semester6Header.innerHTML = "Fall 2024";
+			semester6Header.style.marginBottom = "0px";
+			semester6Header.style.marginTop = "2%";
+			semester6Header.style.textAlign = "center";
+			var semester6p = document.createElement("p");
+			semester6p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester6p.style.marginRight = "5px";
+			semester6p.style.marginLeft = "5px";
+			var semester6Credits = document.createElement("h4");
+			semester6Credits.innerHTML = "15";
+			semester6Credits.style.textAlign = "center";
+			semester6.appendChild(semester6Header);
+			semester6.appendChild(semester6p);
+			semester6.appendChild(semester6Credits);
+			wrapper.appendChild(semester6);
+
+			var semester7 = document.createElement("div");
+			semester7.style.width = "30%";
+			semester7.style.height = "30%";
+			semester7.style.margin = "5px";
+			semester7.style.border = "thin solid #e3e3e3";
+			semester7.style.float = "left";
+			var semester7Header = document.createElement("h2");
+			semester7Header.innerHTML = "Spring 2025";
+			semester7Header.style.marginBottom = "0px";
+			semester7Header.style.marginTop = "2%";
+			semester7Header.style.textAlign = "center";
+			var semester7p = document.createElement("p");
+			semester7p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester7p.style.marginRight = "5px";
+			semester7p.style.marginLeft = "5px";
+			var semester7Credits = document.createElement("h4");
+			semester7Credits.innerHTML = "15";
+			semester7Credits.style.textAlign = "center";
+			semester7.appendChild(semester7Header);
+			semester7.appendChild(semester7p);
+			semester7.appendChild(semester7Credits);
+			wrapper.appendChild(semester7);
+
+			var semester8 = document.createElement("div");
+			semester8.style.width = "30%";
+			semester8.style.height = "30%";
+			semester8.style.margin = "5px";
+			semester8.style.border = "thin solid #e3e3e3";
+			semester8.style.float = "left";
+			var semester8Header = document.createElement("h2");
+			semester8Header.innerHTML = "Fall 2025";
+			semester8Header.style.marginBottom = "0px";
+			semester8Header.style.marginTop = "2%";
+			semester8Header.style.textAlign = "center";
+			var semester8p = document.createElement("p");
+			semester8p.innerHTML = "class - credits \n class - credits \n class - credits \n class - credits";
+			semester8p.style.marginRight = "5px";
+			semester8p.style.marginLeft = "5px";
+			var semester8Credits = document.createElement("h4");
+			semester8Credits.innerHTML = "15";
+			semester8Credits.style.textAlign = "center";
+			semester8.appendChild(semester8Header);
+			semester8.appendChild(semester8p);
+			semester8.appendChild(semester8Credits)
+			wrapper.appendChild(semester8);
+		})
 	});
 }
 

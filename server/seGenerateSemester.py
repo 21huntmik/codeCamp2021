@@ -41,10 +41,10 @@ def preReqCheck(student, course):
     # check if preReq is satisfied
     # if so, return True
     # else, return False
-    print("Printing course: " + str(course))
+    #print("Printing course: " + str(course))
     se_db = seDB()
     rawList = se_db.getPreReqs(course)
-    print("Printing rawList: " + str(rawList))
+    #print("Printing rawList: " + str(rawList))
     #print("Raw list prereqs: " + str(rawList))
     cleanedList = []
     value = rawList['prereqs']
@@ -133,7 +133,7 @@ def generateSemester(student):
     for course in semesterCourses:
         student.addCompleted(course)
 
-    # print(semesterCourses)
+    print(semesterCourses)
     return semesterCourses
 
 
@@ -151,6 +151,8 @@ def generatePlan(completed, electives):
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
         student.incrementSemester()
+        print("Printing student requirements: " +
+              str(student.getRequirements()))
     #print("Printing plan")
     # print(plan)
     return plan

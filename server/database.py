@@ -12,8 +12,7 @@ def dict_factory(cursor, row):
 
 class csDB:
     def __init__(self):
-        self.connection = sqlite3.connect(
-            "/Users/david/Desktop/FinalCodeCamp/codeCamp2021/server/schedules.db")
+        self.connection = sqlite3.connect("schedules.db")
         self.connection.row_factory = dict_factory
         self.cursor = self.connection.cursor()
 

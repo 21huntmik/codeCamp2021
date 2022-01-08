@@ -526,7 +526,7 @@ secondMoveOnSE.onclick = function() {
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	})
+	});
 }
 
 secondMoveOnM.onclick = function () {
@@ -769,12 +769,27 @@ thirdMoveOn.onclick = function() {
 
 	fetch("http://localhost:8080/grad", {
 			method: "POST",
-			body: 'item='+fetchString,
-			credentials: 'include',
+			body: fetchString,
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded"
 			}
-	})
+	}).then(function (response) {
+		response.json().then(function (data) {
+			//format here
+			//3 x 3 grid
+
+			var wrapper = document.querySelector(".csSchedule");
+
+			var semester1 = document.createElement("div");
+			var semester1Header = document.createElement("h2");
+			semester1Header.innerHTML = "Semester";
+			var semester1p = document.createElement("p");
+			semester1p.innerHTML = "class - credits";
+			semester1.appendChild(semester1Header);
+			semester1.appendChild(semester1p);
+			wrapper.appendChild(semester1);
+		});
+	});
 }
 
 thirdMoveOnSE.onclick = function() {

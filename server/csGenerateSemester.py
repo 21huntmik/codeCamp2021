@@ -7,7 +7,7 @@ def appendElectives(completed, choice):  # WORKS
     electivesList = []
     if choice == "theory":
         electivesList = ['CS-3400', 'CS-3410', 'CS-4307', 'CS-4550',
-                         'CS-4320', 'CS-4300', 'CS-3520', 'CS-3200', 'CS-3500', 'CS-3600']
+                         'CS-4320', 'CS-4300', 'CS-3520', 'CS-3200', 'CS-3150', 'CS-3600']
     elif choice == "dev":
         electivesList = ['CS-3200', 'CS-3600', 'CS-3400', 'CS-3520',
                          'CS-4307', 'CS-4320', 'CS-4550', 'CS-4200', 'CS-3500', 'CS-3020', ]

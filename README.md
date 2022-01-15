@@ -10,7 +10,7 @@ That's where Graduation-Station comes in. We created a web-based application tha
 
 ##### Table Names
 
-CS, SE, MA
+CS, SE, MA, IT
 
 ##### Schema
 

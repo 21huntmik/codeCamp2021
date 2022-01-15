@@ -141,6 +141,8 @@ def generatePlan(completed, electives):
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
+        if len(student.requirements) < 6:
+            student.completed.append("PEMA-4900")
         student.incrementSemester()
     #print("Printing plan")
     # print(plan)

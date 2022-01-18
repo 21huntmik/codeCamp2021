@@ -112,11 +112,11 @@ def generateSemester(student):
     semesterCourses = {}
     se_db = seDB()
     tmpCredits = 0
-    while semesterCredits < 15:
+    while semesterCredits < 16:
 
         # print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():
-            if semesterCredits >= 15:
+            if semesterCredits >= 16:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):

@@ -30,13 +30,19 @@ rating INTEGER
 
 - [ ] No variability in CS final math course selection.
 
+
+### Features Actively in Development
+- [ ] Allow functionality for IT major
+- [ ] Change CS from having theory/app dev elective choices to allowing full elective selection
+- [ ] Allow users to select which math class they would like to take
+
 ### Planned Features
 
 - [ ] Build an effective web-scraper to gather correct requirements for all majors at UTU
 - [ ] Generate and display 3 schedule permutations
 - [ ] Account for courses that do not follow the same permission structures as most
 - [ ] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
-- [ ] Allow users to export a desired plan as a pdf
+- [x] Allow users to export a desired plan as a pdf
 - [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
 - [ ] Create another interest area for the CS degree
 - [x] Add a course difficulty rating to all database

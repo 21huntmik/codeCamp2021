@@ -107,11 +107,11 @@ def generateSemester(student):
     semesterCourses = {}
     cs_db = csDB()
     tmpCredits = 0
-    while semesterCredits < 15:
+    while semesterCredits < 16:
 
         #print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():
-            if semesterCredits >= 15:
+            if semesterCredits >= 16:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):
@@ -145,7 +145,7 @@ def generatePlan(completed, electives):
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
-        if len(student.requirements) < 6:
+        if len(student.requirements) <= 6:
             student.completed.append("PECS-4600")
         student.incrementSemester()
     #print("Printing plan")

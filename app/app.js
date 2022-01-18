@@ -1,3 +1,7 @@
+$.getScript("./jsPDFolder/jspdf.js", function() {
+   alert("Script loaded but not necessarily executed.");
+});
+
 var firstMoveOn = document.querySelector(".firstMoveOn");
 var secondMoveOn = document.querySelector(".secondMoveOn");
 var secondMoveOnSE = document.querySelector(".secondMoveOnSE");
@@ -21,11 +25,11 @@ var body3SE = document.querySelector("#body3SE");
 body3SE.style.display = "none";
 var body3M = document.querySelector("#body3M");
 body3M.style.display = "none";
-var csSchedule = document.querySelector(".csSchedule");
+var csSchedule = document.querySelector("#csSchedule");
 csSchedule.style.display = "none";
-var seSchedule = document.querySelector(".seSchedule");
+var seSchedule = document.querySelector("#seSchedule");
 seSchedule.style.display = "none";
-var maSchedule = document.querySelector(".maSchedule");
+var maSchedule = document.querySelector("#maSchedule");
 maSchedule.style.display = "none";
 var introHeader = document.querySelector("#introHeader");
 introHeader.style.display = "block";
@@ -827,7 +831,7 @@ thirdMoveOn.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector(".csSchedule");
+			var wrapper = document.querySelector("#csSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 
@@ -1099,6 +1103,63 @@ thirdMoveOn.onclick = function() {
 			}
 
 			console.log(data);
+
+			var pdf = document.createElement("div");
+			pdf.style.width = "30%";
+			pdf.style.height = "30%";
+			pdf.style.margin = "5px";
+			pdf.style.float = "left";
+			var pdfButton = document.createElement("button");
+			pdfButton.style.backgroundColor = "#BA1C21";
+			pdfButton.style.border = "none";
+			pdfButton.style.color = "white";
+			pdfButton.style.textAlign = "center";
+			pdfButton.style.paddingRight = "15px";
+			pdfButton.style.paddingLeft = "15px";
+			pdfButton.style.textDecoration = "none";
+			pdfButton.style.marginRight = "auto";
+			pdfButton.style.marginLeft = "auto";
+			pdfButton.innerHTML = "Export PDF";
+			pdf.appendChild(pdfButton);
+			wrapper.appendChild(pdf);
+
+			pdfButton.onclick = function() {
+				var doc = new jsPDF();
+				if (semester1HeaderContent.length > 0) {
+				    doc.text(20, 20, semester1HeaderContent);
+				    doc.text(40, 20, semester1Classes);
+				}
+				if (semester2HeaderContent.length > 0) {
+					doc.text(80, 20, semester2HeaderContent);
+					doc.text(100, 20, semester2Classes);
+				}
+			    if (semester3HeaderContent.length > 0) {
+			    	doc.text(140, 20, semester3HeaderContent);
+			    	doc.text(160, 20, semester3Classes);
+			    }
+			    if (semester4HeaderContent.length > 0) {
+			    	doc.text(20, 60, semester4HeaderContent);
+			    	doc.text(40, 60, semester4Classes);
+			    }
+			    if (semester5HeaderContent.length > 0) {
+			    	doc.text(80, 60, semester5HeaderContent);
+			    	doc.text(100, 60, semester5Classes);
+			    }
+			    if (semester6HeaderContent.length > 0) {
+			    	doc.text(140, 60, semester6HeaderContent);
+			    	doc.text(160, 60, semester6Classes);
+			    }
+			    if (semester7HeaderContent.length > 0) {
+			    	doc.text(20, 100, semester7HeaderContent);
+			    	doc.text(40, 100, semester7Classes);
+			    }
+			    if (semester8HeaderContent.length > 0) {
+			    	doc.text(80, 100, semester8HeaderContent);
+			    	doc.text(100, 100, semester8Classes);
+			    }
+			    doc.output("dataurlnewwindow");
+			}
+			
 		})
 	});
 }
@@ -1466,12 +1527,69 @@ thirdMoveOnSE.onclick = function() {
 					semester8Credits.style.textAlign = "center";
 					semester8.appendChild(semester8Header);
 					semester8.appendChild(semester8p);
-					semester8.appendChild(semester8Credits)
+					semester8.appendChild(semester8Credits);
 					wrapper.appendChild(semester8);
 				}
+
+				console.log(data);
+
+			var pdf = document.createElement("div");
+			pdf.style.width = "30%";
+			pdf.style.height = "30%";
+			pdf.style.margin = "5px";
+			pdf.style.float = "left";
+			var pdfButton = document.createElement("button");
+			pdfButton.style.backgroundColor = "#BA1C21";
+			pdfButton.style.border = "none";
+			pdfButton.style.color = "white";
+			pdfButton.style.textAlign = "center";
+			pdfButton.style.paddingRight = "15px";
+			pdfButton.style.paddingLeft = "15px";
+			pdfButton.style.textDecoration = "none";
+			pdfButton.style.marginRight = "auto";
+			pdfButton.style.marginLeft = "auto";
+			pdfButton.innerHTML = "Export PDF";
+			pdf.appendChild(pdfButton);
+			wrapper.appendChild(pdf);
+
+			pdfButton.onclick = function() {
+				var doc = new jsPDF();
+				if (semester1HeaderContent.length > 0) {
+				    doc.text(20, 20, semester1HeaderContent);
+				    doc.text(40, 20, semester1Classes);
+				}
+				if (semester2HeaderContent.length > 0) {
+					doc.text(80, 20, semester2HeaderContent);
+					doc.text(100, 20, semester2Classes);
+				}
+			    if (semester3HeaderContent.length > 0) {
+			    	doc.text(140, 20, semester3HeaderContent);
+			    	doc.text(160, 20, semester3Classes);
+			    }
+			    if (semester4HeaderContent.length > 0) {
+			    	doc.text(20, 60, semester4HeaderContent);
+			    	doc.text(40, 60, semester4Classes);
+			    }
+			    if (semester5HeaderContent.length > 0) {
+			    	doc.text(80, 60, semester5HeaderContent);
+			    	doc.text(100, 60, semester5Classes);
+			    }
+			    if (semester6HeaderContent.length > 0) {
+			    	doc.text(140, 60, semester6HeaderContent);
+			    	doc.text(160, 60, semester6Classes);
+			    }
+			    if (semester7HeaderContent.length > 0) {
+			    	doc.text(20, 100, semester7HeaderContent);
+			    	doc.text(40, 100, semester7Classes);
+			    }
+			    if (semester8HeaderContent.length > 0) {
+			    	doc.text(80, 100, semester8HeaderContent);
+			    	doc.text(100, 100, semester8Classes);
+			    }
+			    doc.output("dataurlnewwindow");
 			}
 
-			console.log(data);
+			}
 		})
 	});
 }
@@ -1625,7 +1743,7 @@ thirdMoveOnM.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector(".maSchedule");
+			var wrapper = document.querySelector("#maSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 
@@ -1896,7 +2014,61 @@ thirdMoveOnM.onclick = function() {
 				}
 			}
 
-			console.log(data);
+			var pdf = document.createElement("div");
+			pdf.style.width = "30%";
+			pdf.style.height = "30%";
+			pdf.style.margin = "5px";
+			pdf.style.float = "left";
+			var pdfButton = document.createElement("button");
+			pdfButton.style.backgroundColor = "#BA1C21";
+			pdfButton.style.border = "none";
+			pdfButton.style.color = "white";
+			pdfButton.style.textAlign = "center";
+			pdfButton.style.paddingRight = "15px";
+			pdfButton.style.paddingLeft = "15px";
+			pdfButton.style.textDecoration = "none";
+			pdfButton.style.marginRight = "auto";
+			pdfButton.style.marginLeft = "auto";
+			pdfButton.innerHTML = "Export PDF";
+			pdf.appendChild(pdfButton);
+			wrapper.appendChild(pdf);
+
+			pdfButton.onclick = function() {
+				var doc = new jsPDF();
+				if (semester1HeaderContent.length > 0) {
+				    doc.text(20, 20, semester1HeaderContent);
+				    doc.text(40, 20, semester1Classes);
+				}
+				if (semester2HeaderContent.length > 0) {
+					doc.text(80, 20, semester2HeaderContent);
+					doc.text(100, 20, semester2Classes);
+				}
+			    if (semester3HeaderContent.length > 0) {
+			    	doc.text(140, 20, semester3HeaderContent);
+			    	doc.text(160, 20, semester3Classes);
+			    }
+			    if (semester4HeaderContent.length > 0) {
+			    	doc.text(20, 60, semester4HeaderContent);
+			    	doc.text(40, 60, semester4Classes);
+			    }
+			    if (semester5HeaderContent.length > 0) {
+			    	doc.text(80, 60, semester5HeaderContent);
+			    	doc.text(100, 60, semester5Classes);
+			    }
+			    if (semester6HeaderContent.length > 0) {
+			    	doc.text(140, 60, semester6HeaderContent);
+			    	doc.text(160, 60, semester6Classes);
+			    }
+			    if (semester7HeaderContent.length > 0) {
+			    	doc.text(20, 100, semester7HeaderContent);
+			    	doc.text(40, 100, semester7Classes);
+			    }
+			    if (semester8HeaderContent.length > 0) {
+			    	doc.text(80, 100, semester8HeaderContent);
+			    	doc.text(100, 100, semester8Classes);
+			    }
+			    doc.output("dataurlnewwindow");
+			}
 		})
 	});
 }

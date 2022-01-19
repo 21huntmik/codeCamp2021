@@ -44,7 +44,6 @@ rating INTEGER
 - [ ] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
 - [x] Allow users to export a desired plan as a pdf
 - [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
-- [ ] Create another interest area for the CS degree
 - [x] Add a course difficulty rating to all database
 - [ ] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university

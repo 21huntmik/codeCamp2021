@@ -760,14 +760,207 @@ thirdMoveOn.onclick = function() {
 
 	var interestCSData = "";
 
-	var csInterestTheory = document.getElementById("theory");
-	if (csInterestTheory.checked) {
-		interestCSData+=("theory");
+	var cs3200e = document.getElementById("cs3200e");
+	if (cs3200e.checked) {
+		interestCSData+=("CS-3200,");
 	}
 
-	var csInterestDev = document.getElementById("dev");
-	if (csInterestDev.checked) {
-		interestCSData+=("dev");
+	var cs3400e = document.getElementById("cs3400e");
+	if (cs3400e.checked) {
+		interestCSData+=("CS-3400,");
+	}
+
+	var cs3410e = document.getElementById("cs3410e");
+	if (cs3410e.checked) {
+		interestCSData+=("CS-3410,");
+	}
+
+	var cs3520e = document.getElementById("cs3520e");
+	if (cs3520e.checked) {
+		interestCSData+=("CS-3520,");
+	}
+
+	var cs3600e = document.getElementById("cs3600e");
+	if (cs3600e.checked) {
+		interestCSData+=("CS-3600,");
+	}
+
+	var cs4300e = document.getElementById("cs4300e");
+	if (cs4300e.checked) {
+		interestCSData+=("CS-4300,");
+	}
+
+	var cs4307e = document.getElementById("cs4307e");
+	if (cs4307e.checked) {
+		interestCSData+=("CS-4307,");
+	}
+
+	var cs4320e = document.getElementById("cs4320e");
+	if (cs4320e.checked) {
+		interestCSData+=("CS-4320,");
+	}
+
+	var cs4550e = document.getElementById("cs4550e");
+	if (cs4550e.checked) {
+		interestCSData+=("CS-4550,");
+	}
+
+	//math elective section
+
+	interestCSData+=("|");
+
+	var csma3400e = document.getElementById("csma3400e");
+	if (csma3400e.checked) {
+		interestCSData+=("MA-3400,");
+	}
+
+	var csma2270e = document.getElementById("csma2270e");
+	if (csma2270e.checked) {
+		interestCSData+=("MA-2270,");
+	}
+
+	var csma2210e = document.getElementById("csma2210e");
+	if (csma2210e.checked) {
+		interestCSData+=("MA-2210,");
+	}
+
+	var csma2280e = document.getElementById("csma2280e");
+	if (csma2280e.checked) {
+		interestCSData+=("MA-2280,");
+	}
+
+	var csma2250e = document.getElementById("csma2250e");
+	if (csma2250e.checked) {
+		interestCSData+=("MA-2250,");
+	}
+
+	//last group of electives
+
+	interestCSData+=("|");
+
+	var cs3010e2 = document.getElementById("cs3010e2");
+	if (cs3010e2.checked) {
+		interestCSData+=("CS-3010,");
+	}
+
+	var cs3020e2 = document.getElementById("cs3020e2");
+	if (cs3020e2.checked) {
+		interestCSData+=("CS-3010,");
+	}
+
+	var cs3150e2 = document.getElementById("cs3150e2");
+	if (cs3150e2.checked) {
+		interestCSData+=("CS-3150,");
+	}
+
+	var cs3200e2 = document.getElementById("cs3200e2");
+	if (cs3200e2.checked) {
+		interestCSData+=("CS-3200,");
+	}
+
+	var cs3400e2 = document.getElementById("cs3400e2");
+	if (cs3400e2.checked) {
+		interestCSData+=("CS-3400,");
+	}
+
+	var cs3410e2 = document.getElementById("cs3410e2");
+	if (cs3410e2.checked) {
+		interestCSData+=("CS-3410,");
+	}
+
+	var cs3440e2 = document.getElementById("cs3440e2");
+	if (cs3440e2.checked) {
+		interestCSData+=("CS-3440,");
+	}
+
+	var cs3500e2 = document.getElementById("cs3500e2");
+	if (cs3500e2.checked) {
+		interestCSData+=("CS-3500,");
+	}
+
+	var cs3520e2 = document.getElementById("cs3520e2");
+	if (cs3520e2.checked) {
+		interestCSData+=("CS-3520,");
+	}
+
+	var cs3600e2 = document.getElementById("cs3600e2");
+	if (cs3600e2.checked) {
+		interestCSData+=("CS-3600,");
+	}
+
+	var cs4200e2 = document.getElementById("cs4200e2");
+	if (cs4200e2.checked) {
+		interestCSData+=("CS-4200,");
+	}
+
+	var cs4300e2 = document.getElementById("cs4300e2");
+	if (cs4300e2.checked) {
+		interestCSData+=("CS-4300,");
+	}
+
+	var cs4307e2 = document.getElementById("cs4307e2");
+	if (cs4307e2.checked) {
+		interestCSData+=("CS-4307,");
+	}
+
+	var cs4320e2 = document.getElementById("cs4320e2");
+	if (cs4320e2.checked) {
+		interestCSData+=("CS-4320,");
+	}
+
+	var cs4550e2 = document.getElementById("cs4550e2");
+	if (cs4550e2.checked) {
+		interestCSData+=("CS-4550,");
+	}
+
+	var cs4920e2 = document.getElementById("cs4920e2");
+	if (cs4920e2.checked) {
+		interestCSData+=("CS-4920,");
+	}
+
+	var cs4990e2 = document.getElementById("cs4990e2");
+	if (cs4990e2.checked) {
+		interestCSData+=("CS-4990,");
+	}
+
+	var cs4991e2 = document.getElementById("cs4991e2");
+	if (cs4991e2.checked) {
+		interestCSData+=("CS-4991,");
+	}
+
+	var csit2700e2 = document.getElementById("csit2700e2");
+	if (csit2700e2.checked) {
+		interestCSData+=("IT-2700,");
+	}
+
+	var csit3100e2 = document.getElementById("csit3100e2");
+	if (csit3100e2.checked) {
+		interestCSData+=("IT-3100,");
+	}
+
+	var csit3110e2 = document.getElementById("csit3110e2");
+	if (csit3110e2.checked) {
+		interestCSData+=("IT-3110,");
+	}
+
+	var cs3010e2 = document.getElementById("cs3010e2");
+	if (cs3010e2.checked) {
+		interestCSData+=("CS-3010,");
+	}
+
+	var csit4200e2 = document.getElementById("csit4200e2");
+	if (csit4200e2.checked) {
+		interestCSData+=("IT-4200,");
+	}
+
+	var csse1400e2 = document.getElementById("csse1400e2");
+	if (csse1400e2.checked) {
+		interestCSData+=("SE-1400,");
+	}
+
+	var csse3400e2 = document.getElementById("csse3400e2");
+	if (csse3400e2.checked) {
+		interestCSData+=("SE-3400,");
 	}
 	
 	interestCSData+=(" ");

@@ -6,9 +6,11 @@ var firstMoveOn = document.querySelector(".firstMoveOn");
 var secondMoveOn = document.querySelector(".secondMoveOn");
 var secondMoveOnSE = document.querySelector(".secondMoveOnSE");
 var secondMoveOnM = document.querySelector(".secondMoveOnM");
+var secondMoveOnIT = document.querySelector(".secondMoveOnIT");
 var thirdMoveOn = document.querySelector(".thirdMoveOn");
 var thirdMoveOnSE = document.querySelector(".thirdMoveOnSE");
 var thirdMoveOnM = document.querySelector(".thirdMoveOnM");
+var thirdMoveOnIT = document.querySelector(".thirdMoveOnIT");
 var fetchString = "";
 
 var body1 = document.querySelector("#body1");
@@ -17,20 +19,26 @@ var body2CS = document.querySelector("#body2CS");
 body2CS.style.display = "none";
 var body2SE = document.querySelector("#body2SE");
 body2SE.style.display = "none";
-var body3M = document.querySelector("#body2M");
+var body2M = document.querySelector("#body2M");
 body2M.style.display = "none";
+var body2IT = document.querySelector("#body2IT");
+body2IT.style.display = "none";
 var body3CS = document.querySelector("#body3CS");
 body3CS.style.display = "none";
 var body3SE = document.querySelector("#body3SE");
 body3SE.style.display = "none";
 var body3M = document.querySelector("#body3M");
 body3M.style.display = "none";
+var body3IT = document.querySelector("#body3IT");
+body3IT.style.display = "none";
 var csSchedule = document.querySelector("#csSchedule");
 csSchedule.style.display = "none";
 var seSchedule = document.querySelector("#seSchedule");
 seSchedule.style.display = "none";
 var maSchedule = document.querySelector("#maSchedule");
 maSchedule.style.display = "none";
+var itSchedule = document.querySelector("#itSchedule");
+itSchedule.style.display = "none";
 var introHeader = document.querySelector("#introHeader");
 introHeader.style.display = "block";
 var header = document.querySelector("#header");
@@ -44,12 +52,15 @@ firstMoveOn.onclick = function() {
 		body2CS.style.display = "block";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
+		body2IT.style.display = "none";
 		body3CS.style.display = "none";
 		body3SE.style.display = "none";
 		body3M.style.display ="none";
+		body3IT.style.display = "none";
 		csSchedule.style.display = "none";
 		seSchedule.style.display = "none";
 		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
 
@@ -69,12 +80,15 @@ firstMoveOn.onclick = function() {
 		body2CS.style.display = "none";
 		body2SE.style.display = "block";
 		body2M.style.display = "none";
+		body2IT.style.display = "none";
 		body3CS.style.display = "none";
 		body3SE.style.display = "none";
 		body3M.style.display = "none";
+		body3IT.style.display = "none";
 		csSchedule.style.display = "none";
 		seSchedule.style.display = "none";
 		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
 
@@ -94,12 +108,42 @@ firstMoveOn.onclick = function() {
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "block";
+		body2IT.style.display = "none";
 		body3CS.style.display = "none";
 		body3SE.style.display = "none";
 		body3M.style.display = "none";
+		body3IT.style.display = "none";
 		csSchedule.style.display = "none";
 		seSchedule.style.display = "none";
 		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+
+		major+=(" ");
+
+		/*fetch("http://localhost:8080/grad", {
+			method: "POST",
+			body: major,
+			credentials: 'include',
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			}
+		})*/
+	} else if (major == "it") {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "block";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
 
@@ -114,6 +158,7 @@ firstMoveOn.onclick = function() {
 			}
 		})*/
 	}
+
 fetchString += major;
 }
 
@@ -122,12 +167,15 @@ secondMoveOn.onclick = function() {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "block";
 	body3SE.style.display = "none";
 	body3M.style.display = "none";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "none";
 	seSchedule.style.display = "none";
 	maSchedule.style.display = "none";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -336,12 +384,15 @@ secondMoveOnSE.onclick = function() {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "none";
 	body3SE.style.display = "block";
 	body3M.style.display = "none";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "none";
 	seSchedule.style.display = "none";
 	maSchedule.style.display = "none";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -539,12 +590,15 @@ secondMoveOnM.onclick = function () {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "none";
 	body3SE.style.display = "none";
 	body3M.style.display = "block";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "none";
 	seSchedule.style.display = "none";
 	maSchedule.style.display = "none";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -731,16 +785,185 @@ secondMoveOnM.onclick = function () {
 	}
 
 	maClasses+=(" ");
-
-	/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: maClasses,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-	})*/
 	fetchString += maClasses;
+}
+
+secondMoveOnIT.onclick = function () {
+	body1.style.display = "none";
+	body2CS.style.display = "none";
+	body2SE.style.display = "none";
+	body2M.style.display = "none";
+	body2IT.style.display = "none";
+	body3CS.style.display = "none";
+	body3SE.style.display = "none";
+	body3M.style.display = "none";
+	body3IT.style.display = "block";
+	csSchedule.style.display = "none";
+	seSchedule.style.display = "none";
+	maSchedule.style.display = "none";
+	introHeader.style.display = "none";
+	header.style.display = "block";
+
+	var itClasses = "";
+
+	var it1100 = document.getElementById("it1100");
+	if (it1100.checked) {
+		itClasses+=("IT-1100|");
+	}
+
+	var it1200 = document.getElementById("it1200");
+	if (it1200.checked) {
+		itClasses+=("IT-1200|");
+	}
+
+	var it2300 = document.getElementById("it2300");
+	if (it2300.checked) {
+		itClasses+=("IT-2300|");
+	}
+
+	var it2400 = document.getElementById("it2400");
+	if (it2400.checked) {
+		itClasses+=("IT-2400|");
+	}
+
+	var it2500 = document.getElementById("it2500");
+	if (it2500.checked) {
+		itClasses+=("IT-2500|");
+	}
+
+	var it2700 = document.getElementById("it2700");
+	if (it2700.checked) {
+		itClasses+=("IT-2700|");
+	}
+
+	var it3100 = document.getElementById("it3100");
+	if (it3100.checked) {
+		itClasses+=("IT-3100|");
+	}
+
+	var it3110 = document.getElementById("it3110");
+	if (it3110.checked) {
+		itClasses+=("IT-3110|");
+	}
+
+	var it3150 = document.getElementById("it3150");
+	if (it3150.checked) {
+		itClasses+=("IT-3150|");
+	}
+
+	var it3300 = document.getElementById("it3300");
+	if (it3300.checked) {
+		itClasses+=("IT-3300|");
+	}
+
+	var it3400 = document.getElementById("it3400");
+	if (it3400.checked) {
+		itClasses+=("IT-3400|");
+	}
+
+	var it4060 = document.getElementById("it4060");
+	if (it4060.checked) {
+		itClasses+=("IT-4060|");
+	}
+
+	var it4070 = document.getElementById("it4070");
+	if (it4070.checked) {
+		itClasses+=("IT-4070|");
+	}
+
+	var it4100 = document.getElementById("it4100");
+	if (it4100.checked) {
+		itClasses+=("IT-4100|");
+	}
+
+	var it4200 = document.getElementById("it4200");
+	if (it4200.checked) {
+		itClasses+=("IT-4200|");
+	}
+
+	var it4310 = document.getElementById("it4310");
+	if (it4310.checked) {
+		itClasses+=("IT-4310|");
+	}
+
+	var it4400 = document.getElementById("it4400");
+	if (it4400.checked) {
+		itClasses+=("IT-4400|");
+	}
+
+	var it4510 = document.getElementById("it4510");
+	if (it4510.checked) {
+		itClasses+=("IT-4510|");
+	}
+
+	var it4600 = document.getElementById("it4600");
+	if (it4600.checked) {
+		itClasses+=("IT-4600|");
+	}
+
+	var it4920 = document.getElementById("it4920");
+	if (it4920.checked) {
+		itClasses+=("IT-4920|");
+	}
+
+	var it4990 = document.getElementById("it4990");
+	if (it4990.checked) {
+		itClasses+=("IT-4990|");
+	}
+
+	var itcs1400 = document.getElementById("itcs1400");
+	if (itcs1400.checked) {
+		itClasses+=("CS-1400|");
+	}
+
+	var itcs1410 = document.getElementById("itcs1410");
+	if (itcs1410.checked) {
+		itClasses+=("CS-1410|");
+	}
+
+	var itcs3005 = document.getElementById("itcs3005");
+	if (itcs3005.checked) {
+		itClasses+=("CS-3005|");
+	}
+
+	var itse3200 = document.getElementById("itse3200");
+	if (itse3200.checked) {
+		itClasses+=("SE-3200|");
+	}
+
+	var itse3400 = document.getElementById("itse3400");
+	if (itse3400.checked) {
+		itClasses+=("SE-3400|");
+	}
+
+	var itse4200 = document.getElementById("itse4200");
+	if (itse4200.checked) {
+		itClasses+=("SE-4200|");
+	}
+
+	var itis2050 = document.getElementById("itis2050");
+	if (itis2050.checked) {
+		itClasses+=("ISA-2050|");
+	}
+
+	var iten3010 = document.getElementById("iten3010");
+	if (iten3010.checked) {
+		itClasses+=("ENGL-3010|");
+	}
+
+	var itma1040 = document.getElementById("itma1040");
+	if (itma1040.checked) {
+		itClasses+=("MA-1040|");
+	}
+
+	var itma1050 = document.getElementById("itma1050");
+	if (itma1050.checked) {
+		itClasses+=("MA-1050|");
+	}
+
+	itClasses+=(" ");
+	fetchString += itClasses;
+
 }
 
 
@@ -749,12 +972,15 @@ thirdMoveOn.onclick = function() {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "none";
 	body3SE.style.display = "none";
 	body3M.style.display = "none";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "block";
 	seSchedule.style.display = "none";
 	maSchedule.style.display = "none";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -1362,12 +1588,15 @@ thirdMoveOnSE.onclick = function() {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "none";
 	body3SE.style.display = "none";
 	body3M.style.display = "none";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "none";
 	seSchedule.style.display = "block";
 	maSchedule.style.display = "none";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -1792,12 +2021,15 @@ thirdMoveOnM.onclick = function() {
 	body2CS.style.display = "none";
 	body2SE.style.display = "none";
 	body2M.style.display = "none";
+	body2IT.style.display = "none";
 	body3CS.style.display = "none";
 	body3SE.style.display = "none";
 	body3M.style.display = "none";
+	body3IT.style.display = "none";
 	csSchedule.style.display = "none";
 	seSchedule.style.display = "none";
 	maSchedule.style.display = "block";
+	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
 
@@ -1937,6 +2169,502 @@ thirdMoveOnM.onclick = function() {
 			var semester8CreditCount = "";
 
 			var wrapper = document.querySelector("#maSchedule");
+			wrapper.style.marginBottom = "2%";
+			wrapper.style.marginTop = "2%";
+
+			for (var x of schedule) {
+				console.log("In the for loop");
+				console.log(x);
+				semesterCount += 1;
+				console.log(semesterCount);
+				var loopSemester = x;
+				//loopSemester is the list with the current semester info
+				//index to store, pop and shift to remove and leave everything else for class list
+				if (semesterCount == 1) {
+					semester1HeaderContent = loopSemester[0];
+					console.log(semester1HeaderContent);
+					var length = loopSemester.length;
+					semester1CreditCount = loopSemester[length - 1];
+					console.log(semester1CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester1Classes = loopSemester;
+					console.log(semester1Classes);
+					var semester1 = document.createElement("div");
+					semester1.style.width = "30%";
+					semester1.style.height = "30%";
+					semester1.style.margin = "5px";
+					semester1.style.border = "thin solid #e3e3e3";
+					semester1.style.float = "left";
+					var semester1Header = document.createElement("h2");
+					semester1Header.innerHTML = semester1HeaderContent;
+					semester1Header.style.marginBottom = "0px";
+					semester1Header.style.marginTop = "2%";
+					semester1Header.style.textAlign = "center";
+					var semester1p = document.createElement("p");
+					semester1p.innerHTML = semester1Classes;
+					semester1p.style.marginRight = "15px";
+					semester1p.style.marginLeft = "15px";
+					var semester1Credits = document.createElement("h4");
+					semester1Credits.innerHTML = semester1CreditCount;
+					semester1Credits.style.textAlign = "center";
+					semester1.appendChild(semester1Header);
+					semester1.appendChild(semester1p);
+					semester1.appendChild(semester1Credits);
+					wrapper.appendChild(semester1);
+				} else if (semesterCount == 2) {
+					semester2HeaderContent = loopSemester[0];
+					console.log(semester2HeaderContent);
+					var length = loopSemester.length;
+					semester2CreditCount = loopSemester[length - 1];
+					console.log(semester2CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester2Classes = loopSemester;
+					console.log(semester2Classes);
+					var semester2 = document.createElement("div");
+					semester2.style.width = "30%";
+					semester2.style.height = "30%";
+					semester2.style.margin = "5px";
+					semester2.style.border = "thin solid #e3e3e3";
+					semester2.style.float = "left";
+					var semester2Header = document.createElement("h2");
+					semester2Header.innerHTML = semester2HeaderContent;
+					semester2Header.style.marginBottom = "0px";
+					semester2Header.style.marginTop = "2%";
+					semester2Header.style.textAlign = "center";
+					var semester2p = document.createElement("p");
+					semester2p.innerHTML = semester2Classes;
+					semester2p.style.marginRight = "15px";
+					semester2p.style.marginLeft = "15px";
+					var semester2Credits = document.createElement("h4");
+					semester2Credits.innerHTML = semester2CreditCount;
+					semester2Credits.style.textAlign = "center";
+					semester2.appendChild(semester2Header);
+					semester2.appendChild(semester2p);
+					semester2.appendChild(semester2Credits);
+					wrapper.appendChild(semester2);
+				} else if (semesterCount == 3) {
+					semester3HeaderContent = loopSemester[0];
+					console.log(semester3HeaderContent);
+					var length = loopSemester.length;
+					semester3CreditCount = loopSemester[length - 1];
+					console.log(semester3CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester3Classes = loopSemester;
+					console.log(semester3Classes);
+					var semester3 = document.createElement("div");
+					semester3.style.width = "30%";
+					semester3.style.height = "30%";
+					semester3.style.margin = "5px";
+					semester3.style.border = "thin solid #e3e3e3";
+					semester3.style.float = "left";
+					var semester3Header = document.createElement("h2");
+					semester3Header.innerHTML = semester3HeaderContent;
+					semester3Header.style.marginBottom = "0px";
+					semester3Header.style.marginTop = "2%";
+					semester3Header.style.textAlign = "center";
+					var semester3p = document.createElement("p");
+					semester3p.innerHTML = semester3Classes;
+					semester3p.style.marginRight = "15px";
+					semester3p.style.marginLeft = "15px";
+					var semester3Credits = document.createElement("h4");
+					semester3Credits.innerHTML = semester3CreditCount;
+					semester3Credits.style.textAlign = "center";
+					semester3.appendChild(semester3Header);
+					semester3.appendChild(semester3p);
+					semester3.appendChild(semester3Credits);
+					wrapper.appendChild(semester3);
+				} else if (semesterCount == 4) {
+					semester4HeaderContent = loopSemester[0];
+					console.log(semester4HeaderContent);
+					var length = loopSemester.length;
+					semester4CreditCount = loopSemester[length - 1];
+					console.log(semester4CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester4Classes = loopSemester;
+					console.log(semester4Classes);
+					var semester4 = document.createElement("div");
+					semester4.style.width = "30%";
+					semester4.style.height = "30%";
+					semester4.style.margin = "5px";
+					semester4.style.border = "thin solid #e3e3e3";
+					semester4.style.float = "left";
+					var semester4Header = document.createElement("h2");
+					semester4Header.innerHTML = semester4HeaderContent;
+					semester4Header.style.marginBottom = "0px";
+					semester4Header.style.marginTop = "2%";
+					semester4Header.style.textAlign = "center";
+					var semester4p = document.createElement("p");
+					semester4p.innerHTML = semester4Classes;
+					semester4p.style.marginRight = "15px";
+					semester4p.style.marginLeft = "15px";
+					var semester4Credits = document.createElement("h4");
+					semester4Credits.innerHTML = semester4CreditCount;
+					semester4Credits.style.textAlign = "center";
+					semester4.appendChild(semester4Header);
+					semester4.appendChild(semester4p);
+					semester4.appendChild(semester4Credits);
+					wrapper.appendChild(semester4);
+				} else if (semesterCount == 5) {
+					semester5HeaderContent = loopSemester[0];
+					console.log(semester5HeaderContent);
+					var length = loopSemester.length;
+					semester5CreditCount = loopSemester[length - 1];
+					console.log(semester5CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester5Classes = loopSemester;
+					console.log(semester5Classes);
+					var semester5 = document.createElement("div");
+					semester5.style.width = "30%";
+					semester5.style.height = "30%";
+					semester5.style.margin = "5px";
+					semester5.style.border = "thin solid #e3e3e3";
+					semester5.style.float = "left";
+					var semester5Header = document.createElement("h2");
+					semester5Header.innerHTML = semester5HeaderContent;
+					semester5Header.style.marginBottom = "0px";
+					semester5Header.style.marginTop = "2%";
+					semester5Header.style.textAlign = "center";
+					var semester5p = document.createElement("p");
+					semester5p.innerHTML = semester5Classes;
+					semester5p.style.marginRight = "15px";
+					semester5p.style.marginLeft = "15px";
+					var semester5Credits = document.createElement("h4");
+					semester5Credits.innerHTML = semester5CreditCount;
+					semester5Credits.style.textAlign = "center";
+					semester5.appendChild(semester5Header);
+					semester5.appendChild(semester5p);
+					semester5.appendChild(semester5Credits);
+					wrapper.appendChild(semester5);
+				} else if (semesterCount == 6) {
+					semester6HeaderContent = loopSemester[0];
+					console.log(semester6HeaderContent);
+					var length = loopSemester.length;
+					semester6CreditCount = loopSemester[length - 1];
+					console.log(semester6CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester6Classes = loopSemester;
+					console.log(semester6Classes);
+					var semester6 = document.createElement("div");
+					semester6.style.width = "30%";
+					semester6.style.height = "30%";
+					semester6.style.margin = "5px";
+					semester6.style.border = "thin solid #e3e3e3";
+					semester6.style.float = "left";
+					var semester6Header = document.createElement("h2");
+					semester6Header.innerHTML = semester6HeaderContent;
+					semester6Header.style.marginBottom = "0px";
+					semester6Header.style.marginTop = "2%";
+					semester6Header.style.textAlign = "center";
+					var semester6p = document.createElement("p");
+					semester6p.innerHTML = semester6Classes;
+					semester6p.style.marginRight = "15px";
+					semester6p.style.marginLeft = "15px";
+					var semester6Credits = document.createElement("h4");
+					semester6Credits.innerHTML = semester6CreditCount;
+					semester6Credits.style.textAlign = "center";
+					semester6.appendChild(semester6Header);
+					semester6.appendChild(semester6p);
+					semester6.appendChild(semester6Credits);
+					wrapper.appendChild(semester6);
+				} else if (semesterCount == 7) {
+					semester7HeaderContent = loopSemester[0];
+					console.log(semester7HeaderContent);
+					var length = loopSemester.length;
+					semester7CreditCount = loopSemester[length - 1];
+					console.log(semester7CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester7Classes = loopSemester;
+					console.log(semester7Classes);
+					var semester7 = document.createElement("div");
+					semester7.style.width = "30%";
+					semester7.style.height = "30%";
+					semester7.style.margin = "5px";
+					semester7.style.border = "thin solid #e3e3e3";
+					semester7.style.float = "left";
+					var semester7Header = document.createElement("h2");
+					semester7Header.innerHTML = semester7HeaderContent;
+					semester7Header.style.marginBottom = "0px";
+					semester7Header.style.marginTop = "2%";
+					semester7Header.style.textAlign = "center";
+					var semester7p = document.createElement("p");
+					semester7p.innerHTML = semester7Classes;
+					semester7p.style.marginRight = "15px";
+					semester7p.style.marginLeft = "15px";
+					var semester7Credits = document.createElement("h4");
+					semester7Credits.innerHTML = semester7CreditCount;
+					semester7Credits.style.textAlign = "center";
+					semester7.appendChild(semester7Header);
+					semester7.appendChild(semester7p);
+					semester7.appendChild(semester7Credits);
+					wrapper.appendChild(semester7);
+				} else if (semesterCount == 8) {
+					semester8HeaderContent = loopSemester[0];
+					console.log(semester8HeaderContent);
+					var length = loopSemester.length;
+					semester8CreditCount = loopSemester[length - 1];
+					console.log(semester8CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester8Classes = loopSemester;
+					console.log(semester8Classes);
+					var semester8 = document.createElement("div");
+					semester8.style.width = "30%";
+					semester8.style.height = "30%";
+					semester8.style.margin = "5px";
+					semester8.style.border = "thin solid #e3e3e3";
+					semester8.style.float = "left";
+					var semester8Header = document.createElement("h2");
+					semester8Header.innerHTML = semester8HeaderContent;
+					semester8Header.style.marginBottom = "0px";
+					semester8Header.style.marginTop = "2%";
+					semester8Header.style.textAlign = "center";
+					var semester8p = document.createElement("p");
+					semester8p.innerHTML = semester8Classes;
+					semester8p.style.marginRight = "15px";
+					semester8p.style.marginLeft = "15px";
+					var semester8Credits = document.createElement("h4");
+					semester8Credits.innerHTML = semester8CreditCount;
+					semester8Credits.style.textAlign = "center";
+					semester8.appendChild(semester8Header);
+					semester8.appendChild(semester8p);
+					semester8.appendChild(semester8Credits)
+					wrapper.appendChild(semester8);
+				}
+			}
+
+			var pdf = document.createElement("div");
+			pdf.style.width = "30%";
+			pdf.style.height = "30%";
+			pdf.style.margin = "5px";
+			pdf.style.float = "left";
+			var pdfButton = document.createElement("button");
+			pdfButton.style.backgroundColor = "#BA1C21";
+			pdfButton.style.border = "none";
+			pdfButton.style.color = "white";
+			pdfButton.style.textAlign = "center";
+			pdfButton.style.paddingRight = "15px";
+			pdfButton.style.paddingLeft = "15px";
+			pdfButton.style.textDecoration = "none";
+			pdfButton.style.marginRight = "auto";
+			pdfButton.style.marginLeft = "auto";
+			pdfButton.innerHTML = "Export PDF";
+			pdf.appendChild(pdfButton);
+			wrapper.appendChild(pdf);
+
+			pdfButton.onclick = function() {
+				var doc = new jsPDF();
+				if (semester1HeaderContent.length > 0) {
+				    doc.text(20, 20, semester1HeaderContent);
+				    doc.text(40, 20, semester1Classes);
+				}
+				if (semester2HeaderContent.length > 0) {
+					doc.text(80, 20, semester2HeaderContent);
+					doc.text(100, 20, semester2Classes);
+				}
+			    if (semester3HeaderContent.length > 0) {
+			    	doc.text(140, 20, semester3HeaderContent);
+			    	doc.text(160, 20, semester3Classes);
+			    }
+			    if (semester4HeaderContent.length > 0) {
+			    	doc.text(20, 60, semester4HeaderContent);
+			    	doc.text(40, 60, semester4Classes);
+			    }
+			    if (semester5HeaderContent.length > 0) {
+			    	doc.text(80, 60, semester5HeaderContent);
+			    	doc.text(100, 60, semester5Classes);
+			    }
+			    if (semester6HeaderContent.length > 0) {
+			    	doc.text(140, 60, semester6HeaderContent);
+			    	doc.text(160, 60, semester6Classes);
+			    }
+			    if (semester7HeaderContent.length > 0) {
+			    	doc.text(20, 100, semester7HeaderContent);
+			    	doc.text(40, 100, semester7Classes);
+			    }
+			    if (semester8HeaderContent.length > 0) {
+			    	doc.text(80, 100, semester8HeaderContent);
+			    	doc.text(100, 100, semester8Classes);
+			    }
+			    doc.output("dataurlnewwindow");
+			}
+		})
+	});
+}
+
+thirdMoveOnIT.onclick = function() {
+	body1.style.display = "none";
+	body2CS.style.display = "none";
+	body2SE.style.display = "none";
+	body2M.style.display = "none";
+	body2IT.style.display = "none";
+	body3CS.style.display = "none";
+	body3SE.style.display = "none";
+	body3M.style.display = "none";
+	body3IT.style.display = "none";
+	csSchedule.style.display = "none";
+	seSchedule.style.display = "none";
+	maSchedule.style.display = "none";
+	itSchedule.style.display = "block";
+	introHeader.style.display = "none";
+	header.style.display = "block";
+
+	var itElectives = "";
+
+	var it3110e = document.getElementById("it3110e");
+	if (it3110e.checked) {
+		itElectives+=("IT-3110,");
+	}
+
+	var it3300e = document.getElementById("it3300e");
+	if (it3300e.checked) {
+		itElectives+=("IT-3300,");
+	}
+
+	var it4100e = document.getElementById("it4100e");
+	if (it4100e.checked) {
+		itElectives+=("IT-4100,");
+	}
+
+	var it4200e = document.getElementById("it4200e");
+	if (it4200e.checked) {
+		itElectives+=("IT-4200,");
+	}
+
+	var it4310e = document.getElementById("it4310e");
+	if (it4310e.checked) {
+		itElectives+=("IT-4310,");
+	}
+
+	var it4400e = document.getElementById("it4400e");
+	if (it4400e.checked) {
+		itElectives+=("IT-4400,");
+	}
+
+	var it4510e = document.getElementById("it4510e");
+	if (it4510e.checked) {
+		itElectives+=("IT-4510,");
+	}
+
+	var it4920e = document.getElementById("it4920e");
+	if (it4920e.checked) {
+		itElectives+=("IT-4920,");
+	}
+
+	var it4990e = document.getElementById("it4990e");
+	if (it4990e.checked) {
+		itElectives+=("IT-4990,");
+	}
+
+	//NEW SECTION
+
+	itElectives+=("|");
+
+	var itcs3005e2 = document.getElementById("itcs3005e2");
+	if (itcs3005e2.checked) {
+		itElectives+=("CS-3005,");
+	}
+
+	var itis2050e2 = document.getElementById("itis2050e2");
+	if (itis2050e2.checked) {
+		itElectives+=("ISA-2050,");
+	}
+
+	var it4060e2 = document.getElementById("it4060e2");
+	if (it4060e2.checked) {
+		itElectives+=("IT-4060,");
+	}
+
+	var it4070e2 = document.getElementById("it4070e2");
+	if (it4070e2.checked) {
+		itElectives+=("IT-4070,");
+	}
+
+	var itse3200e2 = document.getElementById("itse3200e2");
+	if (itse3200e2.checked) {
+		itElectives+=("SE-3200,");
+	}
+
+	var itse3400e2 = document.getElementById("itse3400e2");
+	if (itse3400e2.checked) {
+		itElectives+=("SE-3400,");
+	}
+
+	var itse4200e2 = document.getElementById("itse4200e2");
+	if (itse4200e2.checked) {
+		itElectives+=("SE-4200,");
+	}
+
+	itElectives+=(" ");
+	console.log(itElectives);
+
+	fetchString += itElectives;
+
+	fetch("http://localhost:8080/grad", {
+			method: "POST",
+			body: fetchString,
+			credentials: 'include',
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			}
+	}).then(function (response) {
+		response.json().then(function (data) {
+			//format here
+			//3 x 3 grid
+			var schedule = data;
+			console.log("THIS IS FROM THE JAVASCRIPT");
+			console.log(schedule);
+
+			//to access data from the server... use the following functions
+				//indexing values (0 & -1)
+				//pop to remove the last item (credits)
+				//shift to remove the first item (semester)
+
+			//schedules is a list of lists
+			var semesterCount = 0;
+
+			console.log(semesterCount);
+
+			//loop over each list in schedules, index, pop, shift and store
+			var semester1HeaderContent = "";
+			var semester1Classes = "";
+			var semester1CreditCount = "";
+
+			var semester2HeaderContent = "";
+			var semester2Classes = "";
+			var semester2CreditCount = "";
+
+			var semester3HeaderContent = "";
+			var semester3Classes = "";
+			var semester3CreditCount = "";
+
+			var semester4HeaderContent = "";
+			var semester4Classes = "";
+			var semester4CreditCount = "";
+
+			var semester5HeaderContent = "";
+			var semester5Classes = "";
+			var semester5CreditCount = "";
+
+			var semester6HeaderContent = "";
+			var semester6Classes = "";
+			var semester6CreditCount = "";
+
+			var semester7HeaderContent = "";
+			var semester7Classes = "";
+			var semester7CreditCount = "";
+
+			var semester8HeaderContent = "";
+			var semester8Classes = "";
+			var semester8CreditCount = "";
+
+			var wrapper = document.querySelector("#itSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 

@@ -106,6 +106,14 @@ label {
 	margin-top: 5%;
 }
 
+#body2IT {
+	width:50%;
+	margin-right: auto;
+	margin-left: auto;
+	height: 135%;
+	margin-top: 5%;
+}
+
 .leftHalf {
 	float: left;
 	width: 45%;
@@ -128,6 +136,10 @@ label {
 }
 
 .secondMoveOnM {
+	margin-top: 3%;
+}
+
+.secondMoveOnIT {
 	margin-top: 3%;
 }
 
@@ -164,6 +176,17 @@ label {
 	margin-top: 10%;
 }
 
+#body3IT {
+	height: 90%;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#body3IT p {
+	margin-top: 10%;
+}
+
 .thirdMoveOn {
 	margin-top: 5%;
 }
@@ -173,6 +196,10 @@ label {
 }
 
 .thirdMoveOnM {
+	margin-top: 5%;
+}
+
+.thirdMoveOnIT {
 	margin-top: 5%;
 }
 
@@ -238,6 +265,14 @@ select {
 
 #maSchedule {
 	width:60%;
+	min-height: 50%;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#itSchedule {
+	width: 60%;
 	min-height: 50%;
 	overflow: hidden;
 	margin-right: auto;

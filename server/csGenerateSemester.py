@@ -6,7 +6,8 @@ def appendElectives(completed, choice):  # WORKS
     electivesList = []
     choice = choice[:-1]
     for i in choice:
-        electivesList.append(i)
+        if i not in electivesList:
+            electivesList.append(i)
         cs = csDB()
         unfilteredCoursePrereqs = cs.getPreReqs(i)
         print(unfilteredCoursePrereqs)
@@ -17,7 +18,7 @@ def appendElectives(completed, choice):  # WORKS
                     unfilteredCoursePrereqs = unfilteredCoursePrereqs.split(
                         '*')
                     unfilteredCoursePrereqs = sorted(unfilteredCoursePrereqs)
-                    unfilteredCoursePrereqs = unfilteredCoursePrereqs[0]
+                    unfilteredCoursePrereqs = unfilteredCoursePrereqs[1]
                     for j in unfilteredCoursePrereqs.split(';'):
                         if j not in completed:
                             choice.append(j)

@@ -13,6 +13,18 @@ var thirdMoveOnM = document.querySelector(".thirdMoveOnM");
 var thirdMoveOnIT = document.querySelector(".thirdMoveOnIT");
 var fetchString = "";
 
+var breadcrumbBox = document.querySelector("#breadcrumbBox");
+breadcrumbBox.style.display = "none";
+var breadcrumb = document.querySelector("#breadcrumb");
+breadcrumb.style.display = "none";
+var breadcrumb2 = document.querySelector("#breadcrumb2");
+breadcrumb2.style.display = "none";
+var breadcrumb3 = document.querySelector("#breadcrumb3");
+breadcrumb3.style.display = "none";
+var breadcrumbSeparater = document.querySelector("#breadcrumbSeparater");
+breadcrumbSeparater.style.display = "none";
+var breadcrumbSeparater2 = document.querySelector("#breadcrumbSeparater2");
+breadcrumbSeparater2.style.display = "none";
 var body1 = document.querySelector("#body1");
 body1.style.display = "block";
 var body2CS = document.querySelector("#body2CS");
@@ -63,17 +75,14 @@ firstMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
 
 		major+=(" ");
-
-		/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: major,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-		})*/
 
 	} else if (major == "se") {
 		body1.style.display = "none";
@@ -91,17 +100,14 @@ firstMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
 
 		major+=(" ");
-
-		/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: major,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-		})*/
 
 	} else if (major == "ma") {
 		body1.style.display = "none";
@@ -119,17 +125,15 @@ firstMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
 
 		major+=(" ");
 
-		/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: major,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-		})*/
 	} else if (major == "it") {
 		body1.style.display = "none";
 		body2CS.style.display = "none";
@@ -146,20 +150,42 @@ firstMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
 
 		major+=(" ");
 
-		/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: major,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-		})*/
 	}
 
-fetchString += major;
+	breadcrumb.onclick = function() {
+		body1.style.display = "block";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "block";
+		header.style.display = "none";
+		breadcrumbBox.style.display = "none";
+		breadcrumb.style.display = "none";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
+	}
+
+	fetchString += major;
 }
 
 secondMoveOn.onclick = function() {
@@ -178,6 +204,36 @@ secondMoveOn.onclick = function() {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "none";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "none";
+
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "block";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var csClasses = "";
 
@@ -368,14 +424,6 @@ secondMoveOn.onclick = function() {
 	}
 
 	csClasses+=(" ");
-
-	/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: 'item='+csClasses,
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-	})*/
 	fetchString += csClasses;
 }
 
@@ -395,6 +443,36 @@ secondMoveOnSE.onclick = function() {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "none";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "none";
+	
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "block";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var seClasses = "";
 
@@ -574,14 +652,6 @@ secondMoveOnSE.onclick = function() {
 
 	seClasses+=(" ");
 
-	/*fetch("http://localhost:8080/grad", {
-			method: "POST",
-			body: seClasses,
-			credentials: 'include',
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			}
-	});*/
 	fetchString += seClasses;
 }
 
@@ -601,6 +671,36 @@ secondMoveOnM.onclick = function () {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "none";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "none";
+	
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "block";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var maClasses = "";
 
@@ -803,6 +903,36 @@ secondMoveOnIT.onclick = function () {
 	maSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "none";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "none";
+	
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "block";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "none";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "none";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var itClasses = "";
 
@@ -983,6 +1113,36 @@ thirdMoveOn.onclick = function() {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "block";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "block";
+	
+	breadcrumb3.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "block";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var interestCSData = "";
 
@@ -1592,6 +1752,36 @@ thirdMoveOnSE.onclick = function() {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "block";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "block";
+	
+	breadcrumb3.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "block";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var seTrack = "";
 
@@ -2025,6 +2215,36 @@ thirdMoveOnM.onclick = function() {
 	itSchedule.style.display = "none";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "block";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "block";
+	
+	breadcrumb3.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "block";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var maElectives = "";
 
@@ -2507,6 +2727,36 @@ thirdMoveOnIT.onclick = function() {
 	itSchedule.style.display = "block";
 	introHeader.style.display = "none";
 	header.style.display = "block";
+	breadcrumbBox.style.display = "block";
+	breadcrumb.style.display = "block";
+	breadcrumb2.style.display = "block";
+	breadcrumb3.style.display = "block";
+	breadcrumbSeparater.style.display = "block";
+	breadcrumbSeparater2.style.display = "block";
+	
+	breadcrumb3.onclick = function() {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "block";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+	}
 
 	var itElectives = "";
 

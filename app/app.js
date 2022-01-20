@@ -2562,6 +2562,20 @@ thirdMoveOnIT.onclick = function() {
 		itElectives+=("IT-4990,");
 	}
 
+	//Math section
+
+	itElectives+=("|");
+
+	var itma1040e = document.getElementById("itma1040e");
+	if (itma1040e.checked) {
+		itElectives+=("MA-1040,");
+	}
+
+	var itma1050e = document.getElementById("itma1050e");
+	if (itma1050e.checked) {
+		itElectives+=("MA-1050,");
+	}
+
 	//NEW SECTION
 
 	itElectives+=("|");

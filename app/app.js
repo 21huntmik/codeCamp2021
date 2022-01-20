@@ -726,7 +726,7 @@ secondMoveOnM.onclick = function () {
 
 	var mPH2215 = document.getElementById("mPH2215");
 	if (mPH2215.checked) {
-		maClasses+=("PH-2215|");
+		maClasses+=("PH-2220|");
 	}
 
 	var m2200 = document.getElementById("m2200");

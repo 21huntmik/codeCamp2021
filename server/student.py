@@ -3,7 +3,7 @@ class Student:
         self.major = major
         self.completed = completedList
         self.requirements = requirementsList
-        self.currentSemester = 'S2022'
+        self.currentSemester = 'F2022'
         self.electives = electivesList
         self.UpperDivCount = 0
 
@@ -69,7 +69,7 @@ class Student:
             currentSemester = "S"
             currentYear = str(int(currentYear) + 1)
         self.currentSemester = currentSemester + str(currentYear)
-        print("New semester: " + self.currentSemester)
+        # print("New semester: " + self.currentSemester)
 
     def firstUpperDivCount(self):
         for i in self.completed:

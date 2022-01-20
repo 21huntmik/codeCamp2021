@@ -214,3 +214,71 @@ class seDB:
         courses = self.cursor.fetchall()
         # print(courses)
         return courses
+
+
+class itDB:
+    def __init__(self):
+        self.connection = sqlite3.connect("schedules.db")
+        self.connection.row_factory = dict_factory
+        self.cursor = self.connection.cursor()
+
+# READ ALL RECORDS FROM THE DATABASE
+    def getAllCourses(self):
+        self.cursor.execute("SELECT * FROM IT")
+        courses = self.cursor.fetchall()
+        return courses
+
+    def getOneCourse(self, number):
+        data = [number]
+        self.cursor.execute("SELECT * FROM IT WHERE Course = ?", data)
+        course = self.cursor.fetchone()
+        return course
+
+    def getCourseByCreditHour(self, desired_credits):
+        data = [desired_credits]
+        self.cursor.execute("SELECT * FROM IT WHERE Credits = ?", data)
+        course = self.cursor.fetchall()
+        return course
+
+    def getCourseCredits(self, course):
+        data = [course]
+        self.cursor.execute("SELECT credits FROM IT WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
+
+    def getCourseByOddYearFall(self):
+        data = ["TRUE"]
+        self.cursor.execute("SELECT course FROM IT WHERE oddFall = ?", data)
+        course = self.cursor.fetchall()
+        return course
+
+    def getCourseByOddYearSpring(self):
+        data = ["TRUE"]
+        self.cursor.execute("SELECT course FROM IT WHERE oddSpring = ?", data)
+        course = self.cursor.fetchall()
+        return course
+
+    def getCourseByEvenYearFall(self):
+        data = ["TRUE"]
+        self.cursor.execute("SELECT course FROM IT WHERE evenFall = ?", data)
+        course = self.cursor.fetchall()
+        return course
+
+    def getCourseByEvenYearSpring(self):
+        data = ["TRUE"]
+        self.cursor.execute("SELECT course FROM IT WHERE evenSpring = ?", data)
+        course = self.cursor.fetchall()
+        return course
+
+    def getPreReqs(self, course):
+        data = [course]
+        self.cursor.execute("SELECT prereqs FROM IT WHERE course = ?", data)
+        courses = self.cursor.fetchone()
+        return courses
+
+    def getRequiredCourses(self):
+        data = ["TRUE"]
+        self.cursor.execute("SELECT course FROM IT WHERE required = ?", data)
+        courses = self.cursor.fetchall()
+        # print(courses)
+        return courses

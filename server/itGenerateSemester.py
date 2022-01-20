@@ -1,4 +1,4 @@
-from database import csDB as csDB
+from database import itDB as itDB
 import student as std
 
 
@@ -7,8 +7,8 @@ def appendElectives(completed, choice):  # WORKS
     choice = choice[:-1]
     for i in choice:
         electivesList.append(i)
-        cs = csDB()
-        unfilteredCoursePrereqs = cs.getPreReqs(i)
+        it = itDB()
+        unfilteredCoursePrereqs = it.getPreReqs(i)
         print(unfilteredCoursePrereqs)
         if unfilteredCoursePrereqs is not None:
             unfilteredCoursePrereqs = unfilteredCoursePrereqs['prereqs']
@@ -35,16 +35,16 @@ def appendElectives(completed, choice):  # WORKS
 
 
 def makeStudent(completed, electiveChoice):
-    major = "CS"
+    major = "it"
     electives = appendElectives(completed, electiveChoice)
-    cs = csDB()
-    firstCSRequirements = cs.getRequiredCourses()
-    csRequirements = []
-    for i in firstCSRequirements:
+    it = itDB()
+    firstitRequirements = it.getRequiredCourses()
+    itRequirements = []
+    for i in firstitRequirements:
         if i['course'] not in completed:
-            csRequirements.append(i['course'])
+            itRequirements.append(i['course'])
     student = std.Student(major, completed,
-                          csRequirements, electives)
+                          itRequirements, electives)
     student.updateRequirements()
     return student
 
@@ -54,8 +54,8 @@ def preReqCheck(student, course):
     # if so, return True
     # else, return False
     #print("Printing course: " + str(course))
-    cs_db = csDB()
-    rawList = cs_db.getPreReqs(course)
+    it_db = itDB()
+    rawList = it_db.getPreReqs(course)
     #print("Raw list prereqs: " + str(rawList))
     cleanedList = []
     value = rawList['prereqs']
@@ -86,29 +86,29 @@ def isOffered(student, course):
     # else, return False
     # reformat semester/year listing as F or S or U + year
     offered_bool = True
-    cs_db = csDB()
-    #print("Printing odd fall:" + str(cs_db.getCourseByOddYearFall()))
+    it_db = itDB()
+    #print("Printing odd fall:" + str(it_db.getCourseByOddYearFall()))
     if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
         offered = []
-        for i in cs_db.getCourseByOddYearFall():
+        for i in it_db.getCourseByOddYearFall():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
     elif student.currentSemester[0] == "S" and (1 == int(student.currentSemester[1:]) % 2):
         offered = []
-        for i in cs_db.getCourseByOddYearSpring():
+        for i in it_db.getCourseByOddYearSpring():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
     elif student.currentSemester[0] == "F" and (0 == int(student.currentSemester[1:]) % 2):
         offered = []
-        for i in cs_db.getCourseByEvenYearFall():
+        for i in it_db.getCourseByEvenYearFall():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
     elif student.currentSemester[0] == "S" and (0 == int(student.currentSemester[1:]) % 2):
         offered = []
-        for i in cs_db.getCourseByEvenYearSpring():
+        for i in it_db.getCourseByEvenYearSpring():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
@@ -121,7 +121,7 @@ def generateSemester(student):
     # print(student.getRequirements())
     semesterCredits = 0
     semesterCourses = {}
-    cs_db = csDB()
+    it_db = itDB()
     tmpCredits = 0
     while semesterCredits < 16:
 
@@ -131,10 +131,10 @@ def generateSemester(student):
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):
-                    semesterCourses[course] = cs_db.getCourseCredits(course)
+                    semesterCourses[course] = it_db.getCourseCredits(course)
                     #print("Printing course: " + str(course))
                     student.removeRequirement(course)
-                    semesterCredits += cs_db.getCourseCredits(course)[
+                    semesterCredits += it_db.getCourseCredits(course)[
                         'credits']
         if tmpCredits == semesterCredits:
             break
@@ -163,7 +163,7 @@ def generatePlan(completed, electives):
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
         if len(student.requirements) <= 6:
-            student.completed.append("PECS-4600")
+            student.completed.append("PEit-4600")
         student.incrementSemester()
     #print("Printing plan")
     # print(plan)

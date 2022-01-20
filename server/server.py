@@ -4,6 +4,7 @@ import json
 import seGenerateSemester
 import csGenerateSemester
 import maGenerateSemester
+import itGenerateSemester
 
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -43,21 +44,22 @@ class MyHandler(BaseHTTPRequestHandler):
         #listItems = parsed_body[1]
         # print(listItems)
         inputComponents = listItems.split(' ')
-        #print("Printing inputComponents:")
-        # print(inputComponents)
-        # print("\n\n")
+        print("Printing inputComponents:")
+        print(inputComponents)
+        print("\n\n")
         major = inputComponents[0]
         #print("Printing major:")
         # print(major)
-        # print("\n\n")
-        electives = inputComponents[2]
-        #print("Printing electives:")
-        # print(electives)
         # print("\n\n")
         completed = inputComponents[1]
         #print("Printing completed:")
         # print(completed)
         # print("\n\n")
+        electives = inputComponents[2]
+        electives = electives.split('|')
+        print("Printing electives:")
+        print(electives)
+        print("\n\n")
         completed = completed.split("|")
         if major == "se":
             totalPlan = (seGenerateSemester.generatePlan(completed, electives))
@@ -65,6 +67,8 @@ class MyHandler(BaseHTTPRequestHandler):
             totalPlan = (csGenerateSemester.generatePlan(completed, electives))
         elif major == "ma":
             totalPlan = (maGenerateSemester.generatePlan(completed, electives))
+        elif major == "it":
+            totalPlan = (itGenerateSemester.generatePlan(completed, electives))
         # print("/n/n")
         # print(totalPlan)
         outputPlan = []

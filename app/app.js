@@ -704,6 +704,11 @@ secondMoveOnM.onclick = function () {
 
 	var maClasses = "";
 
+	var mCS1400 = document.getElementById("mCS1400");
+	if (mCS1400.checked) {
+		maClasses+=("CS-1400");
+	}
+
 	var m1210 = document.getElementById("m1210");
 	if (m1210.checked) {
 		maClasses+=("MA-1210|");
@@ -1866,7 +1871,7 @@ thirdMoveOnSE.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector(".seSchedule");
+			var wrapper = document.querySelector("#seSchedule");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 
@@ -2136,7 +2141,9 @@ thirdMoveOnSE.onclick = function() {
 					wrapper.appendChild(semester8);
 				}
 
-				console.log(data);
+			}
+
+			console.log(data);
 
 			var pdf = document.createElement("div");
 			pdf.style.width = "30%";
@@ -2194,7 +2201,6 @@ thirdMoveOnSE.onclick = function() {
 			    doc.output("dataurlnewwindow");
 			}
 
-			}
 		})
 	});
 }

@@ -1410,8 +1410,6 @@ thirdMoveOn.onclick = function() {
 			var semester8CreditCount = "";
 
 			var wrapper = document.querySelector("#fileBody");
-			wrapper.style.marginBottom = "2%";
-			wrapper.style.marginTop = "2%";
 
 			for (var x of schedule) {
 				console.log("In the for loop");

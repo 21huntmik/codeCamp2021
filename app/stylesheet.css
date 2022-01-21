@@ -367,4 +367,6 @@ select {
 	border-radius: 5px 5px 0px 0px;
 	background-color: #ebebeb;
 	margin-bottom: 5%;
+	padding: 3%;
+	padding-left: 5%;
 }

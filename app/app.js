@@ -183,6 +183,7 @@ firstMoveOn.onclick = function() {
 		breadcrumb3.style.display = "none";
 		breadcrumbSeparater.style.display = "none";
 		breadcrumbSeparater2.style.display = "none";
+		fetchString = "";
 	}
 
 	fetchString += major;
@@ -1408,7 +1409,7 @@ thirdMoveOn.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector("#csSchedule");
+			var wrapper = document.querySelector("#fileBody");
 			wrapper.style.marginBottom = "2%";
 			wrapper.style.marginTop = "2%";
 

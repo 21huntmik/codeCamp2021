@@ -28,13 +28,16 @@ rating INTEGER
 
 ### Current Bugs
 
-- [ ] No variability in CS final math course selection.
+- [x] No variability in CS final math course selection.
 
 
 ### Features Actively in Development
 - [ ] Allow functionality for IT major
-- [ ] Change CS from having theory/app dev elective choices to allowing full elective selection
-- [ ] Allow users to select which math class they would like to take
+- [x] Change CS from having theory/app dev elective choices to allowing full elective selection
+- [x] Allow users to select which math class they would like to take
+- [ ] 3 schedule permutation front end display prototype
+- [ ] "Desired Graduation Date" input (just front end, not functional)
+- [ ] Hover Descriptions
 
 ### Planned Features
 
@@ -47,5 +50,5 @@ rating INTEGER
 - [x] Add a course difficulty rating to all database
 - [ ] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
-- [ ] Allow users to go back a page
+- [x] Allow users to go back a page
 - [ ] With classes like Competitive Programming and Seminar in Computer Science, after the initial checkbox was marked, have a drop down radio button to see how many times the class was taken. This will help with schedule generation.

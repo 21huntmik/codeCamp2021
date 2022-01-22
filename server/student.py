@@ -6,6 +6,7 @@ class Student:
         self.currentSemester = 'F2022'
         self.electives = electivesList
         self.UpperDivCount = 0
+        self.totalPlanScore = 0
 
     def addCompleted(self, course):
         newCompleted = self.completed

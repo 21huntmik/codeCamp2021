@@ -125,11 +125,11 @@ def generateSemester(student):
     semesterCourses = {}
     cs_db = csDB()
     tmpCredits = 0
-    while semesterCredits < 16:
+    while semesterCredits < 17:
 
         #print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():
-            if semesterCredits >= 16:
+            if semesterCredits >= 17:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):

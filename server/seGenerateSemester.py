@@ -1,5 +1,6 @@
 from database import seDB as seDB
 import student as std
+import random as r
 
 
 def appendElectives(completed, choice):  # WORKS
@@ -164,6 +165,7 @@ def generatePlan(completed, electives):
     #print("Printing completed: " + str(completed))
     #print("Printing electives: " + str(electives))
     student = makeStudent(completed, electives)
+    r.shuffle(student.requirements)
     plan = {}
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)

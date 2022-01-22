@@ -1,5 +1,6 @@
 from database import itDB as itDB
 import student as std
+import random as r
 
 
 def appendElectives(completed, choice):  # WORKS
@@ -160,6 +161,7 @@ def generatePlan(completed, electives):
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         print(student.requirements)
+        r.shuffle(student.requirements)
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
         if len(student.requirements) <= 6:

@@ -1,5 +1,6 @@
 class Student:
-    def __init__(self, major, completedList, requirementsList, electivesList):
+    def __init__(self, studentID, major, completedList, requirementsList, electivesList):
+        self.studentID = studentID
         self.major = major
         self.completed = completedList
         self.requirements = requirementsList

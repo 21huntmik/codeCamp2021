@@ -36,7 +36,7 @@ def appendElectives(completed, choice):  # WORKS
     return finalAppend
 
 
-def makeStudent(completed, electiveChoice):
+def makeStudent(planNumber, completed, electiveChoice):
     major = "CS"
     electives = appendElectives(completed, electiveChoice)
     cs = csDB()
@@ -45,7 +45,7 @@ def makeStudent(completed, electiveChoice):
     for i in firstCSRequirements:
         if i['course'] not in completed:
             csRequirements.append(i['course'])
-    student = std.Student(major, completed,
+    student = std.Student(planNumber, major, completed,
                           csRequirements, electives)
     student.updateRequirements()
     return student
@@ -152,14 +152,14 @@ def generateSemester(student):
     return semesterCourses
 
 
-def generatePlan(completed, electives):
+def generatePlan(planNumber, completed, electives):
     # generate plan
     # return dictionary of semesters
     # key is semester
     # value is list of classes
     #print("Printing completed: " + str(completed))
     #print("Printing electives: " + str(electives))
-    student = makeStudent(completed, electives)
+    student = makeStudent(planNumber, completed, electives)
     plan = {}
     print("Printing student requirements preshuffle" +
           str(student.getRequirements()))

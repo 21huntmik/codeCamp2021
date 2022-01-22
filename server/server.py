@@ -67,8 +67,8 @@ class MyHandler(BaseHTTPRequestHandler):
                 totalPlan = (seGenerateSemester.generatePlan(
                     completed, electives))
             elif major == "cs":
-                totalPlan, planScore = (csGenerateSemester.generatePlan(
-                    completed, electives))
+                totalPlan, planScore = (csGenerateSemester.generatePlan(i,
+                                                                        completed, electives))
             elif major == "ma":
                 totalPlan = (maGenerateSemester.generatePlan(
                     completed, electives))
@@ -87,12 +87,14 @@ class MyHandler(BaseHTTPRequestHandler):
                     creditCount += totalPlan[semester][course]['credits']
                 currentSemesterList.append(f"Total credits: {creditCount}")
                 outputPlan.append(currentSemesterList)
-            setOfNPlans[planScore] = outputPlan
+            setOfNPlans[planScore+i] = outputPlan
         for i in setOfNPlans:
             print(f"Plan: {setOfNPlans[i]}")
             print(f"Score: {i}")
         sortedPlans = sorted(setOfNPlans.items())
-        finalThreePlans = sortedPlans[1:4]
+        finalThreePlans = []
+        for i in range(3):
+            finalThreePlans.append(sortedPlans[i+1])
         print("Printing finalThreePlans:")
         print(finalThreePlans)
         # print(outputPlan)

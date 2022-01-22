@@ -1754,6 +1754,7 @@ thirdMoveOn.onclick = function() {
 				schedule1button.style.backgroundColor = "#ebebeb";
 				schedule2button.style.backgroundColor = "#f1f1f1";
 				schedule3button.style.backgroundColor = "#f1f1f1";
+				wrapper.innerHTML = "";
 
 				for (var x of schedule1) {
 				console.log("In the for loop");
@@ -2085,6 +2086,7 @@ thirdMoveOn.onclick = function() {
 				schedule1button.style.backgroundColor = "#f1f1f1";
 				schedule2button.style.backgroundColor = "#ebebeb";
 				schedule3button.style.backgroundColor = "#f1f1f1";
+				wrapper.innerHTML = "";
 
 				for (var x of schedule2) {
 				console.log("In the for loop");
@@ -2416,6 +2418,7 @@ thirdMoveOn.onclick = function() {
 				schedule1button.style.backgroundColor = "#f1f1f1";
 				schedule2button.style.backgroundColor = "#f1f1f1";
 				schedule3button.style.backgroundColor = "#ebebeb";
+				wrapper.innerHTML = "";
 
 				for (var x of schedule3) {
 				console.log("In the for loop");

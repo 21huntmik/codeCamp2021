@@ -55,14 +55,14 @@ def preReqCheck(student, course):
     # check if preReq is satisfied
     # if so, return True
     # else, return False
-    #print("Printing course: " + str(course))
+    # print("Printing course: " + str(course))
     cs_db = csDB()
     rawList = cs_db.getPreReqs(course)
-    #print("Raw list prereqs: " + str(rawList))
+    # print("Raw list prereqs: " + str(rawList))
     cleanedList = []
     value = rawList['prereqs']
     cleanedList.append(value)
-    #print("Printing cleaned list: " + str(cleanedList))
+    # print("Printing cleaned list: " + str(cleanedList))
     if cleanedList[0] == None:
         cleanedList = cleanedList.remove(None)
         return True
@@ -89,7 +89,7 @@ def isOffered(student, course):
     # reformat semester/year listing as F or S or U + year
     offered_bool = True
     cs_db = csDB()
-    #print("Printing odd fall:" + str(cs_db.getCourseByOddYearFall()))
+    # print("Printing odd fall:" + str(cs_db.getCourseByOddYearFall()))
     if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
         offered = []
         for i in cs_db.getCourseByOddYearFall():
@@ -114,12 +114,12 @@ def isOffered(student, course):
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
-    #print("Printing offered: " + str(offered))
+    # print("Printing offered: " + str(offered))
     return offered_bool
 
 
 def generateSemester(student):
-    #print("Generating a semester")
+    # print("Generating a semester")
     # print(student.getRequirements())
     semesterCredits = 0
     semesterCourses = {}
@@ -127,14 +127,14 @@ def generateSemester(student):
     tmpCredits = 0
     while semesterCredits < 17:
 
-        #print("Printing Semester Courses: " + str(semesterCourses))
+        # print("Printing Semester Courses: " + str(semesterCourses))
         for course in student.getRequirements():
             if semesterCredits >= 17:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):
                     semesterCourses[course] = cs_db.getCourseCredits(course)
-                    #print("Printing course: " + str(course))
+                    # print("Printing course: " + str(course))
                     student.removeRequirement(course)
                     semesterCredits += cs_db.getCourseCredits(course)[
                         'credits']
@@ -147,7 +147,7 @@ def generateSemester(student):
 
     for course in semesterCourses:
         student.addCompleted(course)
-    student.totalPlanScore += (semesterCredits - 15) ** 3
+    student.totalPlanScore += ((semesterCredits - 15) ** 2)
     # print(semesterCourses)
     return semesterCourses
 
@@ -157,26 +157,26 @@ def generatePlan(planNumber, completed, electives):
     # return dictionary of semesters
     # key is semester
     # value is list of classes
-    #print("Printing completed: " + str(completed))
-    #print("Printing electives: " + str(electives))
+    # print("Printing completed: " + str(completed))
+    # print("Printing electives: " + str(electives))
     student = makeStudent(planNumber, completed, electives)
     plan = {}
-    print("Printing student requirements preshuffle" +
-          str(student.getRequirements()))
+    # print("Printing student requirements preshuffle" +
+    # str(student.getRequirements()))
     r.shuffle(student.requirements)
-    print("Printing student requirements postshuffle" +
-          str(student.getRequirements()))
+    # print("Printing student requirements postshuffle" +
+    # str(student.getRequirements()))
 
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         # print(student.requirements)
         plan[student.currentSemester] = semester
-        #print("Printing plan: " + str(plan))
+        # print("Printing plan: " + str(plan))
         if len(student.requirements) <= 6:
             student.completed.append("PECS-4600")
         student.incrementSemester()
-        student.totalPlanScore += 30
-    #print("Printing plan")
+        student.totalPlanScore += 100
+    # print("Printing plan")
     # print(plan)
     planScore = student.totalPlanScore
     return plan, planScore

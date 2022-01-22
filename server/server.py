@@ -62,13 +62,19 @@ class MyHandler(BaseHTTPRequestHandler):
         print("\n\n")
         completed = completed.split("|")
         setOfNPlans = {}
-        for i in range(5):
+        for i in range(100):
+            print("Printing major")
+            print(major)
+            print("Prnting completed: " + str(completed))
+            print("Printing electives: " + str(electives))
             if major == "se":
                 totalPlan = (seGenerateSemester.generatePlan(
                     completed, electives))
             elif major == "cs":
+                newCompleted = completed[:]
+                newElectives = electives[:]
                 totalPlan, planScore = (csGenerateSemester.generatePlan(i,
-                                                                        completed, electives))
+                                                                        newCompleted, newElectives))
             elif major == "ma":
                 totalPlan = (maGenerateSemester.generatePlan(
                     completed, electives))
@@ -76,8 +82,13 @@ class MyHandler(BaseHTTPRequestHandler):
                 totalPlan = (itGenerateSemester.generatePlan(
                     completed, electives))
             # print("/n/n")
-            # print(totalPlan)
+            print("Printing totalPlan:")
+            print(totalPlan)
+            print("Printing plan score:")
+            print(planScore)
             outputPlan = []
+
+            # Generates the printed out list in python
             for semester in totalPlan:
                 creditCount = 0
                 currentSemesterList = []
@@ -87,16 +98,18 @@ class MyHandler(BaseHTTPRequestHandler):
                     creditCount += totalPlan[semester][course]['credits']
                 currentSemesterList.append(f"Total credits: {creditCount}")
                 outputPlan.append(currentSemesterList)
-            setOfNPlans[planScore+i] = outputPlan
-        for i in setOfNPlans:
+
+            # Generates the list of dictionaries
+            setOfNPlans[planScore] = outputPlan
+
+        '''for i in setOfNPlans:
             print(f"Plan: {setOfNPlans[i]}")
-            print(f"Score: {i}")
+            print(f"Score: {i}")'''
         sortedPlans = sorted(setOfNPlans.items())
         finalThreePlans = []
-        for i in range(3):
-            finalThreePlans.append(sortedPlans[i])
-        print("Printing finalThreePlans:")
-        print(finalThreePlans)
+        finalThreePlans.append(sortedPlans[0:3])
+        # print("Printing finalThreePlans:")
+        # print(finalThreePlans)
         # print(outputPlan)
         # for i in outputPlan:
         # for x in i[:-1]:

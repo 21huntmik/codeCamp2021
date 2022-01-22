@@ -11,7 +11,7 @@ def appendElectives(completed, choice):  # WORKS
             electivesList.append(i)
         cs = csDB()
         unfilteredCoursePrereqs = cs.getPreReqs(i)
-        print(unfilteredCoursePrereqs)
+        # print(unfilteredCoursePrereqs)
         if unfilteredCoursePrereqs is not None:
             unfilteredCoursePrereqs = unfilteredCoursePrereqs['prereqs']
             if unfilteredCoursePrereqs is not None:
@@ -23,12 +23,12 @@ def appendElectives(completed, choice):  # WORKS
                     for j in unfilteredCoursePrereqs.split(';'):
                         if j not in completed:
                             choice.append(j)
-                            print("Appending elective: " + str(j))
+                            # print("Appending elective: " + str(j))
                 else:
                     for j in unfilteredCoursePrereqs.split(';'):
                         if j not in completed:
                             choice.append(j)
-                            print("Appending elective: " + str(j))
+                            # print("Appending elective: " + str(j))
     finalAppend = []
     for course in electivesList:
         if course not in completed:
@@ -138,8 +138,8 @@ def generateSemester(student):
                     student.removeRequirement(course)
                     semesterCredits += cs_db.getCourseCredits(course)[
                         'credits']
-                    student.totalPlanScore += (cs_db.getCourseRanking(
-                        course)['rating'] * cs_db.getCourseCredits(course)['credits'])
+                    # student.totalPlanScore += (cs_db.getCourseRanking(
+                    # course)['rating'] * cs_db.getCourseCredits(course)['credits'])
         if tmpCredits == semesterCredits:
             break
         else:
@@ -147,7 +147,7 @@ def generateSemester(student):
 
     for course in semesterCourses:
         student.addCompleted(course)
-
+    student.totalPlanScore += (semesterCredits - 15) ** 3
     # print(semesterCourses)
     return semesterCourses
 
@@ -169,7 +169,7 @@ def generatePlan(completed, electives):
 
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
-        print(student.requirements)
+        # print(student.requirements)
         plan[student.currentSemester] = semester
         #print("Printing plan: " + str(plan))
         if len(student.requirements) <= 6:

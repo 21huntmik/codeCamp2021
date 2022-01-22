@@ -40,6 +40,12 @@ class csDB:
         credits = self.cursor.fetchone()
         return credits
 
+    def getCourseRanking(self, course):
+        data = [course]
+        self.cursor.execute("SELECT rating FROM CS WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
+
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE oddFall = ?", data)

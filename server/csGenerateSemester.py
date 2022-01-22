@@ -138,6 +138,8 @@ def generateSemester(student):
                     student.removeRequirement(course)
                     semesterCredits += cs_db.getCourseCredits(course)[
                         'credits']
+                    student.totalPlanScore += (cs_db.getCourseRanking(
+                        course)['rating'] * cs_db.getCourseCredits(course)['credits'])
         if tmpCredits == semesterCredits:
             break
         else:
@@ -173,6 +175,8 @@ def generatePlan(completed, electives):
         if len(student.requirements) <= 6:
             student.completed.append("PECS-4600")
         student.incrementSemester()
+        student.totalPlanScore += 30
     #print("Printing plan")
     # print(plan)
-    return plan
+    planScore = student.totalPlanScore
+    return plan, planScore

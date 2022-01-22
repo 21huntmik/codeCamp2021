@@ -61,13 +61,13 @@ class MyHandler(BaseHTTPRequestHandler):
         print(electives)
         print("\n\n")
         completed = completed.split("|")
-        finalPlan = []
-        for i in range(3):
+        setOfNPlans = {}
+        for i in range(100):
             if major == "se":
                 totalPlan = (seGenerateSemester.generatePlan(
                     completed, electives))
             elif major == "cs":
-                totalPlan = (csGenerateSemester.generatePlan(
+                totalPlan, planScore = (csGenerateSemester.generatePlan(
                     completed, electives))
             elif major == "ma":
                 totalPlan = (maGenerateSemester.generatePlan(
@@ -87,17 +87,24 @@ class MyHandler(BaseHTTPRequestHandler):
                     creditCount += totalPlan[semester][course]['credits']
                 currentSemesterList.append(f"Total credits: {creditCount}")
                 outputPlan.append(currentSemesterList)
-            finalPlan.append(outputPlan)
+            setOfNPlans[planScore] = outputPlan
+        for i in setOfNPlans:
+            print(f"Plan: {setOfNPlans[i]}")
+            print(f"Score: {i}")
+        sortedPlans = sorted(setOfNPlans.items())
+        finalThreePlans = sortedPlans[1:4]
+        print("Printing finalThreePlans:")
+        print(finalThreePlans)
         # print(outputPlan)
         # for i in outputPlan:
-            # for x in i[:-1]:
-            # print(x)
-            # print(i[-1])
-            # print("\n\n")
+        # for x in i[:-1]:
+        # print(x)
+        # print(i[-1])
+        # print("\n\n")
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
-        self.wfile.write(bytes(json.dumps(finalPlan), "utf-8"))
+        self.wfile.write(bytes(json.dumps(finalThreePlans), "utf-8"))
 
     def getList(self):
         listItems = self.createList()

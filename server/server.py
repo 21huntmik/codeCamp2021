@@ -62,7 +62,7 @@ class MyHandler(BaseHTTPRequestHandler):
         print("\n\n")
         completed = completed.split("|")
         setOfNPlans = {}
-        for i in range(100):
+        for i in range(5):
             if major == "se":
                 totalPlan = (seGenerateSemester.generatePlan(
                     completed, electives))
@@ -94,7 +94,7 @@ class MyHandler(BaseHTTPRequestHandler):
         sortedPlans = sorted(setOfNPlans.items())
         finalThreePlans = []
         for i in range(3):
-            finalThreePlans.append(sortedPlans[i+1])
+            finalThreePlans.append(sortedPlans[i])
         print("Printing finalThreePlans:")
         print(finalThreePlans)
         # print(outputPlan)

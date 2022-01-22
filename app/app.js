@@ -183,6 +183,7 @@ firstMoveOn.onclick = function() {
 		breadcrumb3.style.display = "none";
 		breadcrumbSeparater.style.display = "none";
 		breadcrumbSeparater2.style.display = "none";
+		fetchString = "";
 	}
 
 	fetchString += major;
@@ -726,7 +727,7 @@ secondMoveOnM.onclick = function () {
 
 	var mPH2215 = document.getElementById("mPH2215");
 	if (mPH2215.checked) {
-		maClasses+=("PH-2215|");
+		maClasses+=("PH-2220|");
 	}
 
 	var m2200 = document.getElementById("m2200");
@@ -1408,9 +1409,7 @@ thirdMoveOn.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector("#csSchedule");
-			wrapper.style.marginBottom = "2%";
-			wrapper.style.marginTop = "2%";
+			var wrapper = document.querySelector("#fileBody");
 
 			for (var x of schedule) {
 				console.log("In the for loop");

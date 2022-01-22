@@ -1362,9 +1362,19 @@ thirdMoveOn.onclick = function() {
 		response.json().then(function (data) {
 			//format here
 			//3 x 3 grid
-			var schedule = data;
+			var schedules = data;
 			console.log("THIS IS FROM THE JAVASCRIPT");
-			console.log(schedule);
+			console.log(schedules);
+
+			var schedule1 = schedules[0];
+			var schedule2 = schedules[1];
+			var schedule3 = schedules[2];
+			console.log("1");
+			console.log(schedule1);
+			console.log("2");
+			console.log(schedule2);
+			console.log("3");
+			console.log(schedule3);
 
 			//to access data from the server... use the following functions
 				//indexing values (0 & -1)
@@ -1410,8 +1420,11 @@ thirdMoveOn.onclick = function() {
 			var semester8CreditCount = "";
 
 			var wrapper = document.querySelector("#fileBody");
+			var schedule1button = document.querySelector("#fileLabel1");
+			var schedule2button = document.querySelector("#fileLabel2");
+			var schedule3button = document.querySelector("#fileLabel3");
 
-			for (var x of schedule) {
+			for (var x of schedule1) {
 				console.log("In the for loop");
 				console.log(x);
 				semesterCount += 1;
@@ -1736,6 +1749,999 @@ thirdMoveOn.onclick = function() {
 			    doc.output("dataurlnewwindow");
 			}
 			
+
+			schedule1button.onclick = function() {
+				schedule1button.style.backgroundColor = "#ebebeb";
+				schedule2button.style.backgroundColor = "#f1f1f1";
+				schedule3button.style.backgroundColor = "#f1f1f1";
+
+				for (var x of schedule1) {
+				console.log("In the for loop");
+				console.log(x);
+				semesterCount += 1;
+				console.log(semesterCount);
+				var loopSemester = x;
+				//loopSemester is the list with the current semester info
+				//index to store, pop and shift to remove and leave everything else for class list
+				if (semesterCount == 1) {
+					semester1HeaderContent = loopSemester[0];
+					console.log(semester1HeaderContent);
+					var length = loopSemester.length;
+					semester1CreditCount = loopSemester[length - 1];
+					console.log(semester1CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester1Classes = loopSemester;
+					console.log(semester1Classes);
+					var semester1 = document.createElement("div");
+					semester1.style.width = "30%";
+					semester1.style.height = "30%";
+					semester1.style.margin = "5px";
+					semester1.style.border = "thin solid #e3e3e3";
+					semester1.style.float = "left";
+					var semester1Header = document.createElement("h2");
+					semester1Header.innerHTML = semester1HeaderContent;
+					semester1Header.style.marginBottom = "0px";
+					semester1Header.style.marginTop = "2%";
+					semester1Header.style.textAlign = "center";
+					var semester1p = document.createElement("p");
+					semester1p.innerHTML = semester1Classes;
+					semester1p.style.marginRight = "15px";
+					semester1p.style.marginLeft = "15px";
+					var semester1Credits = document.createElement("h4");
+					semester1Credits.innerHTML = semester1CreditCount;
+					semester1Credits.style.textAlign = "center";
+					semester1.appendChild(semester1Header);
+					semester1.appendChild(semester1p);
+					semester1.appendChild(semester1Credits);
+					wrapper.appendChild(semester1);
+				} else if (semesterCount == 2) {
+					semester2HeaderContent = loopSemester[0];
+					console.log(semester2HeaderContent);
+					var length = loopSemester.length;
+					semester2CreditCount = loopSemester[length - 1];
+					console.log(semester2CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester2Classes = loopSemester;
+					console.log(semester2Classes);
+					var semester2 = document.createElement("div");
+					semester2.style.width = "30%";
+					semester2.style.height = "30%";
+					semester2.style.margin = "5px";
+					semester2.style.border = "thin solid #e3e3e3";
+					semester2.style.float = "left";
+					var semester2Header = document.createElement("h2");
+					semester2Header.innerHTML = semester2HeaderContent;
+					semester2Header.style.marginBottom = "0px";
+					semester2Header.style.marginTop = "2%";
+					semester2Header.style.textAlign = "center";
+					var semester2p = document.createElement("p");
+					semester2p.innerHTML = semester2Classes;
+					semester2p.style.marginRight = "15px";
+					semester2p.style.marginLeft = "15px";
+					var semester2Credits = document.createElement("h4");
+					semester2Credits.innerHTML = semester2CreditCount;
+					semester2Credits.style.textAlign = "center";
+					semester2.appendChild(semester2Header);
+					semester2.appendChild(semester2p);
+					semester2.appendChild(semester2Credits);
+					wrapper.appendChild(semester2);
+				} else if (semesterCount == 3) {
+					semester3HeaderContent = loopSemester[0];
+					console.log(semester3HeaderContent);
+					var length = loopSemester.length;
+					semester3CreditCount = loopSemester[length - 1];
+					console.log(semester3CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester3Classes = loopSemester;
+					console.log(semester3Classes);
+					var semester3 = document.createElement("div");
+					semester3.style.width = "30%";
+					semester3.style.height = "30%";
+					semester3.style.margin = "5px";
+					semester3.style.border = "thin solid #e3e3e3";
+					semester3.style.float = "left";
+					var semester3Header = document.createElement("h2");
+					semester3Header.innerHTML = semester3HeaderContent;
+					semester3Header.style.marginBottom = "0px";
+					semester3Header.style.marginTop = "2%";
+					semester3Header.style.textAlign = "center";
+					var semester3p = document.createElement("p");
+					semester3p.innerHTML = semester3Classes;
+					semester3p.style.marginRight = "15px";
+					semester3p.style.marginLeft = "15px";
+					var semester3Credits = document.createElement("h4");
+					semester3Credits.innerHTML = semester3CreditCount;
+					semester3Credits.style.textAlign = "center";
+					semester3.appendChild(semester3Header);
+					semester3.appendChild(semester3p);
+					semester3.appendChild(semester3Credits);
+					wrapper.appendChild(semester3);
+				} else if (semesterCount == 4) {
+					semester4HeaderContent = loopSemester[0];
+					console.log(semester4HeaderContent);
+					var length = loopSemester.length;
+					semester4CreditCount = loopSemester[length - 1];
+					console.log(semester4CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester4Classes = loopSemester;
+					console.log(semester4Classes);
+					var semester4 = document.createElement("div");
+					semester4.style.width = "30%";
+					semester4.style.height = "30%";
+					semester4.style.margin = "5px";
+					semester4.style.border = "thin solid #e3e3e3";
+					semester4.style.float = "left";
+					var semester4Header = document.createElement("h2");
+					semester4Header.innerHTML = semester4HeaderContent;
+					semester4Header.style.marginBottom = "0px";
+					semester4Header.style.marginTop = "2%";
+					semester4Header.style.textAlign = "center";
+					var semester4p = document.createElement("p");
+					semester4p.innerHTML = semester4Classes;
+					semester4p.style.marginRight = "15px";
+					semester4p.style.marginLeft = "15px";
+					var semester4Credits = document.createElement("h4");
+					semester4Credits.innerHTML = semester4CreditCount;
+					semester4Credits.style.textAlign = "center";
+					semester4.appendChild(semester4Header);
+					semester4.appendChild(semester4p);
+					semester4.appendChild(semester4Credits);
+					wrapper.appendChild(semester4);
+				} else if (semesterCount == 5) {
+					semester5HeaderContent = loopSemester[0];
+					console.log(semester5HeaderContent);
+					var length = loopSemester.length;
+					semester5CreditCount = loopSemester[length - 1];
+					console.log(semester5CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester5Classes = loopSemester;
+					console.log(semester5Classes);
+					var semester5 = document.createElement("div");
+					semester5.style.width = "30%";
+					semester5.style.height = "30%";
+					semester5.style.margin = "5px";
+					semester5.style.border = "thin solid #e3e3e3";
+					semester5.style.float = "left";
+					var semester5Header = document.createElement("h2");
+					semester5Header.innerHTML = semester5HeaderContent;
+					semester5Header.style.marginBottom = "0px";
+					semester5Header.style.marginTop = "2%";
+					semester5Header.style.textAlign = "center";
+					var semester5p = document.createElement("p");
+					semester5p.innerHTML = semester5Classes;
+					semester5p.style.marginRight = "15px";
+					semester5p.style.marginLeft = "15px";
+					var semester5Credits = document.createElement("h4");
+					semester5Credits.innerHTML = semester5CreditCount;
+					semester5Credits.style.textAlign = "center";
+					semester5.appendChild(semester5Header);
+					semester5.appendChild(semester5p);
+					semester5.appendChild(semester5Credits);
+					wrapper.appendChild(semester5);
+				} else if (semesterCount == 6) {
+					semester6HeaderContent = loopSemester[0];
+					console.log(semester6HeaderContent);
+					var length = loopSemester.length;
+					semester6CreditCount = loopSemester[length - 1];
+					console.log(semester6CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester6Classes = loopSemester;
+					console.log(semester6Classes);
+					var semester6 = document.createElement("div");
+					semester6.style.width = "30%";
+					semester6.style.height = "30%";
+					semester6.style.margin = "5px";
+					semester6.style.border = "thin solid #e3e3e3";
+					semester6.style.float = "left";
+					var semester6Header = document.createElement("h2");
+					semester6Header.innerHTML = semester6HeaderContent;
+					semester6Header.style.marginBottom = "0px";
+					semester6Header.style.marginTop = "2%";
+					semester6Header.style.textAlign = "center";
+					var semester6p = document.createElement("p");
+					semester6p.innerHTML = semester6Classes;
+					semester6p.style.marginRight = "15px";
+					semester6p.style.marginLeft = "15px";
+					var semester6Credits = document.createElement("h4");
+					semester6Credits.innerHTML = semester6CreditCount;
+					semester6Credits.style.textAlign = "center";
+					semester6.appendChild(semester6Header);
+					semester6.appendChild(semester6p);
+					semester6.appendChild(semester6Credits);
+					wrapper.appendChild(semester6);
+				} else if (semesterCount == 7) {
+					semester7HeaderContent = loopSemester[0];
+					console.log(semester7HeaderContent);
+					var length = loopSemester.length;
+					semester7CreditCount = loopSemester[length - 1];
+					console.log(semester7CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester7Classes = loopSemester;
+					console.log(semester7Classes);
+					var semester7 = document.createElement("div");
+					semester7.style.width = "30%";
+					semester7.style.height = "30%";
+					semester7.style.margin = "5px";
+					semester7.style.border = "thin solid #e3e3e3";
+					semester7.style.float = "left";
+					var semester7Header = document.createElement("h2");
+					semester7Header.innerHTML = semester7HeaderContent;
+					semester7Header.style.marginBottom = "0px";
+					semester7Header.style.marginTop = "2%";
+					semester7Header.style.textAlign = "center";
+					var semester7p = document.createElement("p");
+					semester7p.innerHTML = semester7Classes;
+					semester7p.style.marginRight = "15px";
+					semester7p.style.marginLeft = "15px";
+					var semester7Credits = document.createElement("h4");
+					semester7Credits.innerHTML = semester7CreditCount;
+					semester7Credits.style.textAlign = "center";
+					semester7.appendChild(semester7Header);
+					semester7.appendChild(semester7p);
+					semester7.appendChild(semester7Credits);
+					wrapper.appendChild(semester7);
+				} else if (semesterCount == 8) {
+					semester8HeaderContent = loopSemester[0];
+					console.log(semester8HeaderContent);
+					var length = loopSemester.length;
+					semester8CreditCount = loopSemester[length - 1];
+					console.log(semester8CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester8Classes = loopSemester;
+					console.log(semester8Classes);
+					var semester8 = document.createElement("div");
+					semester8.style.width = "30%";
+					semester8.style.height = "30%";
+					semester8.style.margin = "5px";
+					semester8.style.border = "thin solid #e3e3e3";
+					semester8.style.float = "left";
+					var semester8Header = document.createElement("h2");
+					semester8Header.innerHTML = semester8HeaderContent;
+					semester8Header.style.marginBottom = "0px";
+					semester8Header.style.marginTop = "2%";
+					semester8Header.style.textAlign = "center";
+					var semester8p = document.createElement("p");
+					semester8p.innerHTML = semester8Classes;
+					semester8p.style.marginRight = "15px";
+					semester8p.style.marginLeft = "15px";
+					var semester8Credits = document.createElement("h4");
+					semester8Credits.innerHTML = semester8CreditCount;
+					semester8Credits.style.textAlign = "center";
+					semester8.appendChild(semester8Header);
+					semester8.appendChild(semester8p);
+					semester8.appendChild(semester8Credits)
+					wrapper.appendChild(semester8);
+				}
+				}
+
+				console.log(data);
+
+				var pdf = document.createElement("div");
+				pdf.style.width = "30%";
+				pdf.style.height = "30%";
+				pdf.style.margin = "5px";
+				pdf.style.float = "left";
+				var pdfButton = document.createElement("button");
+				pdfButton.style.backgroundColor = "#BA1C21";
+				pdfButton.style.border = "none";
+				pdfButton.style.color = "white";
+				pdfButton.style.textAlign = "center";
+				pdfButton.style.paddingRight = "15px";
+				pdfButton.style.paddingLeft = "15px";
+				pdfButton.style.textDecoration = "none";
+				pdfButton.style.marginRight = "auto";
+				pdfButton.style.marginLeft = "auto";
+				pdfButton.innerHTML = "Export PDF";
+				pdf.appendChild(pdfButton);
+				wrapper.appendChild(pdf);
+
+				pdfButton.onclick = function() {
+					var doc = new jsPDF();
+					if (semester1HeaderContent.length > 0) {
+					    doc.text(20, 20, semester1HeaderContent);
+					    doc.text(40, 20, semester1Classes);
+					}
+					if (semester2HeaderContent.length > 0) {
+						doc.text(80, 20, semester2HeaderContent);
+						doc.text(100, 20, semester2Classes);
+					}
+				    if (semester3HeaderContent.length > 0) {
+				    	doc.text(140, 20, semester3HeaderContent);
+				    	doc.text(160, 20, semester3Classes);
+				    }
+				    if (semester4HeaderContent.length > 0) {
+				    	doc.text(20, 60, semester4HeaderContent);
+				    	doc.text(40, 60, semester4Classes);
+				    }
+				    if (semester5HeaderContent.length > 0) {
+				    	doc.text(80, 60, semester5HeaderContent);
+				    	doc.text(100, 60, semester5Classes);
+				    }
+				    if (semester6HeaderContent.length > 0) {
+				    	doc.text(140, 60, semester6HeaderContent);
+				    	doc.text(160, 60, semester6Classes);
+				    }
+				    if (semester7HeaderContent.length > 0) {
+				    	doc.text(20, 100, semester7HeaderContent);
+				    	doc.text(40, 100, semester7Classes);
+				    }
+				    if (semester8HeaderContent.length > 0) {
+				    	doc.text(80, 100, semester8HeaderContent);
+				    	doc.text(100, 100, semester8Classes);
+				    }
+				    doc.output("dataurlnewwindow");
+				}
+			}
+
+			schedule2button.onclick = function() {
+				schedule1button.style.backgroundColor = "#f1f1f1";
+				schedule2button.style.backgroundColor = "#ebebeb";
+				schedule3button.style.backgroundColor = "#f1f1f1";
+
+				for (var x of schedule2) {
+				console.log("In the for loop");
+				console.log(x);
+				semesterCount += 1;
+				console.log(semesterCount);
+				var loopSemester = x;
+				//loopSemester is the list with the current semester info
+				//index to store, pop and shift to remove and leave everything else for class list
+				if (semesterCount == 1) {
+					semester1HeaderContent = loopSemester[0];
+					console.log(semester1HeaderContent);
+					var length = loopSemester.length;
+					semester1CreditCount = loopSemester[length - 1];
+					console.log(semester1CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester1Classes = loopSemester;
+					console.log(semester1Classes);
+					var semester1 = document.createElement("div");
+					semester1.style.width = "30%";
+					semester1.style.height = "30%";
+					semester1.style.margin = "5px";
+					semester1.style.border = "thin solid #e3e3e3";
+					semester1.style.float = "left";
+					var semester1Header = document.createElement("h2");
+					semester1Header.innerHTML = semester1HeaderContent;
+					semester1Header.style.marginBottom = "0px";
+					semester1Header.style.marginTop = "2%";
+					semester1Header.style.textAlign = "center";
+					var semester1p = document.createElement("p");
+					semester1p.innerHTML = semester1Classes;
+					semester1p.style.marginRight = "15px";
+					semester1p.style.marginLeft = "15px";
+					var semester1Credits = document.createElement("h4");
+					semester1Credits.innerHTML = semester1CreditCount;
+					semester1Credits.style.textAlign = "center";
+					semester1.appendChild(semester1Header);
+					semester1.appendChild(semester1p);
+					semester1.appendChild(semester1Credits);
+					wrapper.appendChild(semester1);
+				} else if (semesterCount == 2) {
+					semester2HeaderContent = loopSemester[0];
+					console.log(semester2HeaderContent);
+					var length = loopSemester.length;
+					semester2CreditCount = loopSemester[length - 1];
+					console.log(semester2CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester2Classes = loopSemester;
+					console.log(semester2Classes);
+					var semester2 = document.createElement("div");
+					semester2.style.width = "30%";
+					semester2.style.height = "30%";
+					semester2.style.margin = "5px";
+					semester2.style.border = "thin solid #e3e3e3";
+					semester2.style.float = "left";
+					var semester2Header = document.createElement("h2");
+					semester2Header.innerHTML = semester2HeaderContent;
+					semester2Header.style.marginBottom = "0px";
+					semester2Header.style.marginTop = "2%";
+					semester2Header.style.textAlign = "center";
+					var semester2p = document.createElement("p");
+					semester2p.innerHTML = semester2Classes;
+					semester2p.style.marginRight = "15px";
+					semester2p.style.marginLeft = "15px";
+					var semester2Credits = document.createElement("h4");
+					semester2Credits.innerHTML = semester2CreditCount;
+					semester2Credits.style.textAlign = "center";
+					semester2.appendChild(semester2Header);
+					semester2.appendChild(semester2p);
+					semester2.appendChild(semester2Credits);
+					wrapper.appendChild(semester2);
+				} else if (semesterCount == 3) {
+					semester3HeaderContent = loopSemester[0];
+					console.log(semester3HeaderContent);
+					var length = loopSemester.length;
+					semester3CreditCount = loopSemester[length - 1];
+					console.log(semester3CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester3Classes = loopSemester;
+					console.log(semester3Classes);
+					var semester3 = document.createElement("div");
+					semester3.style.width = "30%";
+					semester3.style.height = "30%";
+					semester3.style.margin = "5px";
+					semester3.style.border = "thin solid #e3e3e3";
+					semester3.style.float = "left";
+					var semester3Header = document.createElement("h2");
+					semester3Header.innerHTML = semester3HeaderContent;
+					semester3Header.style.marginBottom = "0px";
+					semester3Header.style.marginTop = "2%";
+					semester3Header.style.textAlign = "center";
+					var semester3p = document.createElement("p");
+					semester3p.innerHTML = semester3Classes;
+					semester3p.style.marginRight = "15px";
+					semester3p.style.marginLeft = "15px";
+					var semester3Credits = document.createElement("h4");
+					semester3Credits.innerHTML = semester3CreditCount;
+					semester3Credits.style.textAlign = "center";
+					semester3.appendChild(semester3Header);
+					semester3.appendChild(semester3p);
+					semester3.appendChild(semester3Credits);
+					wrapper.appendChild(semester3);
+				} else if (semesterCount == 4) {
+					semester4HeaderContent = loopSemester[0];
+					console.log(semester4HeaderContent);
+					var length = loopSemester.length;
+					semester4CreditCount = loopSemester[length - 1];
+					console.log(semester4CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester4Classes = loopSemester;
+					console.log(semester4Classes);
+					var semester4 = document.createElement("div");
+					semester4.style.width = "30%";
+					semester4.style.height = "30%";
+					semester4.style.margin = "5px";
+					semester4.style.border = "thin solid #e3e3e3";
+					semester4.style.float = "left";
+					var semester4Header = document.createElement("h2");
+					semester4Header.innerHTML = semester4HeaderContent;
+					semester4Header.style.marginBottom = "0px";
+					semester4Header.style.marginTop = "2%";
+					semester4Header.style.textAlign = "center";
+					var semester4p = document.createElement("p");
+					semester4p.innerHTML = semester4Classes;
+					semester4p.style.marginRight = "15px";
+					semester4p.style.marginLeft = "15px";
+					var semester4Credits = document.createElement("h4");
+					semester4Credits.innerHTML = semester4CreditCount;
+					semester4Credits.style.textAlign = "center";
+					semester4.appendChild(semester4Header);
+					semester4.appendChild(semester4p);
+					semester4.appendChild(semester4Credits);
+					wrapper.appendChild(semester4);
+				} else if (semesterCount == 5) {
+					semester5HeaderContent = loopSemester[0];
+					console.log(semester5HeaderContent);
+					var length = loopSemester.length;
+					semester5CreditCount = loopSemester[length - 1];
+					console.log(semester5CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester5Classes = loopSemester;
+					console.log(semester5Classes);
+					var semester5 = document.createElement("div");
+					semester5.style.width = "30%";
+					semester5.style.height = "30%";
+					semester5.style.margin = "5px";
+					semester5.style.border = "thin solid #e3e3e3";
+					semester5.style.float = "left";
+					var semester5Header = document.createElement("h2");
+					semester5Header.innerHTML = semester5HeaderContent;
+					semester5Header.style.marginBottom = "0px";
+					semester5Header.style.marginTop = "2%";
+					semester5Header.style.textAlign = "center";
+					var semester5p = document.createElement("p");
+					semester5p.innerHTML = semester5Classes;
+					semester5p.style.marginRight = "15px";
+					semester5p.style.marginLeft = "15px";
+					var semester5Credits = document.createElement("h4");
+					semester5Credits.innerHTML = semester5CreditCount;
+					semester5Credits.style.textAlign = "center";
+					semester5.appendChild(semester5Header);
+					semester5.appendChild(semester5p);
+					semester5.appendChild(semester5Credits);
+					wrapper.appendChild(semester5);
+				} else if (semesterCount == 6) {
+					semester6HeaderContent = loopSemester[0];
+					console.log(semester6HeaderContent);
+					var length = loopSemester.length;
+					semester6CreditCount = loopSemester[length - 1];
+					console.log(semester6CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester6Classes = loopSemester;
+					console.log(semester6Classes);
+					var semester6 = document.createElement("div");
+					semester6.style.width = "30%";
+					semester6.style.height = "30%";
+					semester6.style.margin = "5px";
+					semester6.style.border = "thin solid #e3e3e3";
+					semester6.style.float = "left";
+					var semester6Header = document.createElement("h2");
+					semester6Header.innerHTML = semester6HeaderContent;
+					semester6Header.style.marginBottom = "0px";
+					semester6Header.style.marginTop = "2%";
+					semester6Header.style.textAlign = "center";
+					var semester6p = document.createElement("p");
+					semester6p.innerHTML = semester6Classes;
+					semester6p.style.marginRight = "15px";
+					semester6p.style.marginLeft = "15px";
+					var semester6Credits = document.createElement("h4");
+					semester6Credits.innerHTML = semester6CreditCount;
+					semester6Credits.style.textAlign = "center";
+					semester6.appendChild(semester6Header);
+					semester6.appendChild(semester6p);
+					semester6.appendChild(semester6Credits);
+					wrapper.appendChild(semester6);
+				} else if (semesterCount == 7) {
+					semester7HeaderContent = loopSemester[0];
+					console.log(semester7HeaderContent);
+					var length = loopSemester.length;
+					semester7CreditCount = loopSemester[length - 1];
+					console.log(semester7CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester7Classes = loopSemester;
+					console.log(semester7Classes);
+					var semester7 = document.createElement("div");
+					semester7.style.width = "30%";
+					semester7.style.height = "30%";
+					semester7.style.margin = "5px";
+					semester7.style.border = "thin solid #e3e3e3";
+					semester7.style.float = "left";
+					var semester7Header = document.createElement("h2");
+					semester7Header.innerHTML = semester7HeaderContent;
+					semester7Header.style.marginBottom = "0px";
+					semester7Header.style.marginTop = "2%";
+					semester7Header.style.textAlign = "center";
+					var semester7p = document.createElement("p");
+					semester7p.innerHTML = semester7Classes;
+					semester7p.style.marginRight = "15px";
+					semester7p.style.marginLeft = "15px";
+					var semester7Credits = document.createElement("h4");
+					semester7Credits.innerHTML = semester7CreditCount;
+					semester7Credits.style.textAlign = "center";
+					semester7.appendChild(semester7Header);
+					semester7.appendChild(semester7p);
+					semester7.appendChild(semester7Credits);
+					wrapper.appendChild(semester7);
+				} else if (semesterCount == 8) {
+					semester8HeaderContent = loopSemester[0];
+					console.log(semester8HeaderContent);
+					var length = loopSemester.length;
+					semester8CreditCount = loopSemester[length - 1];
+					console.log(semester8CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester8Classes = loopSemester;
+					console.log(semester8Classes);
+					var semester8 = document.createElement("div");
+					semester8.style.width = "30%";
+					semester8.style.height = "30%";
+					semester8.style.margin = "5px";
+					semester8.style.border = "thin solid #e3e3e3";
+					semester8.style.float = "left";
+					var semester8Header = document.createElement("h2");
+					semester8Header.innerHTML = semester8HeaderContent;
+					semester8Header.style.marginBottom = "0px";
+					semester8Header.style.marginTop = "2%";
+					semester8Header.style.textAlign = "center";
+					var semester8p = document.createElement("p");
+					semester8p.innerHTML = semester8Classes;
+					semester8p.style.marginRight = "15px";
+					semester8p.style.marginLeft = "15px";
+					var semester8Credits = document.createElement("h4");
+					semester8Credits.innerHTML = semester8CreditCount;
+					semester8Credits.style.textAlign = "center";
+					semester8.appendChild(semester8Header);
+					semester8.appendChild(semester8p);
+					semester8.appendChild(semester8Credits)
+					wrapper.appendChild(semester8);
+				}
+				}
+
+				console.log(data);
+
+				var pdf = document.createElement("div");
+				pdf.style.width = "30%";
+				pdf.style.height = "30%";
+				pdf.style.margin = "5px";
+				pdf.style.float = "left";
+				var pdfButton = document.createElement("button");
+				pdfButton.style.backgroundColor = "#BA1C21";
+				pdfButton.style.border = "none";
+				pdfButton.style.color = "white";
+				pdfButton.style.textAlign = "center";
+				pdfButton.style.paddingRight = "15px";
+				pdfButton.style.paddingLeft = "15px";
+				pdfButton.style.textDecoration = "none";
+				pdfButton.style.marginRight = "auto";
+				pdfButton.style.marginLeft = "auto";
+				pdfButton.innerHTML = "Export PDF";
+				pdf.appendChild(pdfButton);
+				wrapper.appendChild(pdf);
+
+				pdfButton.onclick = function() {
+					var doc = new jsPDF();
+					if (semester1HeaderContent.length > 0) {
+					    doc.text(20, 20, semester1HeaderContent);
+					    doc.text(40, 20, semester1Classes);
+					}
+					if (semester2HeaderContent.length > 0) {
+						doc.text(80, 20, semester2HeaderContent);
+						doc.text(100, 20, semester2Classes);
+					}
+				    if (semester3HeaderContent.length > 0) {
+				    	doc.text(140, 20, semester3HeaderContent);
+				    	doc.text(160, 20, semester3Classes);
+				    }
+				    if (semester4HeaderContent.length > 0) {
+				    	doc.text(20, 60, semester4HeaderContent);
+				    	doc.text(40, 60, semester4Classes);
+				    }
+				    if (semester5HeaderContent.length > 0) {
+				    	doc.text(80, 60, semester5HeaderContent);
+				    	doc.text(100, 60, semester5Classes);
+				    }
+				    if (semester6HeaderContent.length > 0) {
+				    	doc.text(140, 60, semester6HeaderContent);
+				    	doc.text(160, 60, semester6Classes);
+				    }
+				    if (semester7HeaderContent.length > 0) {
+				    	doc.text(20, 100, semester7HeaderContent);
+				    	doc.text(40, 100, semester7Classes);
+				    }
+				    if (semester8HeaderContent.length > 0) {
+				    	doc.text(80, 100, semester8HeaderContent);
+				    	doc.text(100, 100, semester8Classes);
+				    }
+				    doc.output("dataurlnewwindow");
+				}
+			}
+
+			schedule3button.onclick = function() {
+				schedule1button.style.backgroundColor = "#f1f1f1";
+				schedule2button.style.backgroundColor = "#f1f1f1";
+				schedule3button.style.backgroundColor = "#ebebeb";
+
+				for (var x of schedule3) {
+				console.log("In the for loop");
+				console.log(x);
+				semesterCount += 1;
+				console.log(semesterCount);
+				var loopSemester = x;
+				//loopSemester is the list with the current semester info
+				//index to store, pop and shift to remove and leave everything else for class list
+				if (semesterCount == 1) {
+					semester1HeaderContent = loopSemester[0];
+					console.log(semester1HeaderContent);
+					var length = loopSemester.length;
+					semester1CreditCount = loopSemester[length - 1];
+					console.log(semester1CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester1Classes = loopSemester;
+					console.log(semester1Classes);
+					var semester1 = document.createElement("div");
+					semester1.style.width = "30%";
+					semester1.style.height = "30%";
+					semester1.style.margin = "5px";
+					semester1.style.border = "thin solid #e3e3e3";
+					semester1.style.float = "left";
+					var semester1Header = document.createElement("h2");
+					semester1Header.innerHTML = semester1HeaderContent;
+					semester1Header.style.marginBottom = "0px";
+					semester1Header.style.marginTop = "2%";
+					semester1Header.style.textAlign = "center";
+					var semester1p = document.createElement("p");
+					semester1p.innerHTML = semester1Classes;
+					semester1p.style.marginRight = "15px";
+					semester1p.style.marginLeft = "15px";
+					var semester1Credits = document.createElement("h4");
+					semester1Credits.innerHTML = semester1CreditCount;
+					semester1Credits.style.textAlign = "center";
+					semester1.appendChild(semester1Header);
+					semester1.appendChild(semester1p);
+					semester1.appendChild(semester1Credits);
+					wrapper.appendChild(semester1);
+				} else if (semesterCount == 2) {
+					semester2HeaderContent = loopSemester[0];
+					console.log(semester2HeaderContent);
+					var length = loopSemester.length;
+					semester2CreditCount = loopSemester[length - 1];
+					console.log(semester2CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester2Classes = loopSemester;
+					console.log(semester2Classes);
+					var semester2 = document.createElement("div");
+					semester2.style.width = "30%";
+					semester2.style.height = "30%";
+					semester2.style.margin = "5px";
+					semester2.style.border = "thin solid #e3e3e3";
+					semester2.style.float = "left";
+					var semester2Header = document.createElement("h2");
+					semester2Header.innerHTML = semester2HeaderContent;
+					semester2Header.style.marginBottom = "0px";
+					semester2Header.style.marginTop = "2%";
+					semester2Header.style.textAlign = "center";
+					var semester2p = document.createElement("p");
+					semester2p.innerHTML = semester2Classes;
+					semester2p.style.marginRight = "15px";
+					semester2p.style.marginLeft = "15px";
+					var semester2Credits = document.createElement("h4");
+					semester2Credits.innerHTML = semester2CreditCount;
+					semester2Credits.style.textAlign = "center";
+					semester2.appendChild(semester2Header);
+					semester2.appendChild(semester2p);
+					semester2.appendChild(semester2Credits);
+					wrapper.appendChild(semester2);
+				} else if (semesterCount == 3) {
+					semester3HeaderContent = loopSemester[0];
+					console.log(semester3HeaderContent);
+					var length = loopSemester.length;
+					semester3CreditCount = loopSemester[length - 1];
+					console.log(semester3CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester3Classes = loopSemester;
+					console.log(semester3Classes);
+					var semester3 = document.createElement("div");
+					semester3.style.width = "30%";
+					semester3.style.height = "30%";
+					semester3.style.margin = "5px";
+					semester3.style.border = "thin solid #e3e3e3";
+					semester3.style.float = "left";
+					var semester3Header = document.createElement("h2");
+					semester3Header.innerHTML = semester3HeaderContent;
+					semester3Header.style.marginBottom = "0px";
+					semester3Header.style.marginTop = "2%";
+					semester3Header.style.textAlign = "center";
+					var semester3p = document.createElement("p");
+					semester3p.innerHTML = semester3Classes;
+					semester3p.style.marginRight = "15px";
+					semester3p.style.marginLeft = "15px";
+					var semester3Credits = document.createElement("h4");
+					semester3Credits.innerHTML = semester3CreditCount;
+					semester3Credits.style.textAlign = "center";
+					semester3.appendChild(semester3Header);
+					semester3.appendChild(semester3p);
+					semester3.appendChild(semester3Credits);
+					wrapper.appendChild(semester3);
+				} else if (semesterCount == 4) {
+					semester4HeaderContent = loopSemester[0];
+					console.log(semester4HeaderContent);
+					var length = loopSemester.length;
+					semester4CreditCount = loopSemester[length - 1];
+					console.log(semester4CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester4Classes = loopSemester;
+					console.log(semester4Classes);
+					var semester4 = document.createElement("div");
+					semester4.style.width = "30%";
+					semester4.style.height = "30%";
+					semester4.style.margin = "5px";
+					semester4.style.border = "thin solid #e3e3e3";
+					semester4.style.float = "left";
+					var semester4Header = document.createElement("h2");
+					semester4Header.innerHTML = semester4HeaderContent;
+					semester4Header.style.marginBottom = "0px";
+					semester4Header.style.marginTop = "2%";
+					semester4Header.style.textAlign = "center";
+					var semester4p = document.createElement("p");
+					semester4p.innerHTML = semester4Classes;
+					semester4p.style.marginRight = "15px";
+					semester4p.style.marginLeft = "15px";
+					var semester4Credits = document.createElement("h4");
+					semester4Credits.innerHTML = semester4CreditCount;
+					semester4Credits.style.textAlign = "center";
+					semester4.appendChild(semester4Header);
+					semester4.appendChild(semester4p);
+					semester4.appendChild(semester4Credits);
+					wrapper.appendChild(semester4);
+				} else if (semesterCount == 5) {
+					semester5HeaderContent = loopSemester[0];
+					console.log(semester5HeaderContent);
+					var length = loopSemester.length;
+					semester5CreditCount = loopSemester[length - 1];
+					console.log(semester5CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester5Classes = loopSemester;
+					console.log(semester5Classes);
+					var semester5 = document.createElement("div");
+					semester5.style.width = "30%";
+					semester5.style.height = "30%";
+					semester5.style.margin = "5px";
+					semester5.style.border = "thin solid #e3e3e3";
+					semester5.style.float = "left";
+					var semester5Header = document.createElement("h2");
+					semester5Header.innerHTML = semester5HeaderContent;
+					semester5Header.style.marginBottom = "0px";
+					semester5Header.style.marginTop = "2%";
+					semester5Header.style.textAlign = "center";
+					var semester5p = document.createElement("p");
+					semester5p.innerHTML = semester5Classes;
+					semester5p.style.marginRight = "15px";
+					semester5p.style.marginLeft = "15px";
+					var semester5Credits = document.createElement("h4");
+					semester5Credits.innerHTML = semester5CreditCount;
+					semester5Credits.style.textAlign = "center";
+					semester5.appendChild(semester5Header);
+					semester5.appendChild(semester5p);
+					semester5.appendChild(semester5Credits);
+					wrapper.appendChild(semester5);
+				} else if (semesterCount == 6) {
+					semester6HeaderContent = loopSemester[0];
+					console.log(semester6HeaderContent);
+					var length = loopSemester.length;
+					semester6CreditCount = loopSemester[length - 1];
+					console.log(semester6CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester6Classes = loopSemester;
+					console.log(semester6Classes);
+					var semester6 = document.createElement("div");
+					semester6.style.width = "30%";
+					semester6.style.height = "30%";
+					semester6.style.margin = "5px";
+					semester6.style.border = "thin solid #e3e3e3";
+					semester6.style.float = "left";
+					var semester6Header = document.createElement("h2");
+					semester6Header.innerHTML = semester6HeaderContent;
+					semester6Header.style.marginBottom = "0px";
+					semester6Header.style.marginTop = "2%";
+					semester6Header.style.textAlign = "center";
+					var semester6p = document.createElement("p");
+					semester6p.innerHTML = semester6Classes;
+					semester6p.style.marginRight = "15px";
+					semester6p.style.marginLeft = "15px";
+					var semester6Credits = document.createElement("h4");
+					semester6Credits.innerHTML = semester6CreditCount;
+					semester6Credits.style.textAlign = "center";
+					semester6.appendChild(semester6Header);
+					semester6.appendChild(semester6p);
+					semester6.appendChild(semester6Credits);
+					wrapper.appendChild(semester6);
+				} else if (semesterCount == 7) {
+					semester7HeaderContent = loopSemester[0];
+					console.log(semester7HeaderContent);
+					var length = loopSemester.length;
+					semester7CreditCount = loopSemester[length - 1];
+					console.log(semester7CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester7Classes = loopSemester;
+					console.log(semester7Classes);
+					var semester7 = document.createElement("div");
+					semester7.style.width = "30%";
+					semester7.style.height = "30%";
+					semester7.style.margin = "5px";
+					semester7.style.border = "thin solid #e3e3e3";
+					semester7.style.float = "left";
+					var semester7Header = document.createElement("h2");
+					semester7Header.innerHTML = semester7HeaderContent;
+					semester7Header.style.marginBottom = "0px";
+					semester7Header.style.marginTop = "2%";
+					semester7Header.style.textAlign = "center";
+					var semester7p = document.createElement("p");
+					semester7p.innerHTML = semester7Classes;
+					semester7p.style.marginRight = "15px";
+					semester7p.style.marginLeft = "15px";
+					var semester7Credits = document.createElement("h4");
+					semester7Credits.innerHTML = semester7CreditCount;
+					semester7Credits.style.textAlign = "center";
+					semester7.appendChild(semester7Header);
+					semester7.appendChild(semester7p);
+					semester7.appendChild(semester7Credits);
+					wrapper.appendChild(semester7);
+				} else if (semesterCount == 8) {
+					semester8HeaderContent = loopSemester[0];
+					console.log(semester8HeaderContent);
+					var length = loopSemester.length;
+					semester8CreditCount = loopSemester[length - 1];
+					console.log(semester8CreditCount);
+					loopSemester.pop();
+					loopSemester.shift();
+					semester8Classes = loopSemester;
+					console.log(semester8Classes);
+					var semester8 = document.createElement("div");
+					semester8.style.width = "30%";
+					semester8.style.height = "30%";
+					semester8.style.margin = "5px";
+					semester8.style.border = "thin solid #e3e3e3";
+					semester8.style.float = "left";
+					var semester8Header = document.createElement("h2");
+					semester8Header.innerHTML = semester8HeaderContent;
+					semester8Header.style.marginBottom = "0px";
+					semester8Header.style.marginTop = "2%";
+					semester8Header.style.textAlign = "center";
+					var semester8p = document.createElement("p");
+					semester8p.innerHTML = semester8Classes;
+					semester8p.style.marginRight = "15px";
+					semester8p.style.marginLeft = "15px";
+					var semester8Credits = document.createElement("h4");
+					semester8Credits.innerHTML = semester8CreditCount;
+					semester8Credits.style.textAlign = "center";
+					semester8.appendChild(semester8Header);
+					semester8.appendChild(semester8p);
+					semester8.appendChild(semester8Credits)
+					wrapper.appendChild(semester8);
+				}
+				}
+
+				console.log(data);
+
+				var pdf = document.createElement("div");
+				pdf.style.width = "30%";
+				pdf.style.height = "30%";
+				pdf.style.margin = "5px";
+				pdf.style.float = "left";
+				var pdfButton = document.createElement("button");
+				pdfButton.style.backgroundColor = "#BA1C21";
+				pdfButton.style.border = "none";
+				pdfButton.style.color = "white";
+				pdfButton.style.textAlign = "center";
+				pdfButton.style.paddingRight = "15px";
+				pdfButton.style.paddingLeft = "15px";
+				pdfButton.style.textDecoration = "none";
+				pdfButton.style.marginRight = "auto";
+				pdfButton.style.marginLeft = "auto";
+				pdfButton.innerHTML = "Export PDF";
+				pdf.appendChild(pdfButton);
+				wrapper.appendChild(pdf);
+
+				pdfButton.onclick = function() {
+					var doc = new jsPDF();
+					if (semester1HeaderContent.length > 0) {
+					    doc.text(20, 20, semester1HeaderContent);
+					    doc.text(40, 20, semester1Classes);
+					}
+					if (semester2HeaderContent.length > 0) {
+						doc.text(80, 20, semester2HeaderContent);
+						doc.text(100, 20, semester2Classes);
+					}
+				    if (semester3HeaderContent.length > 0) {
+				    	doc.text(140, 20, semester3HeaderContent);
+				    	doc.text(160, 20, semester3Classes);
+				    }
+				    if (semester4HeaderContent.length > 0) {
+				    	doc.text(20, 60, semester4HeaderContent);
+				    	doc.text(40, 60, semester4Classes);
+				    }
+				    if (semester5HeaderContent.length > 0) {
+				    	doc.text(80, 60, semester5HeaderContent);
+				    	doc.text(100, 60, semester5Classes);
+				    }
+				    if (semester6HeaderContent.length > 0) {
+				    	doc.text(140, 60, semester6HeaderContent);
+				    	doc.text(160, 60, semester6Classes);
+				    }
+				    if (semester7HeaderContent.length > 0) {
+				    	doc.text(20, 100, semester7HeaderContent);
+				    	doc.text(40, 100, semester7Classes);
+				    }
+				    if (semester8HeaderContent.length > 0) {
+				    	doc.text(80, 100, semester8HeaderContent);
+				    	doc.text(100, 100, semester8Classes);
+				    }
+				    doc.output("dataurlnewwindow");
+				}
+			}
 		})
 	});
 }

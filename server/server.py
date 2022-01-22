@@ -61,26 +61,33 @@ class MyHandler(BaseHTTPRequestHandler):
         print(electives)
         print("\n\n")
         completed = completed.split("|")
-        if major == "se":
-            totalPlan = (seGenerateSemester.generatePlan(completed, electives))
-        elif major == "cs":
-            totalPlan = (csGenerateSemester.generatePlan(completed, electives))
-        elif major == "ma":
-            totalPlan = (maGenerateSemester.generatePlan(completed, electives))
-        elif major == "it":
-            totalPlan = (itGenerateSemester.generatePlan(completed, electives))
-        # print("/n/n")
-        # print(totalPlan)
-        outputPlan = []
-        for semester in totalPlan:
-            creditCount = 0
-            currentSemesterList = []
-            currentSemesterList.append(semester)
-            for course in totalPlan[semester]:
-                currentSemesterList.append(f" {course}")
-                creditCount += totalPlan[semester][course]['credits']
-            currentSemesterList.append(f"Total credits: {creditCount}")
-            outputPlan.append(currentSemesterList)
+        finalPlan = []
+        for i in range(3):
+            if major == "se":
+                totalPlan = (seGenerateSemester.generatePlan(
+                    completed, electives))
+            elif major == "cs":
+                totalPlan = (csGenerateSemester.generatePlan(
+                    completed, electives))
+            elif major == "ma":
+                totalPlan = (maGenerateSemester.generatePlan(
+                    completed, electives))
+            elif major == "it":
+                totalPlan = (itGenerateSemester.generatePlan(
+                    completed, electives))
+            # print("/n/n")
+            # print(totalPlan)
+            outputPlan = []
+            for semester in totalPlan:
+                creditCount = 0
+                currentSemesterList = []
+                currentSemesterList.append(semester)
+                for course in totalPlan[semester]:
+                    currentSemesterList.append(f" {course}")
+                    creditCount += totalPlan[semester][course]['credits']
+                currentSemesterList.append(f"Total credits: {creditCount}")
+                outputPlan.append(currentSemesterList)
+            finalPlan.append(outputPlan)
         # print(outputPlan)
         # for i in outputPlan:
             # for x in i[:-1]:
@@ -90,7 +97,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
-        self.wfile.write(bytes(json.dumps(outputPlan), "utf-8"))
+        self.wfile.write(bytes(json.dumps(finalPlan), "utf-8"))
 
     def getList(self):
         listItems = self.createList()

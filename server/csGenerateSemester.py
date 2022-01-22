@@ -1,5 +1,6 @@
 from database import csDB as csDB
 import student as std
+import random as r
 
 
 def appendElectives(completed, choice):  # WORKS
@@ -158,6 +159,12 @@ def generatePlan(completed, electives):
     #print("Printing electives: " + str(electives))
     student = makeStudent(completed, electives)
     plan = {}
+    print("Printing student requirements preshuffle" +
+          str(student.getRequirements()))
+    r.shuffle(student.requirements)
+    print("Printing student requirements postshuffle" +
+          str(student.getRequirements()))
+
     while len(student.getRequirements()) > 0:
         semester = generateSemester(student)
         print(student.requirements)

@@ -14,7 +14,7 @@ def appendElectives(major, completed, choice):  # WORKS
             electivesList = ['SE-3600', 'SE-3100', 'SE-3450']
         elif choice == "data":
             electivesList = ['CS-4300', 'CS-4320', 'IT-4070']
-            return electivesList
+        return electivesList
     else:
         return choice[:-1]
 

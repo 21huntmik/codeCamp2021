@@ -19,8 +19,7 @@ class csDB:
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
         self.cursor.execute("SELECT * FROM CS")
-        courses = self.cursor.fetchall()
-        return courses
+        return self.cursor.fetchall()
 
     def getOneCourse(self, number):
         data = [number]
@@ -31,8 +30,7 @@ class csDB:
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
         self.cursor.execute("SELECT * FROM CS WHERE Credits = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseCredits(self, course):
         data = [course]
@@ -49,38 +47,32 @@ class csDB:
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE oddFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE oddSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE evenFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE evenSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getPreReqs(self, course):
         data = [course]
         self.cursor.execute("SELECT prereqs FROM CS WHERE course = ?", data)
-        courses = self.cursor.fetchone()
-        return courses
+        return self.cursor.fetchone()
 
     def getRequiredCourses(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM CS WHERE required = ?", data)
         courses = self.cursor.fetchall()
-        # print(courses)
         return courses
 
 
@@ -94,8 +86,7 @@ class maDB:
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
         self.cursor.execute("SELECT * FROM MA")
-        courses = self.cursor.fetchall()
-        return courses
+        return self.cursor.fetchall()
 
     def getOneCourse(self, number):
         data = [number]
@@ -112,8 +103,7 @@ class maDB:
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
         self.cursor.execute("SELECT * FROM MA WHERE Credits = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseCredits(self, course):
         data = [course]
@@ -124,38 +114,32 @@ class maDB:
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM MA WHERE oddFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM MA WHERE oddSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM MA WHERE evenFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM MA WHERE evenSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getPreReqs(self, course):
         data = [course]
         self.cursor.execute("SELECT prereqs FROM MA WHERE course = ?", data)
-        courses = self.cursor.fetchone()
-        return courses
+        return self.cursor.fetchone()
 
     def getRequiredCourses(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM MA WHERE required = ?", data)
         courses = self.cursor.fetchall()
-        # print(courses)
         return courses
 
 
@@ -168,8 +152,7 @@ class seDB:
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
         self.cursor.execute("SELECT * FROM SE")
-        courses = self.cursor.fetchall()
-        return courses
+        return self.cursor.fetchall()
 
     def getOneCourse(self, number):
         data = [number]
@@ -180,8 +163,7 @@ class seDB:
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
         self.cursor.execute("SELECT * FROM SE WHERE Credits = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseRanking(self, course):
         data = [course]
@@ -198,39 +180,32 @@ class seDB:
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM SE WHERE oddFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM SE WHERE oddSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM SE WHERE evenFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM SE WHERE evenSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getPreReqs(self, course):
         data = [course]
         self.cursor.execute("SELECT prereqs FROM SE WHERE course = ?", data)
-        courses = self.cursor.fetchone()
-        return courses
+        return self.cursor.fetchone()
 
     def getRequiredCourses(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM SE WHERE required = ?", data)
-        courses = self.cursor.fetchall()
-        # print(courses)
-        return courses
+        return self.cursor.fetchall()
 
 
 class itDB:
@@ -242,20 +217,17 @@ class itDB:
 # READ ALL RECORDS FROM THE DATABASE
     def getAllCourses(self):
         self.cursor.execute("SELECT * FROM IT")
-        courses = self.cursor.fetchall()
-        return courses
+        return self.cursor.fetchall()
 
     def getOneCourse(self, number):
         data = [number]
         self.cursor.execute("SELECT * FROM IT WHERE Course = ?", data)
-        course = self.cursor.fetchone()
-        return course
+        return self.cursor.fetchone()
 
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
         self.cursor.execute("SELECT * FROM IT WHERE Credits = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseRanking(self, course):
         data = [course]
@@ -272,36 +244,29 @@ class itDB:
     def getCourseByOddYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM IT WHERE oddFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByOddYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM IT WHERE oddSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearFall(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM IT WHERE evenFall = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getCourseByEvenYearSpring(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM IT WHERE evenSpring = ?", data)
-        course = self.cursor.fetchall()
-        return course
+        return self.cursor.fetchall()
 
     def getPreReqs(self, course):
         data = [course]
         self.cursor.execute("SELECT prereqs FROM IT WHERE course = ?", data)
-        courses = self.cursor.fetchone()
-        return courses
+        return self.cursor.fetchone()
 
     def getRequiredCourses(self):
         data = ["TRUE"]
         self.cursor.execute("SELECT course FROM IT WHERE required = ?", data)
-        courses = self.cursor.fetchall()
-        # print(courses)
-        return courses
+        return self.cursor.fetchall()

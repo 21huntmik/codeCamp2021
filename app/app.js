@@ -1400,15 +1400,9 @@ thirdMoveOn.onclick = function() {
 			console.log("THIS IS FROM THE JAVASCRIPT");
 			console.log(schedules);
 
-			var schedule1 = schedules[0];
-			var schedule2 = schedules[1];
-			var schedule3 = schedules[2];
-			console.log("1");
-			console.log(schedule1);
-			console.log("2");
-			console.log(schedule2);
-			console.log("3");
-			console.log(schedule3);
+			var schedule1Main = schedules[0];
+			var schedule2Main = schedules[1];
+			var schedule3Main = schedules[2];
 
 			//to access data from the server... use the following functions
 				//indexing values (0 & -1)
@@ -1458,9 +1452,12 @@ thirdMoveOn.onclick = function() {
 			var schedule2button = document.querySelector("#fileLabel2");
 			var schedule3button = document.querySelector("#fileLabel3");
 
-			for (var x of schedule1) {
+			let schedule1Start = $.extend(true, [], schedule1Main);
+
+			for (var x of schedule1Start) {
 				console.log("In the for loop");
 				console.log(x);
+				semesterCount = 0;
 				semesterCount += 1;
 				console.log(semesterCount);
 				var loopSemester = x;
@@ -1789,6 +1786,13 @@ thirdMoveOn.onclick = function() {
 				schedule2button.style.backgroundColor = "#f1f1f1";
 				schedule3button.style.backgroundColor = "#f1f1f1";
 				wrapper.innerHTML = "";
+
+				console.log("LOOPING");
+				console.log(schedule1Main);
+
+				semesterCount = 0;
+
+				let schedule1 = $.extend(true, [], schedule1Main);
 
 				for (var x of schedule1) {
 				console.log("In the for loop");
@@ -2122,6 +2126,13 @@ thirdMoveOn.onclick = function() {
 				schedule3button.style.backgroundColor = "#f1f1f1";
 				wrapper.innerHTML = "";
 
+				console.log("LOOPING");
+				console.log(schedule2Main);
+
+				semesterCount = 0;
+
+				let schedule2 = $.extend(true, [], schedule2Main);
+
 				for (var x of schedule2) {
 				console.log("In the for loop");
 				console.log(x);
@@ -2453,6 +2464,13 @@ thirdMoveOn.onclick = function() {
 				schedule2button.style.backgroundColor = "#f1f1f1";
 				schedule3button.style.backgroundColor = "#ebebeb";
 				wrapper.innerHTML = "";
+
+				console.log("LOOPING");
+				console.log("schedule3Main");
+
+				semesterCount = 0;
+
+				let schedule3 = $.extend(true, [], schedule3Main);
 
 				for (var x of schedule3) {
 				console.log("In the for loop");

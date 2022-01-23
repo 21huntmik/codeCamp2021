@@ -100,7 +100,7 @@ class MyHandler(BaseHTTPRequestHandler):
                 outputPlan.append(currentSemesterList)
 
             # Generates the list of dictionaries
-            setOfNPlans[planScore+i] = outputPlan
+            setOfNPlans[planScore+(i/100)] = outputPlan
 
         '''for i in setOfNPlans:
             print(f"Plan: {setOfNPlans[i]}")
@@ -110,11 +110,14 @@ class MyHandler(BaseHTTPRequestHandler):
         finalThreePlans.append(sortedPlans[0:3])
         print("Printing finalThreePlans:")
         print(finalThreePlans)
-        final = []
+        final = finalThreePlans[0]
         for i in finalThreePlans:
-            final.append(i[1][1])
+            final.append(i[1][1][1])
         print("Printing final:")
         print(final)
+        finalFinal = []
+        for i in final:
+            finalFinal.append(i[1])
         # print("Printing finalThreePlans:")
         # print(finalThreePlans)
         # print(outputPlan)
@@ -126,7 +129,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
-        self.wfile.write(bytes(json.dumps(final), "utf-8"))
+        self.wfile.write(bytes(json.dumps(finalFinal), "utf-8"))
 
     def getList(self):
         listItems = self.createList()

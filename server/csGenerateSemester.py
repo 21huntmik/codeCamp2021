@@ -138,8 +138,8 @@ def generateSemester(student):
                     student.removeRequirement(course)
                     semesterCredits += cs_db.getCourseCredits(course)[
                         'credits']
-                    # student.totalPlanScore += (cs_db.getCourseRanking(
-                    # course)['rating'] * cs_db.getCourseCredits(course)['credits'])
+                    student.totalPlanScore += (cs_db.getCourseRanking(
+                        course)['rating'] * cs_db.getCourseCredits(course)['credits'])
         if tmpCredits == semesterCredits:
             break
         else:

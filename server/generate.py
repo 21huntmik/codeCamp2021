@@ -5,6 +5,7 @@ import random as r
 
 def appendElectives(major, completed, choice):  # WORKS
     if major == 'se':
+        choice = choice[0]
         if choice == "ent":
             electivesList = ['SE-3500', 'SE-3550', 'MK-4200']
         elif choice == "devops":

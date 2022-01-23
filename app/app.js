@@ -2,6 +2,21 @@ $.getScript("./jsPDFolder/jspdf.js", function() {
    alert("Script loaded but not necessarily executed.");
 });
 
+function copy(aObject) {
+  if (!aObject) {
+    return aObject;
+  }
+
+  let v;
+  let bObject = Array.isArray(aObject) ? [] : {};
+  for (const k in aObject) {
+    v = aObject[k];
+    bObject[k] = (typeof v === "object") ? copy(v) : v;
+  }
+
+  return bObject;
+}
+
 var firstMoveOn = document.querySelector(".firstMoveOn");
 var secondMoveOn = document.querySelector(".secondMoveOn");
 var secondMoveOnSE = document.querySelector(".secondMoveOnSE");
@@ -1452,7 +1467,7 @@ thirdMoveOn.onclick = function() {
 			var schedule2button = document.querySelector("#fileLabel2");
 			var schedule3button = document.querySelector("#fileLabel3");
 
-			let schedule1Start = $.extend(true, [], schedule1Main);
+			let schedule1Start = copy(schedule1Main);
 
 			for (var x of schedule1Start) {
 				console.log("In the for loop");
@@ -1792,7 +1807,7 @@ thirdMoveOn.onclick = function() {
 
 				semesterCount = 0;
 
-				let schedule1 = $.extend(true, [], schedule1Main);
+				let schedule1 = copy(schedule1Main);
 
 				for (var x of schedule1) {
 				console.log("In the for loop");
@@ -2131,7 +2146,7 @@ thirdMoveOn.onclick = function() {
 
 				semesterCount = 0;
 
-				let schedule2 = $.extend(true, [], schedule2Main);
+				let schedule2 = copy(schedule2Main);
 
 				for (var x of schedule2) {
 				console.log("In the for loop");
@@ -2470,7 +2485,7 @@ thirdMoveOn.onclick = function() {
 
 				semesterCount = 0;
 
-				let schedule3 = $.extend(true, [], schedule3Main);
+				let schedule3 = copy(schedule3Main);
 
 				for (var x of schedule3) {
 				console.log("In the for loop");

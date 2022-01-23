@@ -31,22 +31,10 @@ class MyHandler(BaseHTTPRequestHandler):
         body = self.rfile.read(length).decode('utf-8')
         listItems = body
         inputComponents = listItems.split(' ')
-        print("Printing inputComponents:")
-        print(inputComponents)
-        print("\n\n")
         major = inputComponents[0]
-        #print("Printing major:")
-        # print(major)
-        # print("\n\n")
         completed = inputComponents[1]
-        #print("Printing completed:")
-        # print(completed)
-        # print("\n\n")
         electives = inputComponents[2]
         electives = electives.split('|')
-        print("Printing electives:")
-        print(electives)
-        print("\n\n")
         completed = completed.split("|")
         setOfNPlans = {}
         for i in range(100):
@@ -76,8 +64,6 @@ class MyHandler(BaseHTTPRequestHandler):
         final = finalThreePlans[0]
         for i in finalThreePlans:
             final.append(i[1][1][1])
-        print("Printing final:")
-        print(final)
         finalFinal = []
         for i in final:
             finalFinal.append(i[1])

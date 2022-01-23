@@ -1,4 +1,4 @@
-from database import csDB as csDB, maDB as maDB, itDB as itDB, seDB as seDB
+from database import tableDB as tDB
 import student as std
 import random as r
 
@@ -24,14 +24,7 @@ def extendedPrereq(major, completed, choice):
     for i in electivesFirst:
         if i not in electivesList:
             electivesList.append(i)
-        if major == 'cs':
-            my_db = csDB()
-        if major == 'ma':
-            my_db = maDB()
-        if major == 'it':
-            my_db = itDB()
-        if major == 'se':
-            my_db = seDB()
+        my_db = tDB(major)
         unfilteredCoursePrereqs = my_db.getPreReqs(i)
         if unfilteredCoursePrereqs is not None:
             unfilteredCoursePrereqs = unfilteredCoursePrereqs['prereqs']
@@ -56,17 +49,7 @@ def extendedPrereq(major, completed, choice):
 
 
 def makeStudent(planNumber, major, completed, electiveChoice):
-    if major == 'cs':
-        my_db = csDB()
-
-    if major == 'ma':
-        my_db = maDB()
-
-    if major == 'it':
-        my_db = itDB()
-
-    if major == 'se':
-        my_db = seDB()
+    my_db = tDB(major)
 
     electives = extendedPrereq(major, completed, electiveChoice)
 
@@ -86,17 +69,7 @@ def preReqCheck(student, course):
     # if so, return True
     # else, return False
     major = student.major
-    if major == 'cs':
-        my_db = csDB()
-
-    if major == 'ma':
-        my_db = maDB()
-
-    if major == 'it':
-        my_db = itDB()
-
-    if major == 'se':
-        my_db = seDB()
+    my_db = tDB(major)
     rawList = my_db.getPreReqs(course)
     cleanedList = []
     value = rawList['prereqs']
@@ -127,17 +100,7 @@ def isOffered(student, course):
     # reformat semester/year listing as F or S or U + year
     offered_bool = True
     major = student.major
-    if major == 'cs':
-        my_db = csDB()
-
-    if major == 'ma':
-        my_db = maDB()
-
-    if major == 'it':
-        my_db = itDB()
-
-    if major == 'se':
-        my_db = seDB()
+    my_db = tDB(major)
     currSem, currYear = student.currentSemester.split('-')
     if currSem == "Fall" and (1 == int(currYear) % 2):
         offered = []
@@ -170,17 +133,7 @@ def generateSemester(student):
     semesterCredits = 0
     semesterCourses = {}
     major = student.major
-    if major == 'cs':
-        my_db = csDB()
-
-    if major == 'ma':
-        my_db = maDB()
-
-    if major == 'it':
-        my_db = itDB()
-
-    if major == 'se':
-        my_db = seDB()
+    my_db = tDB(major)
     tmpCredits = 0
     while semesterCredits < 17:
 

@@ -424,6 +424,40 @@ secondMoveOn.onclick = function() {
 		csClasses+=("PH-2210|");
 	}
 
+	var csIt2700 = document.getElementById("csIt2700");
+	if (csIt2700.checked) {
+		csClasses+=("IT-2700|");
+	}
+
+	var csIt3100 = document.getElementById("csIt3100");
+	if (csIt3100.checked) {
+		csClasses+=("IT-3100|");
+	}
+
+
+	var csIt3110 = document.getElementById("csIt3110");
+	if (csIt3110.checked) {
+		csClasses+=("IT-3110|");
+	}
+
+
+	var csIt4200 = document.getElementById("csIt4200");
+	if (csIt4200.checked) {
+		csClasses+=("IT-4200|");
+	}
+
+
+	var csSe1400 = document.getElementById("csSe1400");
+	if (csSe1400.checked) {
+		csClasses+=("SE-1400|");
+	}
+
+
+	var csSe3400 = document.getElementById("csSe3400");
+	if (csSe3400.checked) {
+		csClasses+=("SE-3400|");
+	}
+
 	csClasses+=(" ");
 	fetchString += csClasses;
 }

@@ -4,10 +4,24 @@ import random as r
 
 
 def appendElectives(major, completed, choice):  # WORKS
+    if major == 'se':
+        if choice == "ent":
+            electivesList = ['SE-3500', 'SE-3550', 'MK-4200']
+        elif choice == "devops":
+            electivesList = ['IT-3110', 'IT-3300', 'IT-4200']
+        elif choice == "app":
+            electivesList = ['SE-3600', 'SE-3100', 'SE-3450']
+        elif choice == "data":
+            electivesList = ['CS-4300', 'CS-4320', 'IT-4070']
+            return electivesList
+    else:
+        return choice[:-1]
+
+
+def extendedPrereq(major, completed, choice):
+    electivesFirst = appendElectives(major, completed, choice)
     electivesList = []
-    choice = choice[:-1]
-    major = major.lower()
-    for i in choice:
+    for i in electivesFirst:
         if i not in electivesList:
             electivesList.append(i)
         if major == 'cs':
@@ -41,59 +55,20 @@ def appendElectives(major, completed, choice):  # WORKS
     return finalAppend
 
 
-def appendElectives2(major, completed, choice):  # WORKS
-    choice = choice[0]
-    if choice == "ent":
-        choiceList = ['SE-3500', 'SE-3550', 'MK-4200']
-    elif choice == "devops":
-        choiceList = ['IT-3110', 'IT-3300', 'IT-4200']
-    elif choice == "app":
-        choiceList = ['SE-3600', 'SE-3100', 'SE-3450']
-    elif choice == "data":
-        choiceList = ['CS-4300', 'CS-4320', 'IT-4070']
-    electivesList = []
-    for i in choiceList:
-        electivesList.append(i)
-        se = seDB()
-        unfilteredCoursePrereqs = se.getPreReqs(i)
-        if unfilteredCoursePrereqs is not None:
-            unfilteredCoursePrereqs = unfilteredCoursePrereqs['prereqs']
-            if unfilteredCoursePrereqs is not None:
-                if '*' in unfilteredCoursePrereqs:
-                    unfilteredCoursePrereqs = unfilteredCoursePrereqs.split(
-                        '*')
-                    unfilteredCoursePrereqs = sorted(unfilteredCoursePrereqs)
-                    unfilteredCoursePrereqs = unfilteredCoursePrereqs[0]
-                    for j in unfilteredCoursePrereqs.split(';'):
-                        if j not in completed:
-                            choiceList.append(j)
-                else:
-                    for j in unfilteredCoursePrereqs.split(';'):
-                        if j not in completed:
-                            choiceList.append(j)
-    finalAppend = []
-    for course in electivesList:
-        if course not in completed:
-            finalAppend.append(course)
-    return finalAppend
-
-
 def makeStudent(planNumber, major, completed, electiveChoice):
     if major == 'cs':
         my_db = csDB()
-        electives = appendElectives(major, completed, electiveChoice)
 
     if major == 'ma':
         my_db = maDB()
-        electives = appendElectives(major, completed, electiveChoice)
 
     if major == 'it':
         my_db = itDB()
-        electives = appendElectives(major, completed, electiveChoice)
 
     if major == 'se':
         my_db = seDB()
-        electives = appendElectives2(major, completed, electiveChoice)
+
+    electives = extendedPrereq(major, completed, electiveChoice)
 
     firstCSRequirements = my_db.getRequiredCourses()
     csRequirements = []
@@ -163,25 +138,26 @@ def isOffered(student, course):
 
     if major == 'se':
         my_db = seDB()
-    if student.currentSemester[0] == "F" and (1 == int(student.currentSemester[1:]) % 2):
+    currSem, currYear = student.currentSemester.split('-')
+    if currSem == "Fall" and (1 == int(currYear) % 2):
         offered = []
         for i in my_db.getCourseByOddYearFall():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
-    elif student.currentSemester[0] == "S" and (1 == int(student.currentSemester[1:]) % 2):
+    elif currSem == "Spring" and (1 == int(currYear) % 2):
         offered = []
         for i in my_db.getCourseByOddYearSpring():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
-    elif student.currentSemester[0] == "F" and (0 == int(student.currentSemester[1:]) % 2):
+    elif currSem == "Fall" and (0 == int(currYear) % 2):
         offered = []
         for i in my_db.getCourseByEvenYearFall():
             offered.append(i['course'])
         if course not in offered:
             offered_bool = False
-    elif student.currentSemester[0] == "S" and (0 == int(student.currentSemester[1:]) % 2):
+    elif currSem == "Spring" and (0 == int(currYear) % 2):
         offered = []
         for i in my_db.getCourseByEvenYearSpring():
             offered.append(i['course'])
@@ -239,8 +215,7 @@ def generatePlan(planNumber, major, completed, electives):
     r.shuffle(student.requirements)
 
     while len(student.getRequirements()) > 0:
-        print("Printing student requirements: " +
-              str(student.getRequirements()))
+        print(student.getRequirements())
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         if len(student.requirements) <= 6:

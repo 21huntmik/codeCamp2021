@@ -4,7 +4,7 @@ class Student:
         self.major = major
         self.completed = completedList
         self.requirements = requirementsList
-        self.currentSemester = 'F2022'
+        self.currentSemester = 'Fall-2022'
         self.electives = electivesList
         self.UpperDivCount = 0
         self.totalPlanScore = 0
@@ -60,20 +60,13 @@ class Student:
 
     def incrementSemester(self):
         # Ensure that graduation input from the website comes in the format of semester-YEAR
-        # Year is an integer
-        # Semester is a string, F=Fall, S=Spring, or U=Summer
-        currentSemester, currentYear = self.currentSemester[0], int(
-            self.currentSemester[1:])
-        if currentSemester == "S":
-            currentSemester = "F"
+        # Year is an integer Semester is a string, F=Fall, S=Spring, or U=Summer
+        currSemester, currentYear = self.currentSemester.split("-")
+        currentYear = int(currentYear)
+        if currSemester == "Spring":
+            currSemester = "Fall"
             currentYear = str(int(currentYear))
-        elif currentSemester == "F":
-            currentSemester = "S"
+        elif currSemester == "Fall":
+            currSemester = "Spring"
             currentYear = str(int(currentYear) + 1)
-        self.currentSemester = currentSemester + str(currentYear)
-        # print("New semester: " + self.currentSemester)
-
-    def firstUpperDivCount(self):
-        for i in self.completed:
-            if int(i.getCourse()) >= 3000:
-                self.UpperDivCount += 1
+        self.currentSemester = currSemester + "-" + str(currentYear)

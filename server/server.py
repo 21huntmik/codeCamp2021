@@ -70,12 +70,9 @@ class MyHandler(BaseHTTPRequestHandler):
 
             # Generates the list of dictionaries
             setOfNPlans[planScore+(i/100)] = outputPlan
-
         sortedPlans = sorted(setOfNPlans.items())
         finalThreePlans = []
         finalThreePlans.append(sortedPlans[0:3])
-        print("Printing finalThreePlans:")
-        print(finalThreePlans)
         final = finalThreePlans[0]
         for i in finalThreePlans:
             final.append(i[1][1][1])

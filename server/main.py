@@ -1,7 +1,4 @@
 import server
-import seGenerateSemester
-import csGenerateSemester
-import maGenerateSemester
 
 
 def main():

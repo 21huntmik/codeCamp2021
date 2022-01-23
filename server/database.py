@@ -87,7 +87,7 @@ class csDB:
 class maDB:
     def __init__(self):
         self.connection = sqlite3.connect(
-            "/Users/david/Desktop/codeCamp2021/server/schedules.db")
+            "/Users/david/Desktop/untitled folder/server/schedules.db")
         self.connection.row_factory = dict_factory
         self.cursor = self.connection.cursor()
 
@@ -102,6 +102,12 @@ class maDB:
         self.cursor.execute("SELECT * FROM MA WHERE Course = ?", data)
         course = self.cursor.fetchone()
         return course
+
+    def getCourseRanking(self, course):
+        data = [course]
+        self.cursor.execute("SELECT rating FROM MA WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
 
     def getCourseByCreditHour(self, desired_credits):
         data = [desired_credits]
@@ -177,6 +183,12 @@ class seDB:
         course = self.cursor.fetchall()
         return course
 
+    def getCourseRanking(self, course):
+        data = [course]
+        self.cursor.execute("SELECT rating FROM SE WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
+
     def getCourseCredits(self, course):
         data = [course]
         self.cursor.execute("SELECT credits FROM SE WHERE course = ?", data)
@@ -244,6 +256,12 @@ class itDB:
         self.cursor.execute("SELECT * FROM IT WHERE Credits = ?", data)
         course = self.cursor.fetchall()
         return course
+
+    def getCourseRanking(self, course):
+        data = [course]
+        self.cursor.execute("SELECT rating FROM IT WHERE course = ?", data)
+        credits = self.cursor.fetchone()
+        return credits
 
     def getCourseCredits(self, course):
         data = [course]

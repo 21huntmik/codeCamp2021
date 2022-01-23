@@ -1,10 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs
 import json
-import seGenerateSemester
-import csGenerateSemester
-import maGenerateSemester
-import itGenerateSemester
+import generate as g
 
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -32,17 +29,7 @@ class MyHandler(BaseHTTPRequestHandler):
     def createList(self):
         length = int(self.headers['Content-Length'])
         body = self.rfile.read(length).decode('utf-8')
-        #print("createList was called.\n\n")
-        #print("priting body:")
-        # print(body)
-        # print("\n\n")
-        #parsed_body = parse_qs(body)
-        #print("Printing Parsed-Body:\n\n")
-        # print(parsed_body)
         listItems = body
-        #listItems = body['item'][1]
-        #listItems = parsed_body[1]
-        # print(listItems)
         inputComponents = listItems.split(' ')
         print("Printing inputComponents:")
         print(inputComponents)
@@ -63,29 +50,11 @@ class MyHandler(BaseHTTPRequestHandler):
         completed = completed.split("|")
         setOfNPlans = {}
         for i in range(100):
-            print("Printing major")
-            print(major)
-            print("Prnting completed: " + str(completed))
-            print("Printing electives: " + str(electives))
-            if major == "se":
-                totalPlan = (seGenerateSemester.generatePlan(
-                    completed, electives))
-            elif major == "cs":
-                newCompleted = completed[:]
-                newElectives = electives[:]
-                totalPlan, planScore = (csGenerateSemester.generatePlan(i,
-                                                                        newCompleted, newElectives))
-            elif major == "ma":
-                totalPlan = (maGenerateSemester.generatePlan(
-                    completed, electives))
-            elif major == "it":
-                totalPlan = (itGenerateSemester.generatePlan(
-                    completed, electives))
-            # print("/n/n")
-            print("Printing totalPlan:")
-            print(totalPlan)
-            print("Printing plan score:")
-            print(planScore)
+            newCompleted = completed[:]
+            newElectives = electives[:]
+
+            totalPlan, planScore = g.generatePlan(
+                i, major, newCompleted, newElectives)
             outputPlan = []
 
             # Generates the printed out list in python
@@ -102,9 +71,6 @@ class MyHandler(BaseHTTPRequestHandler):
             # Generates the list of dictionaries
             setOfNPlans[planScore+(i/100)] = outputPlan
 
-        '''for i in setOfNPlans:
-            print(f"Plan: {setOfNPlans[i]}")
-            print(f"Score: {i}")'''
         sortedPlans = sorted(setOfNPlans.items())
         finalThreePlans = []
         finalThreePlans.append(sortedPlans[0:3])
@@ -118,14 +84,6 @@ class MyHandler(BaseHTTPRequestHandler):
         finalFinal = []
         for i in final:
             finalFinal.append(i[1])
-        # print("Printing finalThreePlans:")
-        # print(finalThreePlans)
-        # print(outputPlan)
-        # for i in outputPlan:
-        # for x in i[:-1]:
-        # print(x)
-        # print(i[-1])
-        # print("\n\n")
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()

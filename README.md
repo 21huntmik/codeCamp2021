@@ -1,6 +1,6 @@
 # Graduation-Station
 
-### Purpose
+## Purpose
 
 The registration process at Utah Tech University sucks. Degree-Works shows students which classes they need to ultimately complete, but their scheduled availability is not listed on the same website. To gather all relevant information for degree planning, UTU students must load the course catalog, degree works, and the banner registration page.
 
@@ -8,11 +8,11 @@ That's where Graduation-Station comes in. We created a web-based application tha
 
 ### Schema for Database
 
-##### Table Names
+#### Table Names
 
 CS, SE, MA, IT
 
-##### Schema
+#### Schema
 
 id PRIMARY INTEGER KEY,
 course TEXT,
@@ -29,21 +29,25 @@ rating INTEGER
 ### Current Bugs
 
 - [x] No variability in CS final math course selection.
-
+- [x] Mystery IT-3300 not registering
 
 ### Features Actively in Development
-- [ ] Allow functionality for IT major
+
+- [x] Allow functionality for IT major
 - [x] Change CS from having theory/app dev elective choices to allowing full elective selection
 - [x] Allow users to select which math class they would like to take
-- [ ] 3 schedule permutation front end display prototype
-- [ ] "Desired Graduation Date" input (just front end, not functional)
+- [x] Implement system to generate 100 different schedules
+- [x] Design and build a ranking system for schedules
+- [x] Produce 3 best plans to the front-end
+- [x] 3 schedule permutation front end display prototype
+- [x] "Desired Graduation Date" input (just front end, not functional)
 - [ ] Hover Descriptions
 
 ### Planned Features
 
 - [ ] Build an effective web-scraper to gather correct requirements for all majors at UTU
-- [ ] Generate and display 3 schedule permutations
-- [ ] Account for courses that do not follow the same permission structures as most
+- [x] Generate and display 3 schedule permutations
+- [x] Account for courses that do not follow the same permission structures as most
 - [ ] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
 - [x] Allow users to export a desired plan as a pdf
 - [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
@@ -52,3 +56,4 @@ rating INTEGER
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
 - [x] Allow users to go back a page
 - [ ] With classes like Competitive Programming and Seminar in Computer Science, after the initial checkbox was marked, have a drop down radio button to see how many times the class was taken. This will help with schedule generation.
+- [ ] Restructure the entire backend. Reduce code to half.

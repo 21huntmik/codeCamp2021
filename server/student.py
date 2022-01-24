@@ -1,5 +1,5 @@
 class Student:
-    def __init__(self, studentID, major, completedList, requirementsList, electivesList):
+    def __init__(self, studentID, major, completedList, requirementsList, electivesList, gradYear):
         self.studentID = studentID
         self.major = major
         self.completed = completedList
@@ -7,6 +7,7 @@ class Student:
         self.currentSemester = 'Fall-2022'
         self.electives = electivesList
         self.totalPlanScore = 0
+        self.gradYear = gradYear
         self.creditCount = 0
 
     def addCompleted(self, course):
@@ -69,4 +70,9 @@ class Student:
         elif currSemester == "Fall":
             currSemester = "Spring"
             currentYear = str(int(currentYear) + 1)
+        if int(currentYear) == self.gradYear and currSemester == "Fall":
+            self.totalPlanScore += 100
+        if int(currentYear) > self.gradYear:
+            self.totalPlanScore += 200
+        self.currentSemester = currSemester + "-" + currentYear
         self.currentSemester = currSemester + "-" + str(currentYear)

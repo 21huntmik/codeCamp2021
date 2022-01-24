@@ -14,7 +14,7 @@ class tableDB:
     def __init__(self, major):
         self.major = major.upper()
         self.connection = sqlite3.connect(
-            "/Users/david/Desktop/tmp/server/schedules.db")
+            "schedules.db")
         self.connection.row_factory = dict_factory
         self.cursor = self.connection.cursor()
 

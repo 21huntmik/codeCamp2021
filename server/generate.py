@@ -49,7 +49,7 @@ def extendedPrereq(major, completed, choice):
     return finalAppend
 
 
-def makeStudent(planNumber, major, completed, electiveChoice):
+def makeStudent(planNumber, major, completed, electiveChoice, gradYear):
     my_db = tDB(major)
     electives = extendedPrereq(major, completed, electiveChoice)
     firstCSRequirements = my_db.getRequiredCourses()
@@ -58,7 +58,7 @@ def makeStudent(planNumber, major, completed, electiveChoice):
         if i['course'] not in completed:
             csRequirements.append(i['course'])
     student = std.Student(planNumber, major, completed,
-                          csRequirements, electives)
+                          csRequirements, electives, gradYear)
     student.updateRequirements()
     return student
 
@@ -150,9 +150,9 @@ def generateSemester(student):
     return semesterCourses
 
 
-def generatePlan(planNumber, major, completed, electives):
+def generatePlan(planNumber, major, completed, electives, gradYear):
     # return dictionary, semester:courseList
-    student = makeStudent(planNumber, major, completed, electives)
+    student = makeStudent(planNumber, major, completed, electives, gradYear)
     plan = {}
     r.shuffle(student.requirements)
 

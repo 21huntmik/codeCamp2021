@@ -2935,10 +2935,10 @@ thirdMoveOnSE.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector("#fileBody");
-			var schedule1button = document.querySelector("#fileLabel1");
-			var schedule2button = document.querySelector("#fileLabel2");
-			var schedule3button = document.querySelector("#fileLabel3");
+			var wrapper = document.querySelector("#fileBodySE");
+			var schedule1button = document.querySelector("#fileLabel1SE");
+			var schedule2button = document.querySelector("#fileLabel2SE");
+			var schedule3button = document.querySelector("#fileLabel3SE");
 
 			let schedule1Start = JSON.parse(JSON.stringify(schedule1Main));
 
@@ -6036,10 +6036,10 @@ thirdMoveOnIT.onclick = function() {
 			var semester8Classes = "";
 			var semester8CreditCount = "";
 
-			var wrapper = document.querySelector("#fileBody");
-			var schedule1button = document.querySelector("#fileLabel1");
-			var schedule2button = document.querySelector("#fileLabel2");
-			var schedule3button = document.querySelector("#fileLabel3");
+			var wrapper = document.querySelector("#fileBodyIT");
+			var schedule1button = document.querySelector("#fileLabel1IT");
+			var schedule2button = document.querySelector("#fileLabel2IT");
+			var schedule3button = document.querySelector("#fileLabel3IT");
 
 			let schedule1Start = JSON.parse(JSON.stringify(schedule1Main));
 

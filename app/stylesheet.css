@@ -440,3 +440,129 @@ select {
 	font-style: normal;
 	font-size: 200%;
 }
+
+#fileLabelsSE {
+	width: 100%;
+	height: 5%;
+	margin-top: 5%;
+}
+
+#fileLabelsSE h4 {
+	font-family: abolition,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 125%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 0px;
+	margin-top: 2%;
+}
+
+#fileLabel1SE {
+	width: 20%;
+	height: 100%;
+	background-color: #ebebeb;
+	/* Rounded corners please */
+	border-radius: 5px 5px 0px 0px;
+	margin-left: 5%;
+	margin-right: 5%;
+	float: left;
+}
+
+#fileLabel2SE {
+	width: 20%;
+	height: 100%;
+	background-color: #f1f1f1;
+	margin-right: 5%;
+	float: left;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#fileLabel3SE {
+	width: 20%;
+	height: 100%;
+	background-color: #f1f1f1;
+	margin-right: 5%;
+	float: left;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#fileBodySE {
+	min-height: 95%;
+	overflow: hidden;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #ebebeb;
+	margin-bottom: 5%;
+	padding: 3%;
+	padding-left: 5%;
+}
+
+#fileBodySE h2 {
+	font-family: abolition,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 200%;
+}
+
+#fileLabelsIT {
+	width: 100%;
+	height: 5%;
+	margin-top: 5%;
+}
+
+#fileLabelsIT h4 {
+	font-family: abolition,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 125%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-bottom: 0px;
+	margin-top: 2%;
+}
+
+#fileLabel1IT {
+	width: 20%;
+	height: 100%;
+	background-color: #ebebeb;
+	/* Rounded corners please */
+	border-radius: 5px 5px 0px 0px;
+	margin-left: 5%;
+	margin-right: 5%;
+	float: left;
+}
+
+#fileLabel2IT {
+	width: 20%;
+	height: 100%;
+	background-color: #f1f1f1;
+	margin-right: 5%;
+	float: left;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#fileLabel3IT {
+	width: 20%;
+	height: 100%;
+	background-color: #f1f1f1;
+	margin-right: 5%;
+	float: left;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#fileBodyIT {
+	min-height: 95%;
+	overflow: hidden;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #ebebeb;
+	margin-bottom: 5%;
+	padding: 3%;
+	padding-left: 5%;
+}
+
+#fileBodyIT h2 {
+	font-family: abolition,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 200%;
+}

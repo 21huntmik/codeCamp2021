@@ -3,7 +3,7 @@ import student as std
 import random as r
 
 
-def appendElectives(major, completed, choice):  # WORKS
+def appendElectives(major, completed, choice):
     if major == 'se':
         choice = choice[0]
         if choice == "ent":
@@ -51,9 +51,7 @@ def extendedPrereq(major, completed, choice):
 
 def makeStudent(planNumber, major, completed, electiveChoice):
     my_db = tDB(major)
-
     electives = extendedPrereq(major, completed, electiveChoice)
-
     firstCSRequirements = my_db.getRequiredCourses()
     csRequirements = []
     for i in firstCSRequirements:
@@ -66,9 +64,6 @@ def makeStudent(planNumber, major, completed, electiveChoice):
 
 
 def preReqCheck(student, course):
-    # check if preReq is satisfied
-    # if so, return True
-    # else, return False
     major = student.major
     my_db = tDB(major)
     rawList = my_db.getPreReqs(course)
@@ -95,10 +90,6 @@ def preReqCheck(student, course):
 
 
 def isOffered(student, course):
-    # check if course is offered
-    # if so, return True
-    # else, return False
-    # reformat semester/year listing as F or S or U + year
     offered_bool = True
     major = student.major
     my_db = tDB(major)
@@ -137,7 +128,6 @@ def generateSemester(student):
     my_db = tDB(major)
     tmpCredits = 0
     while semesterCredits < 15:
-
         for course in student.getRequirements():
             if semesterCredits >= 15:
                 break
@@ -153,17 +143,15 @@ def generateSemester(student):
             break
         else:
             tmpCredits = semesterCredits
-
     for course in semesterCourses:
         student.addCompleted(course)
     student.totalPlanScore += ((semesterCredits - 15) ** 2)
+    student.creditCount += semesterCredits
     return semesterCourses
 
 
 def generatePlan(planNumber, major, completed, electives):
-    # generate plan
-    # return dictionary of semesters
-    # key is semester
+    # return dictionary, semester:courseList
     student = makeStudent(planNumber, major, completed, electives)
     plan = {}
     r.shuffle(student.requirements)

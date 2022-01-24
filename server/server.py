@@ -37,7 +37,7 @@ class MyHandler(BaseHTTPRequestHandler):
         electives = electives.split('|')
         completed = completed.split("|")
         setOfNPlans = {}
-        for i in range(100):
+        for i in range(50):
             newCompleted = completed[:]
             newElectives = electives[:]
 
@@ -57,6 +57,8 @@ class MyHandler(BaseHTTPRequestHandler):
                 outputPlan.append(currentSemesterList)
 
             # Generates the list of dictionaries
+            print(f"Printing output plan #{i}")
+            print(outputPlan)
             setOfNPlans[planScore+(i/100)] = outputPlan
         sortedPlans = sorted(setOfNPlans.items())
         finalThreePlans = []
@@ -67,6 +69,7 @@ class MyHandler(BaseHTTPRequestHandler):
         finalFinal = []
         for i in final:
             finalFinal.append(i[1])
+
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()

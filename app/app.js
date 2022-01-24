@@ -187,6 +187,12 @@ firstMoveOn.onclick = function() {
 	}
 
 	fetchString += major;
+
+	var gradDateSelector = document.querySelector(".gradDate");
+	var gradDate = gradDateSelector.value;
+	gradDate+=(" ");
+
+	fetchString+= gradDate;
 }
 
 secondMoveOn.onclick = function() {

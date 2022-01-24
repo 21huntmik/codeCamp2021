@@ -5,6 +5,7 @@ import random as r
 
 def appendElectives(major, completed, choice):  # WORKS
     if major == 'se':
+        choice = choice[0]
         if choice == "ent":
             electivesList = ['SE-3500', 'SE-3550', 'MK-4200']
         elif choice == "devops":
@@ -13,7 +14,7 @@ def appendElectives(major, completed, choice):  # WORKS
             electivesList = ['SE-3600', 'SE-3100', 'SE-3450']
         elif choice == "data":
             electivesList = ['CS-4300', 'CS-4320', 'IT-4070']
-            return electivesList
+        return electivesList
     else:
         return choice[:-1]
 
@@ -135,10 +136,10 @@ def generateSemester(student):
     major = student.major
     my_db = tDB(major)
     tmpCredits = 0
-    while semesterCredits < 17:
+    while semesterCredits < 15:
 
         for course in student.getRequirements():
-            if semesterCredits >= 17:
+            if semesterCredits >= 15:
                 break
             if isOffered(student, course):
                 if preReqCheck(student, course):
@@ -168,7 +169,6 @@ def generatePlan(planNumber, major, completed, electives):
     r.shuffle(student.requirements)
 
     while len(student.getRequirements()) > 0:
-        print(student.getRequirements())
         semester = generateSemester(student)
         plan[student.currentSemester] = semester
         if len(student.requirements) <= 6:

@@ -7,7 +7,7 @@ class Student:
         self.currentSemester = 'Fall-2022'
         self.electives = electivesList
         self.totalPlanScore = 0
-        self.gradYear = gradYear
+        self.gradYear = int(gradYear)
         self.creditCount = 0
 
     def addCompleted(self, course):

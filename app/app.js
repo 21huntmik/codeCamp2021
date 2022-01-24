@@ -23,10 +23,14 @@ var breadcrumb2 = document.querySelector("#breadcrumb2");
 breadcrumb2.style.display = "none";
 var breadcrumb3 = document.querySelector("#breadcrumb3");
 breadcrumb3.style.display = "none";
+var breadcrumb4 = document.querySelector("#breadcrumb4");
+breadcrumb4.style.display = "none";
 var breadcrumbSeparater = document.querySelector("#breadcrumbSeparater");
 breadcrumbSeparater.style.display = "none";
 var breadcrumbSeparater2 = document.querySelector("#breadcrumbSeparater2");
 breadcrumbSeparater2.style.display = "none";
+var breadcrumbSeparater3 = document.querySelector("#breadcrumbSeparater3");
+breadcrumbSeparater3.style.display = "none";
 var body1 = document.querySelector("#body1");
 body1.style.display = "block";
 var body1Generals = document.querySelector("#body1Generals");
@@ -175,6 +179,7 @@ firstMoveOn.onclick = function() {
 
 	breadcrumb.onclick = function() {
 		body1.style.display = "block";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -193,8 +198,10 @@ firstMoveOn.onclick = function() {
 		breadcrumb.style.display = "none";
 		breadcrumb2.style.display = "none";
 		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
 		breadcrumbSeparater.style.display = "none";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
 		fetchString = "";
 	}
 
@@ -228,10 +235,12 @@ geneds.onclick = function() {
 		header.style.display = "block";
 		breadcrumbBox.style.display = "block";
 		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
+		breadcrumb2.style.display = "block";
 		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
 	} else if (majorGlobal == "se") {
 		body1.style.display = "none";
 		body2CS.style.display = "none";
@@ -251,10 +260,12 @@ geneds.onclick = function() {
 		header.style.display = "block";
 		breadcrumbBox.style.display = "block";
 		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
+		breadcrumb2.style.display = "block";
 		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
 	} else if (majorGlobal == "ma") {
 		body1.style.display = "none";
 		body2CS.style.display = "none";
@@ -274,10 +285,12 @@ geneds.onclick = function() {
 		header.style.display = "block";
 		breadcrumbBox.style.display = "block";
 		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
+		breadcrumb2.style.display = "block";
 		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
 	} else if (majorGlobal == "it") {
 		body1.style.display = "none";
 		body2CS.style.display = "none";
@@ -297,10 +310,31 @@ geneds.onclick = function() {
 		header.style.display = "block";
 		breadcrumbBox.style.display = "block";
 		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
+		breadcrumb2.style.display = "block";
 		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
+	}
+
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body1Generals.style.display = "block";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
 	}
 
 	var generals = "";
@@ -377,12 +411,15 @@ secondMoveOn.onclick = function() {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "block";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -397,12 +434,6 @@ secondMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var csClasses = "";
@@ -650,12 +681,15 @@ secondMoveOnSE.onclick = function() {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "block";
 		body2M.style.display = "none";
@@ -670,12 +704,6 @@ secondMoveOnSE.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var seClasses = "";
@@ -878,12 +906,15 @@ secondMoveOnM.onclick = function () {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "block";
@@ -898,12 +929,6 @@ secondMoveOnM.onclick = function () {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var maClasses = "";
@@ -1115,12 +1140,15 @@ secondMoveOnIT.onclick = function () {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -1135,12 +1163,6 @@ secondMoveOnIT.onclick = function () {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var itClasses = "";
@@ -1326,11 +1348,14 @@ thirdMoveOn.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -1345,12 +1370,6 @@ thirdMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var interestCSData = "";
@@ -2990,11 +3009,14 @@ thirdMoveOnSE.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -3009,12 +3031,6 @@ thirdMoveOnSE.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var seTrack = "";
@@ -4478,11 +4494,14 @@ thirdMoveOnM.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
-	
-	breadcrumb3.onclick = function() {
+	breadcrumbSeparater3.style.display = "block";
+
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -4497,12 +4516,6 @@ thirdMoveOnM.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var maElectives = "";
@@ -6018,11 +6031,14 @@ thirdMoveOnIT.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -6037,12 +6053,6 @@ thirdMoveOnIT.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var itElectives = "";

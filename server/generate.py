@@ -196,6 +196,7 @@ def parseGenEdsList(major, geneds):
             remainingGenEds.append("ENGL-1010")
         if english2 != 'TRUE':
             remainingGenEds.append("ENGL-2010")
+        print(remainingGenEds)
         if arts != 'TRUE':
             options = table.getCourseArts()
             options = options[0]

@@ -87,3 +87,41 @@ class tableDB:
             f"SELECT course FROM {self.major} WHERE required = ?", data)
         courses = self.cursor.fetchall()
         return courses
+
+
+class genEdDB():
+    def getCourseAmericanInstitutions(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE AMI = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseEnglish(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE ENG = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseArts(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE ART = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseLit(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE LIT = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseSoc(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE SOC = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseEXP(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE GE = ?", data)
+        return self.cursor.fetchall()

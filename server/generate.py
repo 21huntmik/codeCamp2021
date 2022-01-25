@@ -172,3 +172,14 @@ def generatePlan(planNumber, major, completed, electives, gradYear):
         student.totalPlanScore += 100
     planScore = student.totalPlanScore
     return plan, planScore
+
+
+def parseGenEdsList(student, geneds):
+    remainingGenEds = []
+    major = student.major
+    table = tDB(major)
+    if major == 'cs':
+        americanInstitutions, english1, english2, arts, literature, social, exporation = geneds[
+            0], geneds[1], geneds[2], geneds[3], geneds[4], geneds[5], geneds[6]
+        if not americanInstitutions:
+            return

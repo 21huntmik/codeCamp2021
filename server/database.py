@@ -75,21 +75,6 @@ class tableDB:
             f"SELECT course FROM {self.major} WHERE evenSpring = ?", data)
         return self.cursor.fetchall()
 
-    def getPreReqs(self, course):
-        data = [course]
-        self.cursor.execute(
-            f"SELECT prereqs FROM {self.major} WHERE course = ?", data)
-        return self.cursor.fetchone()
-
-    def getRequiredCourses(self):
-        data = ["TRUE"]
-        self.cursor.execute(
-            f"SELECT course FROM {self.major} WHERE required = ?", data)
-        courses = self.cursor.fetchall()
-        return courses
-
-
-class genEdDB():
     def getCourseAmericanInstitutions(self):
         data = ["TRUE"]
         self.cursor.execute(
@@ -125,3 +110,16 @@ class genEdDB():
         self.cursor.execute(
             f"SELECT course FROM {self.major} WHERE GE = ?", data)
         return self.cursor.fetchall()
+
+    def getPreReqs(self, course):
+        data = [course]
+        self.cursor.execute(
+            f"SELECT prereqs FROM {self.major} WHERE course = ?", data)
+        return self.cursor.fetchone()
+
+    def getRequiredCourses(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE required = ?", data)
+        courses = self.cursor.fetchall()
+        return courses

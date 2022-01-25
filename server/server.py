@@ -31,19 +31,22 @@ class MyHandler(BaseHTTPRequestHandler):
         body = self.rfile.read(length).decode('utf-8')
         listItems = body
         inputComponents = listItems.split(' ')
+        print(inputComponents)
         major = inputComponents[0]
         gradYear = inputComponents[1]
-        completed = inputComponents[2]
-        electives = inputComponents[3]
+        genEds = inputComponents[2]
+        completed = inputComponents[3]
+        electives = inputComponents[4]
         electives = electives.split('|')
         completed = completed.split("|")
         setOfNPlans = {}
         for i in range(50):
             newCompleted = completed[:]
             newElectives = electives[:]
+            newGenEds = genEds[:]
 
             totalPlan, planScore = g.generatePlan(
-                i, major, newCompleted, newElectives, gradYear)
+                i, major, newGenEds, newCompleted, newElectives, gradYear)
             outputPlan = []
 
             # Generates the printed out list in python

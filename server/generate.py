@@ -49,8 +49,9 @@ def extendedPrereq(major, completed, choice):
     return finalAppend
 
 
-def makeStudent(planNumber, major, completed, electiveChoice, gradYear):
+def makeStudent(planNumber, major, finalGenEds, completed, electiveChoice, gradYear):
     my_db = tDB(major)
+    electives = finalGenEds + completed
     electives = extendedPrereq(major, completed, electiveChoice)
     firstCSRequirements = my_db.getRequiredCourses()
     csRequirements = []
@@ -150,9 +151,11 @@ def generateSemester(student):
     return semesterCourses
 
 
-def generatePlan(planNumber, major, completed, electives, gradYear):
+def generatePlan(planNumber, major, genEds, completed, electives, gradYear):
     # return dictionary, semester:courseList
-    student = makeStudent(planNumber, major, completed, electives, gradYear)
+    finalGenEds = parseGenEdsList(major, genEds)
+    student = makeStudent(planNumber, major, finalGenEds,
+                          completed, electives, gradYear)
     plan = {}
     r.shuffle(student.requirements)
 
@@ -174,9 +177,8 @@ def generatePlan(planNumber, major, completed, electives, gradYear):
     return plan, planScore
 
 
-def parseGenEdsList(student, geneds):
+def parseGenEdsList(major, geneds):
     remainingGenEds = []
-    major = student.major
     table = tDB(major)
     if major == 'cs':
         americanInstitutions, english1, english2, arts, literature, social, exporation = geneds[

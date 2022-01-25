@@ -1,3 +1,4 @@
+from sympy import rem
 from database import tableDB as tDB
 import student as std
 import random as r
@@ -184,4 +185,37 @@ def parseGenEdsList(major, geneds):
         americanInstitutions, english1, english2, arts, literature, social, exporation = geneds[
             0], geneds[1], geneds[2], geneds[3], geneds[4], geneds[5], geneds[6]
         if not americanInstitutions:
-            return
+            options = table.getCourseAmericanInstitutions()
+            options = r.shuffle(options)
+            print("American Institutions Options")
+            print(options)
+            remainingGenEds.append(options[0]['course'])
+        if not english1:
+            remainingGenEds.append("ENGL-1010")
+        if not english2:
+            remainingGenEds.append("ENGL-2010")
+        if not arts:
+            options = table.getCourseArts()
+            options = r.shuffle(options)
+            print("Arts Options")
+            print(options)
+            remainingGenEds.append(options[0]['course'])
+        if not literature:
+            options = table.getCourseLit()
+            options = r.shuffle(options)
+            print("Literature Options")
+            print(options)
+            remainingGenEds.append(options[0]['course'])
+        if not social:
+            options = table.getCourseSoc()
+            options = r.shuffle(options)
+            print("Social Studies Options")
+            print(options)
+            remainingGenEds.append(options[0]['course'])
+        if not exporation:
+            options = table.getCourseEXP()
+            options = r.shuffle(options)
+            print("Exploration Options")
+            print(options)
+            remainingGenEds.append(options[0]['course'])
+        return remainingGenEds

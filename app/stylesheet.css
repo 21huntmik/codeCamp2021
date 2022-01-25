@@ -566,3 +566,18 @@ select {
 	font-style: normal;
 	font-size: 200%;
 }
+
+#body1Generals {
+	width: 50%;
+	height: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#body1Generals p {
+	margin-top: 5%;
+}
+
+.geneds {
+	margin-top: 10%;
+}

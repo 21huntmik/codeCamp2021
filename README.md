@@ -42,6 +42,7 @@ rating INTEGER
 - [x] 3 schedule permutation front end display prototype
 - [x] "Desired Graduation Date" input (just front end, not functional)
 - [ ] Hover Descriptions
+- [ ] General Education Requirements
 
 ### Planned Features
 

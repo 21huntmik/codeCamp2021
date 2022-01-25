@@ -3,6 +3,7 @@ $.getScript("./jsPDFolder/jspdf.js", function() {
 });
 
 var firstMoveOn = document.querySelector(".firstMoveOn");
+var geneds = document.querySelector(".geneds");
 var secondMoveOn = document.querySelector(".secondMoveOn");
 var secondMoveOnSE = document.querySelector(".secondMoveOnSE");
 var secondMoveOnM = document.querySelector(".secondMoveOnM");
@@ -12,6 +13,7 @@ var thirdMoveOnSE = document.querySelector(".thirdMoveOnSE");
 var thirdMoveOnM = document.querySelector(".thirdMoveOnM");
 var thirdMoveOnIT = document.querySelector(".thirdMoveOnIT");
 var fetchString = "";
+var majorGlobal = "";
 
 var breadcrumbBox = document.querySelector("#breadcrumbBox");
 breadcrumbBox.style.display = "none";
@@ -21,12 +23,18 @@ var breadcrumb2 = document.querySelector("#breadcrumb2");
 breadcrumb2.style.display = "none";
 var breadcrumb3 = document.querySelector("#breadcrumb3");
 breadcrumb3.style.display = "none";
+var breadcrumb4 = document.querySelector("#breadcrumb4");
+breadcrumb4.style.display = "none";
 var breadcrumbSeparater = document.querySelector("#breadcrumbSeparater");
 breadcrumbSeparater.style.display = "none";
 var breadcrumbSeparater2 = document.querySelector("#breadcrumbSeparater2");
 breadcrumbSeparater2.style.display = "none";
+var breadcrumbSeparater3 = document.querySelector("#breadcrumbSeparater3");
+breadcrumbSeparater3.style.display = "none";
 var body1 = document.querySelector("#body1");
 body1.style.display = "block";
+var body1Generals = document.querySelector("#body1Generals");
+body1Generals.style.display = "none";
 var body2CS = document.querySelector("#body2CS");
 body2CS.style.display = "none";
 var body2SE = document.querySelector("#body2SE");
@@ -60,8 +68,10 @@ firstMoveOn.onclick = function() {
 	var majorSelector = document.querySelector(".major");
 	var major = majorSelector.value;
 	if (major == "cs") {
+		majorGlobal = "cs";
 		body1.style.display = "none";
-		body2CS.style.display = "block";
+		body1Generals.style.display = "block";
+		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
 		body2IT.style.display = "none";
@@ -85,9 +95,11 @@ firstMoveOn.onclick = function() {
 		major+=(" ");
 
 	} else if (major == "se") {
+		majorGlobal = "se";
 		body1.style.display = "none";
 		body2CS.style.display = "none";
-		body2SE.style.display = "block";
+		body1Generals.style.display = "block";
+		body2SE.style.display = "none";
 		body2M.style.display = "none";
 		body2IT.style.display = "none";
 		body3CS.style.display = "none";
@@ -110,10 +122,12 @@ firstMoveOn.onclick = function() {
 		major+=(" ");
 
 	} else if (major == "ma") {
+		majorGlobal = "ma";
 		body1.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
-		body2M.style.display = "block";
+		body1Generals.style.display = "block";
+		body2M.style.display = "none";
 		body2IT.style.display = "none";
 		body3CS.style.display = "none";
 		body3SE.style.display = "none";
@@ -135,11 +149,13 @@ firstMoveOn.onclick = function() {
 		major+=(" ");
 
 	} else if (major == "it") {
+		majorGlobal = "it";
 		body1.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
-		body2IT.style.display = "block";
+		body1Generals.style.display = "block";
+		body2IT.style.display = "none";
 		body3CS.style.display = "none";
 		body3SE.style.display = "none";
 		body3M.style.display = "none";
@@ -163,6 +179,7 @@ firstMoveOn.onclick = function() {
 
 	breadcrumb.onclick = function() {
 		body1.style.display = "block";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -181,8 +198,10 @@ firstMoveOn.onclick = function() {
 		breadcrumb.style.display = "none";
 		breadcrumb2.style.display = "none";
 		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
 		breadcrumbSeparater.style.display = "none";
 		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
 		fetchString = "";
 	}
 
@@ -193,6 +212,184 @@ firstMoveOn.onclick = function() {
 	gradDate+=(" ");
 
 	fetchString+= gradDate;
+}
+
+geneds.onclick = function() {
+	//so this one will collect the gened data and send them to the correct pages based off of majorGlobal
+	if (majorGlobal == "cs") {
+		body1.style.display = "none";
+		body2CS.style.display = "block";
+		body2SE.style.display = "none";
+		body1Generals.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
+	} else if (majorGlobal == "se") {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "block";
+		body1Generals.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
+	} else if (majorGlobal == "ma") {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body1Generals.style.display = "none";
+		body2M.style.display = "block";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
+	} else if (majorGlobal == "it") {
+		body1.style.display = "none";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body1Generals.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "block";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+		breadcrumbBox.style.display = "block";
+		breadcrumb.style.display = "block";
+		breadcrumb2.style.display = "block";
+		breadcrumb3.style.display = "none";
+		breadcrumb4.style.display = "none";
+		breadcrumbSeparater.style.display = "block";
+		breadcrumbSeparater2.style.display = "none";
+		breadcrumbSeparater3.style.display = "none";
+	}
+
+	breadcrumb2.onclick = function() {
+		body1.style.display = "none";
+		body1Generals.style.display = "block";
+		body2CS.style.display = "none";
+		body2SE.style.display = "none";
+		body2M.style.display = "none";
+		body2IT.style.display = "none";
+		body3CS.style.display = "none";
+		body3SE.style.display = "none";
+		body3M.style.display = "none";
+		body3IT.style.display = "none";
+		csSchedule.style.display = "none";
+		seSchedule.style.display = "none";
+		maSchedule.style.display = "none";
+		itSchedule.style.display = "none";
+		introHeader.style.display = "none";
+		header.style.display = "block";
+	}
+
+	var generals = "";
+
+	var americanInst = document.getElementById("americanInst");
+	if (americanInst.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var engl1010 = document.getElementById("engl1010");
+	if (engl1010.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var engl2010 = document.getElementById("engl2010");
+	if (engl2010.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var fineArt = document.getElementById("fineArt");
+	if (fineArt.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var litHum = document.getElementById("litHum");
+	if (litHum.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var socialSci = document.getElementById("socialSci");
+	if (socialSci.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	var expl = document.getElementById("expl");
+	if (expl.checked) {
+		generals+=("TRUE|");
+	} else {
+		generals+=("FALSE|");
+	}
+
+	generals+=(" ");
+	fetchString+=generals;
 }
 
 secondMoveOn.onclick = function() {
@@ -214,12 +411,15 @@ secondMoveOn.onclick = function() {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "block";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -234,12 +434,6 @@ secondMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var csClasses = "";
@@ -487,12 +681,15 @@ secondMoveOnSE.onclick = function() {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "block";
 		body2M.style.display = "none";
@@ -507,12 +704,6 @@ secondMoveOnSE.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var seClasses = "";
@@ -715,12 +906,15 @@ secondMoveOnM.onclick = function () {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "block";
@@ -735,12 +929,6 @@ secondMoveOnM.onclick = function () {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var maClasses = "";
@@ -952,12 +1140,15 @@ secondMoveOnIT.onclick = function () {
 	breadcrumbBox.style.display = "block";
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
-	breadcrumb3.style.display = "none";
+	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "none";
 	breadcrumbSeparater.style.display = "block";
-	breadcrumbSeparater2.style.display = "none";
+	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "none";
 	
-	breadcrumb2.onclick = function() {
+	breadcrumb3.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -972,12 +1163,6 @@ secondMoveOnIT.onclick = function () {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "none";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "none";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var itClasses = "";
@@ -1163,11 +1348,14 @@ thirdMoveOn.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -1182,12 +1370,6 @@ thirdMoveOn.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var interestCSData = "";
@@ -2827,11 +3009,14 @@ thirdMoveOnSE.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -2846,12 +3031,6 @@ thirdMoveOnSE.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var seTrack = "";
@@ -4315,11 +4494,14 @@ thirdMoveOnM.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
-	
-	breadcrumb3.onclick = function() {
+	breadcrumbSeparater3.style.display = "block";
+
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -4334,12 +4516,6 @@ thirdMoveOnM.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var maElectives = "";
@@ -5855,11 +6031,14 @@ thirdMoveOnIT.onclick = function() {
 	breadcrumb.style.display = "block";
 	breadcrumb2.style.display = "block";
 	breadcrumb3.style.display = "block";
+	breadcrumb4.style.display = "block";
 	breadcrumbSeparater.style.display = "block";
 	breadcrumbSeparater2.style.display = "block";
+	breadcrumbSeparater3.style.display = "block";
 	
-	breadcrumb3.onclick = function() {
+	breadcrumb4.onclick = function() {
 		body1.style.display = "none";
+		body1Generals.style.display = "none";
 		body2CS.style.display = "none";
 		body2SE.style.display = "none";
 		body2M.style.display = "none";
@@ -5874,12 +6053,6 @@ thirdMoveOnIT.onclick = function() {
 		itSchedule.style.display = "none";
 		introHeader.style.display = "none";
 		header.style.display = "block";
-		breadcrumbBox.style.display = "block";
-		breadcrumb.style.display = "block";
-		breadcrumb2.style.display = "block";
-		breadcrumb3.style.display = "none";
-		breadcrumbSeparater.style.display = "block";
-		breadcrumbSeparater2.style.display = "none";
 	}
 
 	var itElectives = "";

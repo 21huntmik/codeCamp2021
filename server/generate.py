@@ -22,6 +22,10 @@ def appendElectives(major, completed, choice):
 
 def extendedPrereq(major, completed, choice, finalGenEds):
     electivesFirst = appendElectives(major, completed, choice)
+    if 'ENGL-1010' not in finalGenEds:
+        completed.append('ENGL-1010')
+    if 'ENGL-2010' not in finalGenEds:
+        completed.append('ENGL-2010')
     electivesFirst = electivesFirst + finalGenEds
     electivesList = []
     for i in electivesFirst:

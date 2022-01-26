@@ -185,13 +185,12 @@ def parseGenEdsList(major, geneds):
     if major == 'cs':
         americanInstitutions, english1, english2, arts, literature, social, exporation = geneds[
             0], geneds[1], geneds[2], geneds[3], geneds[4], geneds[5], geneds[6]
-        '''
         if not americanInstitutions:
             options = table.getCourseAmericanInstitutions()
             options = r.shuffle(options)
             print("American Institutions Options")
             print(options)
-            remainingGenEds.append(options[0]['course'])'''
+            remainingGenEds.append(options[0]['course'])
         if english1 != 'TRUE':
             remainingGenEds.append("ENGL-1010")
         if english2 != 'TRUE':

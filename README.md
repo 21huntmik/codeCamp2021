@@ -42,19 +42,19 @@ rating INTEGER
 - [x] 3 schedule permutation front end display prototype
 - [x] "Desired Graduation Date" input (just front end, not functional)
 - [ ] Hover Descriptions
-- [ ] General Education Requirements
+- [x] General Education Requirements
 
 ### Planned Features
 
 - [ ] Build an effective web-scraper to gather correct requirements for all majors at UTU
 - [x] Generate and display 3 schedule permutations
 - [x] Account for courses that do not follow the same permission structures as most
-- [ ] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
+- [x] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
 - [x] Allow users to export a desired plan as a pdf
 - [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
 - [x] Add a course difficulty rating to all database
-- [ ] Re-weight the algorithm to ensure a total semester difficulty does not get too high
+- [x] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university
 - [x] Allow users to go back a page
 - [ ] With classes like Competitive Programming and Seminar in Computer Science, after the initial checkbox was marked, have a drop down radio button to see how many times the class was taken. This will help with schedule generation.
-- [ ] Restructure the entire backend. Reduce code to half.
+- [x] Restructure the entire backend. Reduce code to half.

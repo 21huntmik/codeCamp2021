@@ -81,10 +81,28 @@ class tableDB:
             f"SELECT course FROM {self.major} WHERE AMI = ?", data)
         return self.cursor.fetchall()
 
+    def getCourseMath(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE MA = ?", data)
+        return self.cursor.fetchall()
+
     def getCourseEnglish(self):
         data = ["TRUE"]
         self.cursor.execute(
             f"SELECT course FROM {self.major} WHERE ENG = ?", data)
+        return self.cursor.fetchall()
+
+    def getCourseLifeSciences(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE LS = ?", data)
+        return self.cursor.fetchall()
+
+    def getCoursePhysicalSciences(self):
+        data = ["TRUE"]
+        self.cursor.execute(
+            f"SELECT course FROM {self.major} WHERE PS = ?", data)
         return self.cursor.fetchall()
 
     def getCourseArts(self):

@@ -20,8 +20,9 @@ def appendElectives(major, completed, choice):
         return choice[:-1]
 
 
-def extendedPrereq(major, completed, choice):
+def extendedPrereq(major, completed, choice, finalGenEds):
     electivesFirst = appendElectives(major, completed, choice)
+    electivesFirst = electivesFirst + finalGenEds
     electivesList = []
     for i in electivesFirst:
         if i not in electivesList:
@@ -52,8 +53,7 @@ def extendedPrereq(major, completed, choice):
 
 def makeStudent(planNumber, major, finalGenEds, completed, electiveChoice, gradYear):
     my_db = tDB(major)
-    electives = finalGenEds + completed
-    electives = extendedPrereq(major, completed, electiveChoice)
+    electives = extendedPrereq(major, completed, electiveChoice, finalGenEds)
     firstCSRequirements = my_db.getRequiredCourses()
     csRequirements = []
     for i in firstCSRequirements:

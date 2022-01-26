@@ -185,12 +185,13 @@ def parseGenEdsList(major, geneds):
     if major == 'cs':
         americanInstitutions, english1, english2, arts, literature, social, exporation = geneds[
             0], geneds[1], geneds[2], geneds[3], geneds[4], geneds[5], geneds[6]
-        if not americanInstitutions:
+        if americanInstitutions != 'TRUE':
             options = table.getCourseAmericanInstitutions()
-            options = r.shuffle(options)
-            print("American Institutions Options")
-            print(options)
-            remainingGenEds.append(options[0]['course'])
+            newOptions = []
+            for i in options:
+                newOptions.append(i['course'])
+            choice = r.choice(newOptions)
+            remainingGenEds.append(choice)
         if english1 != 'TRUE':
             remainingGenEds.append("ENGL-1010")
         if english2 != 'TRUE':
@@ -198,30 +199,30 @@ def parseGenEdsList(major, geneds):
         print(remainingGenEds)
         if arts != 'TRUE':
             options = table.getCourseArts()
-            options = options[0]
-            options = r.shuffle(options)
-            print("Arts Options")
-            print(options)
-            remainingGenEds.append(options[0])
+            newOptions = []
+            for i in options:
+                newOptions.append(i['course'])
+            choice = r.choice(newOptions)
+            remainingGenEds.append(choice)
         if literature != 'TRUE':
             options = table.getCourseLit()
-            options = options[0]
-            options = r.shuffle(options)
-            print("Literature Options")
-            print(options)
-            remainingGenEds.append(options[0])
+            newOptions = []
+            for i in options:
+                newOptions.append(i['course'])
+            choice = r.choice(newOptions)
+            remainingGenEds.append(choice)
         if social != 'TRUE':
             options = table.getCourseSoc()
-            options = options[0]
-            options = r.shuffle(options)
-            print("Social Studies Options")
-            print(options)
-            remainingGenEds.append(options[0])
+            newOptions = []
+            for i in options:
+                newOptions.append(i['course'])
+            choice = r.choice(newOptions)
+            remainingGenEds.append(choice)
         if exporation != 'TRUE':
             options = table.getCourseEXP()
-            options = options[0]
-            options = r.shuffle(options)
-            print("Exploration Options")
-            print(options)
-            remainingGenEds.append(options[0])
+            newOptions = []
+            for i in options:
+                newOptions.append(i['course'])
+            choice = r.choice(newOptions)
+            remainingGenEds.append(choice)
         return remainingGenEds

@@ -134,6 +134,7 @@ def generateSemester(student):
     my_db = tDB(major)
     tmpCredits = 0
     while semesterCredits < 15:
+        print(student.getRequirements())
         for course in student.getRequirements():
             if semesterCredits >= 15:
                 break

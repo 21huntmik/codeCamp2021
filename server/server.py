@@ -40,7 +40,7 @@ class MyHandler(BaseHTTPRequestHandler):
         electives = electives.split('|')
         completed = completed.split("|")
         setOfNPlans = {}
-        for i in range(50):
+        for i in range(100):
             newCompleted = completed[:]
             newElectives = electives[:]
             newGenEds = genEds[:]

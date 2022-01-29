@@ -569,7 +569,7 @@ select {
 
 #body1Generals {
 	width: 50%;
-	height: 90%;
+	height: 125%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -579,5 +579,5 @@ select {
 }
 
 .geneds {
-	margin-top: 10%;
+	margin-top: 20%;
 }

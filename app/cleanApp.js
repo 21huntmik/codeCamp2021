@@ -108,9 +108,15 @@ storeGenEdsButton.onclick = function() {
 
 	saveCheckboxTF("engl1010");
 	saveCheckboxTF("engl2010");
-	saveCheckboxTF("maGen");
-	saveCheckboxTF("ma1050Gen");
-	saveCheckboxTF("ma1060Gen");
+	saveCheckboxClass("genMA1030", "genMA");
+	saveCheckboxClass("genMA1040", "genMA");
+	saveCheckboxClass("genMA1050", "genMA");
+	saveCheckboxClass("genMA1060", "genMA");
+	saveCheckboxClass("genMA1080", "genMA");
+	saveCheckboxClass("genMA1100", "genMA");
+	saveCheckboxClass("genMA1210", "genMA");
+	saveCheckboxClass("genMA1220", "genMA");
+	saveCheckboxClass("genMA2210", "genMA");
 	saveCheckboxTF("americanInst");
 	saveCheckboxTF("lifeScience");
 	saveCheckboxTF("physicalScience");
@@ -465,6 +471,11 @@ function saveCheckboxClass(id, dataName) {
 		if (classID.checked) {
 			console.log(classID.value);
 			gElectives+=(classID.value + "|");
+		}
+	} else if(dataName == "genMA") {
+		if (classID.checked) {
+			console.log(classID.value);
+			gGenEds+=(classID.value + "|");
 		}
 	}
 }

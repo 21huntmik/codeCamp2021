@@ -30,6 +30,8 @@ rating INTEGER
 
 - [x] No variability in CS final math course selection.
 - [x] Mystery IT-3300 not registering
+- [ ] Math prereqs
+- [ ] Not registering 2010 as taken 
 
 ### Features Actively in Development
 

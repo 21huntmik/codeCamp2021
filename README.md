@@ -30,6 +30,8 @@ rating INTEGER
 
 - [x] No variability in CS final math course selection.
 - [x] Mystery IT-3300 not registering
+- [ ] Math prereqs
+- [ ] Not registering 2010 as taken 
 
 ### Features Actively in Development
 
@@ -41,7 +43,7 @@ rating INTEGER
 - [x] Produce 3 best plans to the front-end
 - [x] 3 schedule permutation front end display prototype
 - [x] "Desired Graduation Date" input (just front end, not functional)
-- [ ] Hover Descriptions
+- [x] Hover Descriptions
 - [x] General Education Requirements
 
 ### Planned Features
@@ -51,7 +53,7 @@ rating INTEGER
 - [x] Account for courses that do not follow the same permission structures as most
 - [x] Implement a "Desired Graduation Date" input feature; rework the backend algorithm
 - [x] Allow users to export a desired plan as a pdf
-- [ ] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
+- [x] Better the user experience by adding extra features such as hover descriptions in applicable circumstances
 - [x] Add a course difficulty rating to all database
 - [x] Re-weight the algorithm to ensure a total semester difficulty does not get too high
 - [ ] Explore ways to potentially import generated schedule into the banner registration page. This will need to be accomplished by working with the university

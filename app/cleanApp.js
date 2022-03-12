@@ -838,6 +838,7 @@ function displaySchedules() {
 }
 
 //Complete The Fetch Request
+
 function completeFetch() {
 	gFetchString = gMajor + gGradDate + gGenEds + gClasses + gElectives;
 
